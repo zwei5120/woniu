@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>1111</h1>
+
+    <script>
+        // 输出 0 - 100
+        /*
+        语法：
+            for(初始化循环变量表达式; 循环条件表达式; 更新循环变量表达式){ // 注意，这三者之间是;连接
+                    循环体;
+            }
+        */
+        // for (let i = 0; i <= 100; i++) {
+        //     console.log(i);
+        // }
+
+        // 输出 10 - 100
+        // for (let i = 10; i <= 100; i++) {
+        //     console.log(i);
+        // }
+
+        // 倒序输出 100 - 0
+        // 100 99 98  97 .... 2 1 0
+        // for(let i = 100; i >= 0; i--) { //  条件表达式和更新变量表达式  一定要对应  否则很容易陷入死循环
+        //     console.log(i);
+        // }
+
+        // 倒序输出 100 - 10
+        // for (let i = 100; i >= 10; i--) { //  条件表达式和更新变量表达式  一定要对应  否则很容易陷入死循环
+        //     console.log(i);
+        // }
+
+        // 计算 0 - 100的和
+
+        // 循环里面 拿到0 - 100的每个数
+        // 就依次把这些数给+起来
+        // let sum = 0;
+        // for (let i = 0; i <= 100; i++) {
+        //     // sum = sum + i;
+        //     sum += i;
+        // }
+        // console.log(sum);
+
+
+        // 计算 1 - 10的积
+        let sum = 1;
+        for (let i = 1; i <= 10; i++) {
+            sum *= i;
+        }
+        console.log(sum);
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,34 @@
+1、变量指一个保存数据的容器，该容器可以多次使用；其用于解决一个数据多次重复使用的问题；var、let及const均可用于声明变量，var声明的变量可再次声明，let和const声明的变量不能再次声明，const声明变量时必须同时赋值，且不支持修改变量值。
+
+2、
+let num1 = prompt('获取用户值1：'),
+    num2 = prompt('获取用户值2：'),
+    num3 = prompt('获取用户值3：');
+    console.log(num1);
+    console.log(num2);
+    console.log(num3);
+    document.write(num1);
+    document.write(num2);
+    document.write(num3);
+
+3、
+		number	parseInt	parseFl	string	boolean
+let a = 0; 		0	0	0	'0'	false
+
+let a = '196';	196	196	196	'196'	true
+
+let a = '906px';	NaN	906	906	'906px'	true
+
+let a = '91.06px';	NaN	91	91.06	'91.06px'	true
+
+let a = 'ak96';	NaN	NaN	NaN	'ak96'	true
+
+let a = true;	1	NaN	NaN	'true'	true
+
+let a = null;	0	NaN	NaN	'null'	false
+
+let a = undefined;	NaN	NaN	NaN	'undefined'	false
+
+
+
+

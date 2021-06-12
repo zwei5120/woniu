@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // 1. break 终止当前循环 也终止后面所有的循环
+        // for(let i = 0; i < 100; i++) {
+        //     if(i > 50) {
+        //         break;
+        //     }
+        //     console.log(i);
+        // }
+
+        // 2. continue 终止当前本次循环 后面循环继续
+        // for(let i = 0; i < 100; i++) {
+        //     console.log(i);
+        //     if(i > 50) {
+        //         continue;
+        //     }
+        // }
+
+
+        // 注意： break只会终止离他最近的一个循环
+        for (let j = 0; j < 3; j++) { // 循环次数：3次   行
+            for (let i = 0; i < 4; i++) { // 循环次数：4次 列
+                if(i == 2) {
+                    break; // break只会终止离他最近的一个循环
+                }
+                document.write('★');
+            }
+            document.write('<br />'); // 每一行星星创建完了  都需要换行
+        }
+
+
+    </script>
+</body>
+
+</html>

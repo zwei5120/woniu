@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <!-- 普通文本框text -->
+        <label for="username">账号：</label>
+        <input type="text" placeholder="请输入用户名" value="张文建" id="username" name="userid"><br/>
+        <!-- 密码文本框 -->
+        <label for="psw">密码：</label>
+        <input type="password" name="password" id="psw" placeholder="请输入密码">
+        <!-- 单选 -->
+        <br> 性别：
+        <input type="radio" name="sex" id="male"><label for="male">男</label>
+        <input type="radio" name="sex" id="female"><label for="female">女</label>
+        <input type="radio" name="sex" id="unknown"><label for="unknown">未知</label>
+        <!-- 复选框 -->
+        <br>爱好：
+        <input type="checkbox" name="hobby" id="">游泳
+        <input type="checkbox" name="hobby" id="" checked>打球
+        <input type="checkbox" name="hobby" id="">散步
+        <!-- 下拉列表 -->
+        <br>
+        <select name="" id="">
+            <option value="">苹果</option>
+            <option value="">香蕉</option>
+            <option value="">橘子</option>
+        </select>
+        <br>
+        <textarea name="" id="" cols="30" rows="10">文本域</textarea>
+        <br>
+        <button type="submit">提交标签</button>
+        <button type="reset">重置标签</button>
+        <button>普通标签</button>
+    </form>
+</body>
+</html>

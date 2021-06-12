@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            1）用户输入两个数字，判断大小，如果输入的第一个数大于输入的第二个数，那么输出第一个数大；同理，如果输入的第二个数大于输入的第一个数，那么输出第二个数大，否则输出两个数相等(预习：分支结构) 
+            2) 利用for循环 来实现输出从10到50的每个数字( 预习for循环)
+            3）交换两个变量的值，使用两种方法
+        */
+
+        // 1
+        // let num1 = prompt('请输入第一个数字：') - 0, num2 = prompt('请输入第二个数字：') - 0;
+        // //注意： prompt接受到的是字符串类型
+        // // '33' > '321'
+        // if(num1 > num2) {
+        //     console.log('第一个数大');
+        // } else if(num1 < num2) {
+        //     console.log('第二个数大');
+        // } else {
+        //     console.log('两个数相等');
+        // }
+
+
+
+        // 3
+        // 方式1
+        // let a = 10, b = 20, c;
+        // c = a;
+        // a = b;
+        // b = c;
+        // console.log(a,b);
+
+        // 方式2
+        // let a = 10, b = 20, c;
+        // c = a + b; // 30
+        // a = c - a; // a = 20
+        // b = c - b; // b = 10
+        // console.log(a,b);
+
+        // 方式3
+        // let a = 10, b = 20;
+        // a = a + b;
+        // b = a - b;
+        // a = a - b;
+        // console.log(a,b);
+
+
+    </script>
+</body>
+
+</html>

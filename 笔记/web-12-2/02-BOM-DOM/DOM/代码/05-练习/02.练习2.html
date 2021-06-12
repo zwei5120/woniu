@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            /* width: 400px; */
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="btnClick()">按钮</button>
+    <img src="./img/5.jpeg" alt="" id="img">
+
+    <script>
+        // 页面上有一个按钮、img标签。点击按钮，随机显示图片(本地的)
+        // 方式1
+        // function btnClick() {
+        //     // console.log('btnClick');
+        //     // 随机生成 1- 5
+        //     let random = parseInt(Math.random() * 5 + 1)
+        //     console.log(random);
+        //     let img = document.getElementById('img');
+        //     img.src = `./img/${random}.jpeg`;
+        //     // img.setAttribute('src', './img/4.jpeg');
+        // }
+
+        
+        let arr = [
+            '1.jpeg',
+            '2.jpeg',
+            '3.jpeg',
+            '4.jpeg',
+            '5.jpeg',
+            '11.jpeg',
+        ];
+        function btnClick() {
+            // 生成一个合法的数组下标
+            let random = parseInt(Math.random() * arr.length);
+            img.src = `./img/${arr[random]}`;
+        }
+
+    </script>
+</body>
+</html>

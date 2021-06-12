@@ -1,0 +1,11 @@
+.box1{
+    width: 450px;
+    height: 30px;
+    display: flex;
+}
+.box1 .box2{
+    height: 30px;
+    width: 50px;
+    box-sizing: border-box;
+    border: 1px solid black;
+}

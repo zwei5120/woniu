@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>2222222</h1>
+
+    <!-- 在body结束标签之前引入js文件 -->
+
+    <!-- 第一种方式： 外部引入 -->
+    <!-- <script src="./index.js"></script> -->
+
+    <!-- 第二种方式 -->
+    <!-- <script>
+        console.log('内嵌式js');
+    </script> -->
+
+
+    <!-- 注意 -->
+    <script src="./index.js">
+      // 有了src就是去加载这个js文件  标签种的内容会被干掉不会生效
+        console.log('内嵌式js');
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" oninput="langJudge(this)" onchange="fn(this)">
+
+
+    <script>
+
+        /* 
+        1. 实现当输入框内容长度超过6且不超过12时，
+        会有一个绿色的边框，否则就是一个红色的边框。
+        2. 输入完成时判断输入的内容，不足8位就弹框
+        显示输入有误，够8位，再判断内容是否是`pyywyzgtl`
+        再输出正确和错误 
+        */
+        function langJudge(ipt) {
+            let len = ipt.value.length;
+            // if (len >= 6 && len <= 12) {
+            //     ipt.style.outline = '1px solid green';
+            // } else {
+            //     ipt.style.outline = '1px solid red';
+            // }
+            (len >= 6 && len <= 12)?ipt.style.outline = '1px solid green' : ipt.style.outline = '1px solid red';
+        }
+        function fn(ipt) {
+            // ipt.style.outline = '0px solid black';
+            if (ipt.value.length >= 8) {
+                if (ipt.value === 'pyywyzgtl') {
+                    alert('正确');
+                } else {
+                    alert('错误');
+                }
+            } else {
+                alert('输入有误');
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

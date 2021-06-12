@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        /* 奇数 */
+        .natural tr:nth-child(odd) {
+            background-color: green;
+        }
+
+        /* 偶数 */
+        .natural tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        .blue tr:nth-child(odd) {
+            background-color: skyblue;
+        }
+
+        .blue tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        /* 随机色彩 */
+    </style>
+</head>
+
+<body>
+    <button onclick="addBorder();">添加边框</button>
+    <button onclick="textCenter()">内容水平居中</button>
+    <button onclick="zebraColor()">斑马线1</button>
+    <button onclick="zebraColor2()">海洋蓝-斑马线</button>
+    <button onclick="randomZebraColor();">随机斑马线效果</button>
+    <button onclick="addLast()">末尾添加商品</button>
+    <button onclick="addFirst()">开头添加商品</button>
+    <button onclick="delLast()">删除末尾的商品</button>
+    <button onclick="delFirstGood();">删除第一件商品</button>
+    <button onclick="delAll()">删除所有商品</button>
+    <br>
+    <input type="text" id="line-number" placeholder="">
+    <button onclick="delOne();">删除指定商品</button>
+    <table id="goods" class="">
+        <thead>
+            <tr>
+
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>商品描述</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>卫龙辣条</td>
+                <td>9.9</td>
+                <td>好吃实惠</td>
+            </tr>
+            <tr>
+                <td>天线宝宝ins联名限量款</td>
+                <td>1999</td>
+                <td>送给孩子的最好礼物</td>
+            </tr>
+            <tr>
+                <td>八佰同款上衣</td>
+                <td>499</td>
+                <td>经典款式</td>
+            </tr>
+            <tr>
+                <td>air force 1 boost Jordan</td>
+                <td>799</td>
+                <td>超轻 又较重</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        // 1. 先获取标签
+        // 2. 用这个标签再去操作
+
+
+        // 添加边框
+        function addBorder() {
+            let table = document.getElementById('goods');
+            if (!table.hasAttribute('border')) {
+                table.setAttribute('border', '1px');
+            } else {
+                table.removeAttribute('border');
+            }
+        }
+        //内容水平居中
+        function textCenter() {
+            let table = document.querySelector('body table');
+            // let table = document.getElementById('goods');
+            // table.setAttribute('class', 'center');
+            let theClass = table.className;
+            if (!theClass.includes('center')) {
+                table.className += " center "
+            } else {
+                let newArr = theClass.split(' center ');
+                theClass = '';
+                newArr.forEach(item => {
+                    theClass += item;
+                })
+                table.className = theClass;
+            }
+
+        }
+
+        // 斑马线1
+        function zebraColor() {
+            let tbody = document.querySelector('body table tbody')
+            let theClass = tbody.className;
+            if (!theClass.includes('natural')) {
+                // tbody.className += " natural "
+                tbody.className = " natural ";
+            } else {
+                /* let newArr = theClass.split(' natural ');
+                theClass = '';
+                newArr.forEach(item => {
+                    theClass += item;
+                })
+                tbody.className = theClass; */
+                tbody.className = '';
+            }
+
+        }
+        // 斑马线2
+        function zebraColor2() {
+            let tbody = document.querySelector('body table tbody')
+            let theClass = tbody.className;
+            if (!theClass.includes('blue')) {
+                // tbody.className += " blue "
+                tbody.className = " blue "
+            } else {
+                /* let newArr = theClass.split(' blue ');
+                theClass = '';
+                newArr.forEach(item => {
+                    theClass += item;
+                })
+                tbody.className = theClass; */
+                tbody.className = '';
+            }
+
+        }
+        //  随机斑马线
+        function randomZebraColor() {
+            // // 定义三个随机生产的变量表示rgb色标
+            let num1 = parseInt(Math.random() * 256);
+            let num2 = parseInt(Math.random() * 256);
+            let num3 = parseInt(Math.random() * 256);
+            let theDocStyle = document.querySelector('head style');
+            // console.log(theDocStyle.innerHTML);
+            theDocStyle.innerHTML += `
+            .randomColor tr:nth-child(odd) {
+                background-color: rgb(${num1},${num2},${num3});
+            }
+            .randomColor tr:nth-child(even) {
+                background-color: #ffffff;
+            }`;
+            console.log(theDocStyle.innerHTML);
+
+            let tbody = document.querySelector('body table tbody')
+            let theClass = tbody.className;
+            if (!theClass.includes('randomColor')) {
+                tbody.className = " randomColor ";
+            } else {
+                // 将style样式还原
+                tbody.className = '';
+                let newDocStyArr = theDocStyle.innerHTML.split('.randomColor tr:nth-child(odd)');
+                theDocStyle.innerHTML = newDocStyArr[0] + '';
+            }
+            console.log(theDocStyle.innerHTML);
+
+        }
+        //  删除第一件商品
+        function delFirstGood() {
+            let tbody = document.querySelector('body table tbody');
+            // console.log(tbody.childNodes);
+            if (tbody.firstElementChild != null) {
+                tbody.removeChild(tbody.firstElementChild);
+            } else {
+                alert('已经删光了');
+            }
+        }
+
+        //删除最后一个
+        function delLast() {
+            let tbody = document.querySelector('body table tbody');
+            // console.log(tbody.childNodes);
+            if (tbody.lastElementChild != null) {
+                tbody.removeChild(tbody.lastElementChild);
+            } else {
+                alert('已经删光了');
+            }
+        }
+        //删除所有
+        function delAll() {
+            let tbody = document.querySelector('body table tbody');
+            let items = tbody.children;
+            if (items.length != 0) {
+                // let items = tbody.children;
+                // console.log(items.length);
+                // console.log(items);
+                // 下面循环条件的长度是时刻变化的，应该固定一个值去只接受它的长度值
+                // for(let i = 0; i < items.length; i++){
+                //     tbody.removeChild(items[0]);
+                // }
+                /* // 顺序
+                for(let i = 0, len = items.length; i < len; i++){
+                    tbody.removeChild(items[0]);
+                } */
+                /* // 改进2
+                for(let i = 0, len = items.length; i < len; i++){
+                    tbody.removeChild(items[items.length - 1]);
+                } */
+                /* // 使用while循环
+                while(items.length != 0){
+                    tbody.removeChild(items[0]);
+                } */
+                // 直接更改tbody内容
+                tbody.innerHTML = '';
+
+            } else {
+                alert('已经删光了');
+            }
+
+        }
+        //删除指定的商品(编号：1，2，3...  :  第一、二、三个)
+        function delOne() {
+            let tbody = document.querySelector('body table tbody');
+            // 获取输入数值
+            let lineNum = document.getElementById('line-number');
+            let num = lineNum.value;
+            console.log(num);
+            /* let tbody = document.querySelector('body table tbody');
+            let items = tbody.children;
+            if(num <= items.length){
+                tbody.removeChild(items[num - 1]);
+            }else{
+                alert('输入行数有误');
+            } */
+            let theTr = document.querySelector(`body table tbody tr:nth-child(${num})`);
+            if (theTr !== null) {
+                tbody.removeChild(theTr);
+            } else {
+                alert('行数错误');
+            }
+            lineNum.value = '';
+
+        }
+        // 定义数组，随机添加
+        let goodsList = [
+            '<td>八佰同款上衣</td><td>499</td><td>经典款式</td>',
+            '<td>卫龙辣条</td><td>9.9</td><td>好吃实惠</td>',
+            '<td>天线宝宝ins联名限量款</td><td>1999</td><td>送给孩子的最好礼物</td>',
+            '<td>air force 1 boost Jordan</td><td>799</td><td>超轻 又较重</td>'
+        ];
+        //末尾添加
+        function addLast() {
+            let newTr = document.createElement('tr');
+            let randomNum = parseInt(Math.random() * 4);
+            newTr.innerHTML = goodsList[randomNum];
+            let tbody = document.querySelector('body table tbody');
+            tbody.appendChild(newTr);
+
+        }
+        //开头添加商品
+        function addFirst() {
+            let newTr = document.createElement('tr');
+            let randomNum = parseInt(Math.random() * 4);
+            newTr.innerHTML = goodsList[randomNum];
+            let tbody = document.querySelector('body table tbody');
+            tbody.insertBefore(newTr, tbody.firstElementChild);
+
+        }
+
+        // 定时更新文本框内提示行数的文字
+        setInterval(function () {
+            let tbody = document.querySelector('body table tbody');
+            let items = tbody.children;
+            let lineNum = document.getElementById('line-number');
+            lineNum.placeholder = '现有商品数:' + items.length;
+        }, 500)
+
+    </script>
+</body>
+
+</html>

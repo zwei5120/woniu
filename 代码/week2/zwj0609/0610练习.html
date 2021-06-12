@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0609</title>
+    <style>
+        .box {
+            width: 200px !important;
+            height: 300px;
+            background-color: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="cb">
+    <div class="box" ></div>
+
+
+    <script>
+        let checkBox = document.getElementById('cb');
+        // console.log(checkBox.checked);
+        // setTimeout(() => {
+        //     checkBox.checked = true;
+        // }, 2000);
+        // setInterval(() => {
+        //     checkBox.toggleAttribute('checked');
+        // }, 2000);
+        let box = document.querySelector('body .box');
+        // setTimeout(() => {
+        //     box.style.width = '500px';
+        // }, 2000);
+        // box.style.cssText = 'width: 500px !important';//可增加important;
+        box.style.width = '500px';//这种方式不能增加important属性强制
+        // box.style.width += ' !important;'
+        console.log(box.style.width);
+
+
+
+
+    </script>
+</body>
+
+</html>

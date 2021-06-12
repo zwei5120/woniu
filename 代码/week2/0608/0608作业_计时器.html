@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计时器</title>
+</head>
+
+<body>
+    <span id="hour"></span>
+    <span>:</span>
+    <span id="minute"></span>
+    <span>：</span>
+    <span id="countDown"></span>
+    <p id="count"></p>
+    <a id="newpage" href="http://www.baidu.com/01-js/index.html?id=123456"></a>
+    <form action="./test.html" method="GET">
+        <input type="text" name='id' value="123456">
+        <input type="text" name='user' value="zwj">
+        <button type="submit">提交</button>
+    </form>
+    <script>
+        // 1. 完成15s中的倒计时
+        // 2. 让用户输入分钟数，然后完成这个分钟数的倒计时（有时、分、秒）。
+        // 3. 获取当前url地址中参数id具体的数值。
+        // 例如：http://www.baidu.com/01-js/index.html?id=123456中获取id的值123456
+
+
+        // 1. 制作一个15s的倒计时
+        // 2. 用户输入一个分钟数  显示对应的倒计时
+        // let timeCount = 15;
+        // let intervalId = setInterval(() => {
+        //     document.getElementById('countDown').innerHTML = timeCount;
+        //     timeCount--;
+        //     if (timeCount <= 0) {
+        //         clearInterval(intervalId)
+        //     }
+        // }, 1000);
+        // 如果输入的是分钟数，将转化成小时数和剩余分钟数进行倒计时
+        let theMinute = prompt('输入分钟数：') - 0;
+        let hour = parseInt(theMinute / 60);
+        let minute = theMinute % 60;
+        let timeCount = 60;
+        document.getElementById('hour').innerHTML = hour;
+        document.getElementById('countDown').innerHTML = 00;
+        document.getElementById('minute').innerHTML = minute;
+        if (minute == 0) {
+            hour--;
+            minute = 60;
+        }
+        minute--;
+        // // 设置一个次数计时器
+        // let count = 0;
+        let intervalId = setInterval(() => {
+            timeCount--;
+            document.getElementById('hour').innerHTML = hour;
+            document.getElementById('minute').innerHTML = minute;
+            document.getElementById('countDown').innerHTML = timeCount;
+            // count++;
+            // document.getElementById('count').innerHTML = count;
+            if (timeCount == 0) {
+                minute--;
+                timeCount = 60;
+            }
+            if (minute == -1) {
+                hour--;
+                minute = 59;
+            }
+            if (hour == -1) {
+                clearInterval(intervalId);
+            }
+
+        }, 1000);
+        let item = location.search;
+        let params = new URLSearchParams(item);
+        let content = parseInt(params.get("userid"));
+        console.log(content);
+
+    </script>
+</body>
+
+</html>

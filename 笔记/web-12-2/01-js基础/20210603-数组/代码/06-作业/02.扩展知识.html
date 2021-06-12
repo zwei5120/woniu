@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        let users = [ // 所有用户
+            ['admin', 'ad123', 1000],
+            ['pyy', '123', 100],
+        ];
+        function login() {
+            let user = prompt('请输入登录用户名');
+            let pwd = prompt('请输入登录密码');
+            // indexOf和includes只能取判断数组中是否存在某个基本数据类型的值
+            // alert(users.includes([user, pwd, 1000]));
+
+            // let flag = true;
+            // for (let i = 0; i < users.length; i++) {
+            //     if (users[i][0] === user && users[i][1] === pwd) {
+            //         alert('登录成功！');
+            //         flag = false;
+            //     }
+            // }
+            // if(flag) {
+            //     alert('err')
+            // }
+
+
+            for (let i = 0; i < users.length; i++) {
+                if (users[i][0] === user && users[i][1] === pwd) {
+                    alert('登录成功！');
+                    break;
+                } else {
+                    // 判断最后一次
+                    if (i === users.length - 1) {
+                        // 如果最后一次都没有进入到 if (users[i][0] === user && users[i][1] === pwd)条件去
+                        alert('登录失败');
+
+                    }
+                }
+            }
+
+        }
+        // login();
+
+
+        // function register() {
+        //     let user = prompt('请输入注册用户名');
+        //     let pwd = prompt('请输入注册密码');
+
+        //     for (let i = 0; i < users.length; i++) {
+        //         if (users[i][0] === user) {
+        //             alert('用户名已存在，请重新输入！');
+        //             break;
+        //         } else {
+        //             if (i === users.length - 1) {
+        //                 alert('注册成功');
+        //                 // 产生问题原因： push方法会修改原数组 数组长度变化了
+        //                 users.push([user, pwd, 1000]);
+        //                 //  方法1：给i赋值。赋值为循环条件不满足就可以了
+        //                 i = users.length;
+        //             }
+        //         }
+        //     }
+        // }
+        // register();
+
+        // 把数组的长度给缓存起来
+        // let length = users.length; // 2
+        // for(let i = 0; i < length; i++) {}
+
+        for (let i = 0, length = users.length; i < length; i++) {
+            console.log(users[i]);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" onblur="fn(this)">
+    <button onclick="addOne(this)">加1</button>
+    <img src="./img/1.jpeg" alt="" onload="myLoad(this)" style="height: 200px;">
+
+
+    <script>
+        function fn(item) {
+            console.log('靠 大威天龙', item.value);
+        }
+        function addOne(item) {
+            item.previousElementSibling.value++;
+        }
+        function myLoad(item) {
+            item.style.opacity = '0.3';
+        }
+
+
+
+    </script>
+
+</body>
+</html>

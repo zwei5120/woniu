@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+     蜗牛ATM系统
+    a)要求：
+    i.   用二维数组保存用户名、密码、余额，默认有一个用户，名字为admin，密码为ad123,余额为1000.
+    ii.  新建用户默认有一定金额(1000).
+    iii. 每个功能用不同的函数
+    b)所包含功能
+    i.登录、注册、查询、转账、存钱、取钱、修改密码
+    c)系统大致流程
+    i.显示一级菜单(1. 登录 2. 注册 3. 退出)
+    ii.当选择注册选项时执行注册功能，执行退出，整个项目结束。
+    iii.当选择登录并登录成功后进入二级菜单
+       二级菜单：1. 查询 2. 取钱 3. 存钱 4. 转账 5. 修改密码 6. 返回上一级
+    iv.选择对应功能并执行后返回二级菜单，只能通过选项6退回到一级菜单
+
+
+    分析
+    1. 欢迎界面
+    2. 显示一级菜单(1. 登录 2. 注册 3. 退出)
+    3.  让用户选择一级菜单操作 ：  如果是注册，那就去注册用户（重复步骤2,3），如果是退出，那么就结束ATM使用
+        当选择登陆的时候，登陆失败，就提示他登陆失败，然后继续输入信息
+                          登陆成功，就进入二级菜单
+    4， 二级菜单： 1. 查询 2. 取钱 3. 存钱 4. 转账 5. 修改密码 6. 返回上一级
+        选择1-5的时候，执行对应的功能，返回二级菜单。
+        选择选项6的时候，就返回一级菜单
+*/
+        alert('欢迎来到我的ATM机');
+        let users = [ // 所有用户
+            ['admin', 'ad123', 1000],
+            ['pyy', '123', 100],
+        ];
+        let acc; // 存放当前登录用户
+        let accIndex; // 存放当前登录用户的索引
+
+        let showFirst = true; // 控制一级菜单的显示
+        while (showFirst) {
+            let num = prompt('1. 登录 2. 注册 3. 退出') - 0;
+            switch (num) {
+                case 1:
+                    // 登录
+                    login();
+                    break;
+                case 2:
+                    // 注册
+                    register();
+                    break;
+                case 3:
+                    showFirst = false;
+                    break;
+                default:
+                    alert('无效输入！');
+            }
+        }
+
+        // 登录
+        function login() {
+            let user = prompt('请输入登录用户名');
+            let pwd = prompt('请输入登录密码');
+
+            // indexOf和includes只能取判断数组中是否存在某个基本数据类型的值
+            // alert(users.includes([user, pwd, 1000]));
+
+            let flag = false;
+            for (let i = 0; i < users.length; i++) {
+                // ['admin', 'ad123', 1000]
+                if (users[i][0] === user && users[i][1] === pwd) {
+                    alert('登录成功！');
+                    // acc = user; // 把当前登录用户保存
+                    accIndex = i;
+
+                    menu(); // 开启二级菜单
+                    flag = true;
+                    break;
+                }
+            }
+            // if(flag == true)  ===  if(flag) 
+            // if(!flag)  ===   if(flag === false)
+            if (flag == false) {
+                alert('登录失败！');
+            }
+
+
+
+
+            // if (true) {
+            //     menu(); // 开启二级菜单
+            // }
+        }
+
+        // 注册
+        function register() {
+            let user = prompt('请输入注册用户名');
+            let pwd = prompt('请输入注册密码');
+
+            // 判断是否已存在 如果已经存在 则不添加
+            let flag = true;
+            for (let i = 0; i < users.length; i++) {
+                if (users[i][0] === user) {
+                    alert('用户名已存在，请重新输入！');
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+                users.push([user, pwd, 1000]);
+            }
+        }
+
+
+        // 二级菜单
+        function menu() {
+            let showSecond = true;
+            while (showSecond) {
+                let num = prompt(' 1. 查询 2. 取钱 3. 存钱 4. 转账 5. 修改密码 6. 返回上一级') - 0;
+                switch (num) {
+                    case 1:
+                        // 查询
+                        getMoney();
+                        break;
+                    case 2:
+                        // 取钱
+                        outMoney();
+                        break;
+                    case 3:
+                        // 存钱
+                        saveMoney();
+                        break;
+                    case 4:
+                        // 转账
+                        tranfer();
+                        break;
+                    case 5:
+                        // 修改密码
+                        let res = changePwd();
+                        if(res) { // 如果修改密码成功 就回到一级菜单
+                            showSecond = false;
+                        }
+                        // alert(res);
+                        break;
+                    case 6:
+                        showSecond = false;
+                        break;
+                    default:
+                        alert('无效输入！');
+                }
+            }
+        }
+
+        // 查询
+        function getMoney() {
+            // for (let i = 0; i < users.length; i++) {
+            //     if (acc === users[i][0]) {
+            //         alert(users[i][2])
+            //         break;
+            //     }
+            // }
+            alert(users[accIndex][2]);
+        }
+
+        // 取钱
+        function outMoney() {
+            let num = prompt('请输入取款金额') - 0;
+            // 金额大于100 并且是100的整数
+            if (num % 100 === 0 && num >= 100) {
+                // for (let i = 0; i < users.length; i++) {
+                //     if (acc === users[i][0]) {
+                //         // 判断余额是否充足
+                //         if (users[i][2] >= num) {
+                //             alert('恭喜小老板 取款成功！');
+                //             users[i][2] -= num;
+                //         } else {
+                //             alert('卡上余额不足！');
+                //         }
+                //     }
+                // }
+
+                if (users[accIndex][2] >= num) {
+                    alert('恭喜小老板 取款成功！');
+                    users[accIndex][2] -= num;
+                } else {
+                    alert('卡上余额不足！');
+                }
+
+            } else {
+                alert('输入金额有误！')
+            }
+        }
+
+        // 存钱
+        function saveMoney() {
+            let num = prompt('请输入存款金额') - 0;
+            if (num % 100 === 0 && num >= 100) {
+                alert('恭喜小老板 存款成功！');
+                users[accIndex][2] += num;
+
+            } else {
+                alert('输入金额有误！')
+            }
+        }
+
+        // 转账
+        function tranfer() {
+            let tranferAcc = prompt('请输入转账用户'), tranferMoney = prompt('请输入转账金额') - 0;
+            // 转账的时候 余额是否充足
+            if(tranferMoney <= users[accIndex][2]) {
+                // 判断转账账户是否是自己
+                if(tranferAcc !== users[accIndex][0]) {
+                    // 判断转账账户是否存在
+                    let flag = true;
+                    for(let i = 0; i < users.length; i++) {
+                        if(users[i][0] === tranferAcc) {
+                            alert('转账成功！')
+                            users[i][2] +=tranferMoney; // 对方加转账金额
+                            users[accIndex][2] -= tranferMoney; // 自己减去转账金额
+                            flag = false;
+                            break;
+                        }
+                    }
+                    if(flag) {
+                        alert('转账账户有误！')
+                    }
+                    
+                } else {
+                    alert('不能给自己转账！')
+                }
+
+            } else {
+                alert('你的余额不足！！');
+            }
+        }
+
+        // 修改密码
+        function changePwd() {
+            let status = true;
+            let oldPwd = prompt('请输入旧的密码');
+            let newPwd = prompt('请输入新的密码');
+            if (users[accIndex][1] === oldPwd) {
+                alert('修改密码成功')
+                users[accIndex][1] = newPwd;
+            } else {
+                alert('旧密码有误！');
+                status = false;
+            }
+             return status;
+        }
+    </script>
+</body>
+
+</html>

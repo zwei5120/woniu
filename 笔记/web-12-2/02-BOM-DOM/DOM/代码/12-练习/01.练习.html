@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="btnclick()">点击添加</button>
+    <div id="box"></div>
+
+
+
+    <script>
+        /* 
+            练习1： 点击按钮，每点击一次，往div中添加一个新增的空的元素
+                2： 点击按钮，每点击一次，往div中添加一个有内容的元素 
+               
+        */
+       // 1.
+
+       
+        function btnclick() {
+            // 要操作的是谁？ div  操作什么？？ 往里面添加一个子节点
+            // 1. 先获取标签
+            let box = document.getElementById('box');
+            // 2. 操作
+            // 2.1 先创建一个空的元素
+            let p = document.createElement('p');// 创建的节点对象了
+            // 2.2 把创建的这个元素 添加到div中去
+            box.appendChild(p);
+        }
+
+        //2
+        // function btnclick() {
+        //     // 要操作的是谁？ div  操作什么？？ 往里面添加一个子节点
+        //     // 1. 先获取标签
+        //     let box = document.getElementById('box');
+        //     // 2. 操作
+        //     // 2.1 先创建一个空的元素
+        //     let p = document.createElement('p');// 创建的节点对象了
+        //     // 2.2 给这个创建的元素添加内容
+        //     p.innerHTML = '我新来的，多多照顾';
+        //     // 2.3 把创建的这个元素 添加到div中去
+        //     box.appendChild(p);
+        // }
+
+    </script>
+</body>
+
+</html>

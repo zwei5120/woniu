@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        // 让用户输入分钟数，然后完成这个分钟数的倒计时（有时、分、秒）。
+
+        let num = prompt('请输入倒计时分钟数');
+        // 先把倒计时时间 转换为秒
+        let second = num * 60;
+
+        let intervalId = setInterval(function() {
+            //  1. 拿到总的分钟数 换算成秒数，再计算得到时、分、秒
+            second--;
+            // 需要重新去计算时、分、秒
+            let hour = parseInt(second / 3600); // 小时
+            console.log(hour);
+            // second - (hour * 3600): 剩余的秒数
+            // 再除以60取整 就得到分
+            let minutes = parseInt((second - (hour * 3600)) / 60); // 分钟数
+
+            // 总的秒数 -  小时换算成秒数 - 分钟换算成秒数
+            let nowSecond = second - (hour * 3600) - (minutes*60); // 
+
+            // 2. 输出倒数计
+            document.open();
+            document.write(`倒计时： ${hour}:${minutes}:${nowSecond}`);
+            document.close();
+
+            // 3. 终止定时器
+            if(second <= 0) { // 如果总的秒数小于等于0了，那么就应该终止定时器
+                clearInterval(intervalId)
+            }
+        }, 1000);
+
+
+        // 获取当前url地址中的id具体的数值
+        // 1. 先获取 = 的索引
+        // let search = location.search;
+        // let index = search.indexOf('=');
+
+        // // 2. 根据=的索引去截取字符串
+        // let id = search.substring(index + 1);
+        // console.log(id);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box" class="blue"></div>
+    <button onclick="fn()">按钮</button>
+
+    <script>
+        // 点击按钮，用于切换div的背景颜色   红色--蓝色切换
+        // 方法1： 先获取div的背景颜色  如果背景颜色是红色 就设置背景颜色为蓝色 如果是蓝色 就设置为红色
+        
+        // 第一步 永远都是先获取节点
+        // 第二： 对谁做操作 做什么操作
+        // 第三： 我做操作的这个数据 是什么类型
+
+        // 点击事件
+        // function fn() {
+        //    // 做切换div的背景颜色的操作
+        //    // 如果div的背景颜色是红色 -》 改成蓝色
+        //    let box = document.getElementById('box');
+        //    // 对box做操作  做修改背景颜色的操作
+        //    // 获取box的背景颜色
+        //    let style = box.getAttribute('style');
+        //     console.log(style);
+        //     console.log(style === 'background-color: red');
+        //     if(style === 'background-color: red') {
+        //         box.setAttribute('style', 'background-color: blue');
+        //     } else {
+        //         box.setAttribute('style', 'background-color: red');
+        //     }
+        // }
+
+
+
+        // 方式2： 点击按钮  切换div的类名 如果类名为red 背景颜色就为red  如果类名为blue 背景颜色就为blue 
+        function fn() {
+            // 1.获取节点
+            let box = document.getElementById('box');
+            // 2. 判断
+            console.log(box.className);
+            // 当我们通过 节点.属性名 去获取它的属性值的时候  class要替换为className
+            if(box.className === 'blue') { // 如果类名为blue
+                // 把类名改为red
+                box.setAttribute('class', 'red'); // 当我们使用方法的时候，class不需要替换为className
+
+            } else {
+                box.setAttribute('class', 'blue');
+            }
+        }
+
+
+    </script>
+
+</body>
+</html>

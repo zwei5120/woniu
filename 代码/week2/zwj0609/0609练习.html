@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <div id="box"></div>
+    <button onclick="addNewItem()">添加空元素</button> -->
+    <!-- <input type="text" value="0" placeholder="输入数字1-6" id="numInput">
+    <button onclick="addImg()">显示</button>
+    <img src="" alt="显示失败" title="彭于晏" id="work3"> -->
+    <input type="text" value="0" placeholder="输入数字1-6" id="numInput">
+    <button onclick="addImgToBox()">显示</button>
+    <img src="" alt="显示失败" title="彭于晏" id="work4">
+    <div class="content"></div>
+
+
+    <script>
+        /*
+            练习1： 点击按钮，每点击一次，往div中添加一个新增的空的元素
+                2： 点击按钮，每点击一次，往div中添加一个有内容的元素
+                3. 页面上有一个输入框，一个按钮，一个img标签,在输入框中输入值，点击按钮，
+                页面上就显示这张图
+                4. 页面上有一个输入框，一个按钮，一个img标签,一个div标签，在输入框中输入值，点击按钮，
+                    往div标签中添加这张图
+        */
+        // function addNewItem() {
+        //     let box = document.getElementById('box');
+        //     let newItem = document.createElement('span');
+        //     // newItem.innerHTML = 'xixi嘻嘻';
+        //     box.appendChild(newItem);
+        // }
+        // 定义图片数组
+        let imgArr = [
+            '1.jpeg', '2.jpeg', '3.jpeg', '4.jpeg', '5.jpeg', '11.jpeg',
+        ];
+        // function addImg() {
+        //     let img = document.getElementById('work3');
+        //     img.setAttribute('style', 'height: 300px;')
+        //     let num = document.getElementById('numInput').value;
+        //     // console.log(num);
+        //     img.src = `./img/${imgArr[num-1]}`;
+        // }
+        // function addImgToBox() {
+        //     // 使用新建元素进行添加操作
+        //     let img = document.createElement('img');
+        //     img.setAttribute('style', 'height: 300px;')
+        //     let num = document.getElementById('numInput').value;
+        //     // console.log(num);
+        //     img.src = `./img/${imgArr[num - 1]}`;
+        //     let box = document.querySelector('body .content');
+        //     box.appendChild(img);
+        // }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

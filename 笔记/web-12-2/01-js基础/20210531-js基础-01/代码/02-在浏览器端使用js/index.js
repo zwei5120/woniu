@@ -1,0 +1,1 @@
+console.log('在浏览器中使用js');

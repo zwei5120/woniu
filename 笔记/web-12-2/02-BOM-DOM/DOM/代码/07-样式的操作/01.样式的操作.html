@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box" style="color: blue;">hhhhh</div>
+    <button onclick="fn()">按钮</button>
+
+    <script>
+        // 1. 先获取节点
+        let box = document.getElementById('box');
+        // console.log(box.style.color);  获取css样式
+        box.style.color = 'red'; // 修改css样式   修改也是以行内样式存在
+        console.log(box.style.width); // 只能获取行内样式
+
+        // function fn() {
+        //     box.style.color = 'red';
+        // }
+
+    </script>
+</body>
+</html>

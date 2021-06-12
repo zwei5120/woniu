@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p class="item">item1</p>
+        <p class="item">item2</p>
+        <p class="item">item3</p>
+    </div>
+    <script>
+        // .xxxx叫做属性   .xxxx()叫做方法
+
+        // getElementsByClassName
+        let items = document.getElementsByClassName('item');
+        console.log(items);
+        // console.log(items[0]);
+        // console.log(items.length);
+
+
+
+        // getElementsByClassName获取的是一个集合 不再是一个元素节点
+
+
+
+        // 注意：   一定要注意 你操作的是个什么东西（类型） 使用这个类型它自己的方式方法来操作
+        // items.sort((a,b) => a- b);
+    </script>
+</body>
+</html>

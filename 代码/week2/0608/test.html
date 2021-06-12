@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    提交成功
+    <script>
+        // let url = location.href;
+        // console.log(url.search);
+        let item = location.search;
+        // console.log(item);
+        let params = new URLSearchParams(item);
+        // console.log(params);
+        // for(let p of params){
+        //     console.log(p);
+        // }
+        console.log(params.get('user'));
+        // let content = params.get('user');
+        // console.log(content);
+        // console.log(typeof content);
+    </script>
+</body>
+</html>

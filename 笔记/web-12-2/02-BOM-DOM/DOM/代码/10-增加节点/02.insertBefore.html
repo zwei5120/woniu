@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p class="item">item1</p>
+        <p class="item">item2</p>
+        <span id="span">span</span>
+        <p class="item">item3</p>
+        <p class="item">item4</p>
+    </div>
+
+    <script>
+        // 语法： 父元素节点.insertBefore(要插入的子节点,现有的子元素)
+        let box = document.getElementById('box');
+        // 新建一个节点
+        let p = document.createElement('p');
+        // 给这个创建的p标签添加内容
+        p.innerHTML = '我是新来的';
+        // 获取现有的子元素节点
+        let span = document.getElementById('span');
+        box.insertBefore(p, span);
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <img src="" alt="" id="img">
+
+    <script>
+        // 页面上有一个按钮、img标签。点击按钮，随机显示图片(本地的)
+        document.querySelector('body button').setAttribute('onclick', 'changeImg()');
+        function changeImg() {
+            let obj = document.getElementById('img');
+            console.log(obj);
+            let num = parseInt(Math.random() * 6) + 1;
+            console.log(num);
+            // obj.setAttribute('src', `./images/${num}.jpg`);
+            obj.src = `./images/${num}.jpg`;
+        }
+    </script>
+</body>
+
+</html>

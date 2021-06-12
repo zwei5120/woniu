@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>购物车</title>
+  <style>
+    input {
+      width: 30px;
+    }
+
+    .findInput {
+      width: 150px;
+    }
+
+    td {
+      text-align: center;
+      width: 200px;
+    }
+
+    table {
+      width: 1000px;
+    }
+
+    .todel {
+      width: 30px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div>
+    名字：<input type="text" class="findInput" id="addName">
+    单价：<input type="text" class="findInput" id="addNumber">
+    <button onclick="addGood()">添加</button>
+  </div>
+  <div style="margin: 20px 0;">
+    <input type="text" id="findInput" class="findInput" onmouseout="backToAll()">
+    <button onclick="findGood()">查找</button>
+  </div>
+  <div style="margin: 20px 0;">
+    <button onclick="goodSort()">点击根据总价排序</button>
+  </div>
+
+  <div style="margin: 20px 0;">
+    <input type="checkbox" onchange="switchCheckbox(this)">
+    <button onclick="delChoose()">删除所选</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button onclick="delAll()">删除所有商品</button>
+  </div>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>选择</th>
+        <th>名称</th>
+        <th>单价</th>
+        <th>操作</th>
+        <th>总价</th>
+      </tr>
+    </thead>
+
+    <tbody onchange="totalPrice()">
+      <tr>
+        <td><input type="checkbox" class="todel"></td>
+        <td>香飘飘奶茶1</td>
+        <td>3.5</td>
+        <td>
+          <button onclick="sub(this)">-</button>
+          <input type="text" value="1" onblur="singleTotalPrice(this)" />
+          <button onclick="add(this)">+</button>
+          <button onclick="delGood(this)">删除</button>
+        </td>
+        <td onchange="totalPrice()">3.5</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="todel"></td>
+        <td>香飘飘奶茶2</td>
+        <td>6</td>
+        <td>
+          <button onclick="sub(this)">-</button>
+          <input type="text" value="1" onchange="singleTotalPrice(this)" />
+          <button onclick="add(this)">+</button>
+          <button onclick="delGood(this)">删除</button>
+        </td>
+        <td onchange="totalPrice()">6</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="todel"></td>
+        <td>香飘飘奶茶3</td>
+        <td>4</td>
+        <td>
+          <button onclick="sub(this)">-</button>
+          <input type="text" value="1" onchange="singleTotalPrice(this)" />
+          <button onclick="add(this)">+</button>
+          <button onclick="delGood(this)">删除</button>
+        </td>
+        <td onchange="totalPrice()">4</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>总价：<span id="totalPrice">0</span></p>
+  <script>
+    /*
+      1. 通过删除按钮来删除当前商品
+      2. 添加商品
+      3. 删除所有商品
+      4. 完成商品数量的加减
+      5. 单件商品总价
+      6. 商品总价格
+      
+      7. 排序
+      8. 切换多选框状态
+      9. 删除所选
+      10. 模糊查询
+
+    */
+
+    // 我们要操作什么？？
+    // 我们要操作哪些标签？？？
+
+
+
+    // 删除商品
+    function delGood(item) {
+      // let tbody = document.querySelector('tbody');
+      let theTr = item.parentNode.parentNode;
+      // console.log(theTr);
+      let tbody = theTr.parentNode;
+      tbody.removeChild(theTr);
+    }
+
+    // 添加
+    function addGood() {
+      let tbody = document.querySelector('tbody');
+      // 创建一个新tr元素，添加内容后，将它添加到tbody中
+      let newTr = document.createElement('tr');
+      // 获取名称与单价的输入
+      let theName = document.getElementById('addName').value;
+      let thePrice = document.getElementById('addNumber').value;
+      newTr.innerHTML = `
+      <td><input type="checkbox" class="todel"></td>
+        <td>${theName}</td>
+        <td>${thePrice}</td>
+        <td>
+          <button onclick="sub(this)">-</button>
+          <input type="text" value="1" onchange="singleTotalPrice(this)" />
+          <button onclick="add(this)">+</button>
+          <button onclick="delGood(this)">删除</button>
+        </td>
+        <td onchange="totalPrice()">0</td>
+      `;
+      tbody.appendChild(newTr);
+
+
+    }
+
+    // 删除所有商品
+    function delAll() {
+      let tbody = document.querySelector('tbody');
+      // 获取tbody下所有的tr元素，进行删除
+      // 或者获取tbody，innerHtml赋值为空
+      tbody.innerHTML = '';
+
+    }
+
+    // 数量加
+    function add(item) {
+      // 通过实参Item获取前一个兄弟元素
+      item.previousElementSibling.setAttribute('value', item.previousElementSibling.value++);
+    }
+
+    // 数量减
+    /* function sub(item) {
+      // 通过实参Item获取后一个兄弟元素
+      let input = item.nextElementSibling;
+      // console.log(input);
+      console.log(typeof input.value);
+      if (Number(input.value) > 0) {
+        let newValue = input.value - 1;
+        input.setAttribute('value', newValue);
+      }
+    } */
+    // 数量减
+    function sub(item) {
+      // 通过实参Item获取后一个兄弟元素
+      if (item.nextElementSibling.value > '0') {
+        item.nextElementSibling.setAttribute('value', item.nextElementSibling.value--);
+      }
+    }
+
+    // 单件商品总价
+    setInterval(() => {
+      let trs = document.querySelectorAll('body table tbody tr');
+      trs.forEach((item) => {
+        let tds = item.children;
+        let theSinglePrice = Number(tds[2].innerHTML)
+        let theSingleNum = tds[3].firstElementChild.nextElementSibling.value;
+        tds[4].innerHTML = `${theSinglePrice * theSingleNum}`;
+      })
+    }, 100);
+
+
+    // 单件商品总价
+    function singleTotalPrice(item) {
+      console.log(item);
+      console.log(item.value);
+
+    }
+
+
+
+
+    // 商品总价格
+    function totalPrice() {
+      // 单件总价之和
+      let span = document.getElementById('totalPrice');
+      let totalPrice = 0;
+      let trs = document.querySelectorAll('body table tbody tr');
+      trs.forEach((item) => {
+        let tds = item.children;
+        totalPrice += Number(tds[4].innerHTML);
+      })
+      span.innerHTML = totalPrice;
+    }
+
+    // 移动函数
+    function changePosition(params) {
+
+    }
+
+
+    // 排序  第一个函数
+    function goodSort1() {
+      let tbody = document.querySelector('tbody');
+      // 使用单行商品的总价进行比较，得出大小值结果
+      // 需要定义一个移动函数，将商品的位置进行移动
+      // 首先获取总价
+      let trArr = [];
+      let trs = document.querySelectorAll('body table tbody tr');
+      trs.forEach((item, index) => {
+        let tds = item.children;
+        // totalPrice += Number(tds[4].innerHTML);
+        trArr[index] = [index, tds[4].innerHTML]
+      })
+      console.log(trArr);
+      // 进行升序排列
+      trArr.sort((a, b) => b[1] - a[1]);
+      console.log(trArr);
+      // 当前trArr数组中每个一维数组的第0位数据就是排序后的位置，tr元素需要依照这个进行移动
+      let newTbody = document.createElement('tbody');
+      trArr.forEach(item => {
+        let newtr = document.createElement('tr');
+        console.log(trs[item[0]].innerHTML);
+        newtr.innerHTML = trs[item[0]].innerHTML;
+        console.log(newtr);
+        newTbody.appendChild(newtr);
+      })
+      let table = document.querySelector('body table');
+      table.removeChild(tbody);
+      table.appendChild(newTbody);
+
+    }
+
+
+    // 排序  对象数组函数
+    function goodSort() {
+      let tbody = document.querySelector('tbody');
+      let trArr = [];
+      let trs = document.querySelectorAll('body table tbody tr');
+      trs.forEach((item, index) => {
+        let tds = item.children;
+        trArr[index] = [item, tds[4].innerHTML]
+      })
+      // console.log(trArr);
+      // 进行升序排列
+      trArr.sort((a, b) => b[1] - a[1]);
+      // console.log(trArr);
+      // tbody.innerHTML = '';
+      trArr.forEach(item => {
+        tbody.appendChild(item[0]);
+      })
+
+    }
+
+    // 切换多选框状态
+    function switchCheckbox(delCheckbox) {
+      // 获取复选框，对选中的复选框的父元素tr进行删除;
+      let checkBoxs = document.getElementsByClassName('todel');
+      if (delCheckbox.checked) {
+        for (let i = 0, len = checkBoxs.length; i < len; i++) {
+          checkBoxs[i].checked = 'checked';
+        }
+      } else {
+        for (let i = 0, len = checkBoxs.length; i < len; i++) {
+          checkBoxs[i].checked = '';
+        }
+      }
+
+
+    }
+
+    // 删除所选
+    function delChoose() {
+      // 获取复选框，对选中的复选框的父元素tr进行删除;
+      // let checkBoxs = document.getElementsByClassName('todel');
+      // // console.log(checkBoxs);
+      // for (let i = 0, len = checkBoxs.length; i < len; i++) {
+      //   if (checkBoxs[checkBoxs.length - 1].checked) {
+      //     tbody.removeChild(checkBoxs[checkBoxs.length - 1].parentNode.parentNode);
+      //   }
+      // }
+      let tbody = document.querySelector('tbody');
+      let checkBoxs = document.querySelectorAll('table tbody tr td .todel');
+      console.log(checkBoxs);
+      checkBoxs.forEach(item => {
+        if (item.checked) {
+          tbody.removeChild(item.parentNode.parentNode);
+        }
+      })
+
+    }
+
+    // 模糊搜索商品的名字
+    function findGood() {
+      let tbody = document.querySelector('body table tbody');
+      // 先获取查找框的文本输入
+      let findInput = document.getElementById('findInput');
+      console.log(findInput.value, typeof findInput.value);
+      let tmp2 = findInput.value;
+      // 获取tbody中，第二列内名称的节点集合
+      let tdNames = document.querySelectorAll('tbody tr td:nth-child(2)');
+      console.log(tdNames);
+      if (tmp2) {
+        tdNames.forEach(item => {
+          let tmp1 = item.innerHTML;
+          console.log(tmp1, typeof tmp1);
+          console.log(tmp2, typeof tmp2);
+          if (!tmp1.includes(tmp2)) {
+            item.parentNode.style.display = 'none';
+          }
+        })
+      } else {
+        tdNames.forEach(item => {
+          item.parentNode.style.display = 'table-row';
+        })
+      }
+    }
+
+    // 搜索框清空时table自动还原
+    function backToAll() {
+      // let tbody = document.querySelector('body table tbody');
+      // 先获取查找框的文本输入
+      let findInput = document.getElementById('findInput');
+      // console.log(findInput.value, typeof findInput.value);
+      let tmp2 = findInput.value;
+      // 获取tbody中，第二列内名称的节点集合
+      let tdNames = document.querySelectorAll('tbody tr td:nth-child(2)');
+      // console.log(tdNames);
+      if (tmp2 === '') {
+        tdNames.forEach(item => {
+          item.parentNode.style.display = 'table-row';
+        })
+      }
+    }
+
+
+    setInterval(() => {
+      totalPrice();
+    }, 100);
+
+
+  </script>

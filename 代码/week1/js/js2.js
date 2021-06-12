@@ -1,0 +1,20 @@
+let num1 = 12;
+let num2 = 12.21;
+let str = '干锅鸡';
+let isHomeWork = true;
+let theUndefined = undefined;
+let theNull = null;
+// 类型转换
+// console.log(Number(undefined));
+// console.log(typeof num1);
+// console.log(typeof num2);
+// console.log(typeof str);
+// console.log(typeof isHomeWork);
+// console.log(typeof theUndefined);
+// console.log(typeof theNull);
+console.log(parseInt('333th'));
+console.log(parseFloat('12.123434px'));
+console.log(Number(null));
+console.log(Number(false));
+console.log(Number(undefined));
+console.log(Number(true));

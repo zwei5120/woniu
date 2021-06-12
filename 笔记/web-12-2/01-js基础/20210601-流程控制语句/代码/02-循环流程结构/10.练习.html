@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            用户输入一个数字，判断是否是质数（只能被自身和1整除）
+            （思路： 循环2-本身（不包括）之间的数字，如果中间的数字都不能被他整除，那么这个数就是质数）
+                let a = xxx;
+                for(){
+
+                }
+            求出1-300之间的质数。
+            扩展练习题：
+            输出99乘法表
+            输出彩色版的99乘法表
+            根据用户输入的行数打印一个三角形。
+                由空格 + 星星组成
+                先搞星星 再弄空格
+            根据用户输入的行数打印一个菱形。
+        */
+
+        // 方式1
+        // let num = 13;
+        // for(let i = 2; i < num; i++) {
+        //     // i: 2-num本身之间的数字
+        //     // 如果这些数字  只要有一个数字能被num整除 那么它就不是质数
+        //     // 如果这些数字 都不能被num整除 那么它就是质数
+
+        //     // 如果是质数 那么for循环执行完成了 也不会进入到if里面去
+        //     if(num % i === 0) {
+        //         console.log('不是质数');
+        //         break;
+        //     } else if(i === num - 1) { // 判断最后一次 -> i的值是num-1就是最后一次  因为i的值为num的时候 判断条件就不成立了
+        //         // 如果连最后一次 都没进入到if里面去 那么它就是质数
+        //         console.log('是质数');
+        //     }
+        // }
+
+
+        // 方式2
+        // let num = 124; 
+        // let count = 0; // 定义一个变量
+        // for(let i = 2; i < num; i++) {
+        //     if(num % i === 0) { // 2-num本身之间的数字，只要其中有一个能被num整除 就让count+1
+        //         count++;
+        //         break;
+        //     }
+        // }
+        // console.log(count);
+        // if(count === 0) { // count没有被改变 也就是说 for循环一次if都没有进入 -> 2-num本身之间的数字没有一个数字能被num整除
+        //     console.log('是质数');
+        // } else {
+        //     console.log('不是质数');
+        // }
+
+
+        // 方式3
+        // let num = 124; 
+        // let count = true; // 定义一个变量
+        // for(let i = 2; i < num; i++) {
+        //     if(num % i === 0) { // 2-num本身之间的数字，只要其中有一个能被num整除 就让count+1
+        //         count = false;
+        //         break;
+        //     }
+        // }
+        // console.log(count);
+        // // if(count === true) { // count没有被改变 也就是说 for循环一次if都没有进入 -> 2-num本身之间的数字没有一个数字能被num整除
+        // if(count) { // count没有被改变 也就是说 for循环一次if都没有进入 -> 2-num本身之间的数字没有一个数字能被num整除
+        //     console.log('是质数');
+        // } else {
+        //     console.log('不是质数');
+        // }
+
+
+
+
+        // let num = prompt('请输入一个数：');
+        // let count = true; // 定义一个变量
+        // for(let i = 2; i < num; i++) {
+        //     if(num % i === 0) { // 2-num本身之间的数字，只要其中有一个能被num整除 就让count+1
+        //         count = false;
+        //         break;
+        //     }
+        // }
+        // console.log(count);
+        // // if(count === true) { // count没有被改变 也就是说 for循环一次if都没有进入 -> 2-num本身之间的数字没有一个数字能被num整除
+        // if(count) { // count没有被改变 也就是说 for循环一次if都没有进入 -> 2-num本身之间的数字没有一个数字能被num整除
+        //     console.log('是质数');
+        // } else {
+        //     console.log('不是质数');
+        // }
+
+        // 求出2-300之间的质数。
+        // for (let j = 2; j <= 300; j++) {
+        //     // i: 2 - 300
+        //     let count = true; // 定义一个变量
+        //     for (let i = 2; i < j; i++) {
+        //         if (j % i === 0) { // 2-j本身之间的数字，只要其中有一个能被j整除 就让count+1
+        //             count = false;
+        //             break;
+        //         }
+        //     }
+        //     // console.log(count);
+        //     // if(count === true) { // count没有被改变 也就是说 for循环一次if都没有进入 -> 2-j本身之间的数字没有一个数字能被j整除
+        //     if (count) { // count没有被改变 也就是说 for循环一次if都没有进入 -> 2-j本身之间的数字没有一个数字能被j整除
+        //         console.log(j+'是质数');
+        //     } else {
+        //         // console.log('不是质数');
+        //     }
+        // }
+
+
+
+
+
+        // 生成随机数
+        // Math.random() 随机生成0 - 1 之间的数（不包括0 和 1）
+        // Math.random() * 9  随机生成0*9 - 1*9 之间的数（不包括0 和 9）
+        // Math.random() * 10  随机生成0*10 - 1*10 之间的数（不包括0 和 10）
+        // console.log(parseInt(Math.random() * 10)); // 0 - 9
+        // console.log(parseInt(Math.random() * 10) + 1); // 1 - 10
+
+        // console.log(parseInt(Math.random() * 255)); // 0 - 254
+        // console.log(parseInt(Math.random() * 255) + 1); // 1 - 255
+
+        // console.log(parseInt(Math.random() * 256)); // 0 - 255
+        let num1 = parseInt(Math.random() * 256);
+        let num2 = parseInt(Math.random() * 256);
+        let num3 = parseInt(Math.random() * 256);
+        console.log(num1, num2, num3);
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

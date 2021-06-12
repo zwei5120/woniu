@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p class="item">item1</p>
+        <p class="item">item2</p>
+        <span id="span">span1</span>
+        <p class="item">item3</p>
+    </div>
+    <span>11111</span>
+
+    <script>
+        // 获取id为span的 span
+        let span = document.getElementById('span');
+        console.log(span);
+        // 通过这个span节点获取它的父标签
+        console.log(span.parentNode);
+
+    </script>
+</body>
+</html>

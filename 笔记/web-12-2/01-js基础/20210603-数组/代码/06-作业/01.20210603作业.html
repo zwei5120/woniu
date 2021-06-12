@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+        
+        求二维数组中最大值、最小值、总个数、总和、平均值
+        let arr = [
+            [80, 92, 97],
+            [61, 65, 71],
+            [59, 63, 70],
+            [85, 87, 99,57],
+            [76, 77, 85]
+        ];
+
+定义一个数组，数组中包含了一些数据，完成下列题目(用户输入接收到的是字符串，不考虑字符串和数字问题)
+        1.1 用户输入一个数据，输出该数据在数组中的位置，没有则输出-1
+        1.2 用户输入一个下标(索引)，输出数组中对应的数据，没有则输出下标不合法
+        1.3 用户输入一个数据，判断数组中是否有该数据，有输出true，没有输出false
+        1.4 获取一个随机数，输出数组中对应的数据
+
+3. 随机生成一个成都车牌号(川A AE86A)(5个字符，只能是数字或大写字母)
+思路： 把字符，以数组方式放一起，然后再获取随机数，从数组中取值
+
+4. 单次登录验证： 定义两个数组，保持长度一致，用于存放一批用户名和密码。然后验证用户输入的用户名和密码是否正确，正确的前提是用户名和密码在位置上是一一对应的。
+
+5.判断两个数组是否完全一致
+
+6.随机点名：定义一批学生姓名，随机抽取其中的5名学生来回答问题。
+
+7.单次登录验证的基础上： 3次用户登录验证：用户有3次机会输入用户名。用户名都输入错误，程序结束，用户名输入正确，则输入密码进行验证。
+      用户名输入错误，那么继续输入，最多3次，程序结束。但中间某一次输入正确，那么剩余的用户名输入次数做废。
+
+8.上一题的基础上，用户名输入成功后，密码也有3次验证。 
+*/
+
+
+
+        // 1. 求二维数组中最大值、最小值、总个数、总和、平均值
+        // let arr = [
+        //     [80, 92, 97],
+        //     [61, 65, 71],
+        //     [59, 63, 70],
+        //     [85, 87, 99, 57],
+        //     [76, 77, 85]
+        // ];
+        // // 二维数组 先遍历它
+        // // arr.forEach(function(item, index) {
+        // //     console.log(item);
+        // // });
+        // let max = arr[0][0]; // 最大数
+        // let min = arr[0][0]; // 最小数
+        // let geshu = 0; // 总个数
+        // let sum = 0; // 总和
+        // arr.forEach(item => {
+        //     let childArr = item;
+        //     childArr.forEach(it => {
+        //         geshu++;
+        //         sum += it;
+
+        //         if (it > max) { // 比最大值大 那么就不会比最小值小      最大值 >= 最小值的
+        //             max = it;
+        //         }
+        //         if (it < min) {
+        //             min = it;
+        //         }
+        //     });
+        // });
+        // console.log(max);
+        // console.log(min);
+        // console.log(geshu);
+        // console.log(sum);
+        // console.log(sum / geshu);
+
+
+
+        /* 
+        定义一个数组，数组中包含了一些数据，完成下列题目(用户输入接收到的是字符串，不考虑字符串和数字问题)
+        1.1 用户输入一个数据，输出该数据在数组中的位置，没有则输出-1
+        1.2 用户输入一个下标(索引)，输出数组中对应的数据，没有则输出下标不合法
+        1.3 用户输入一个数据，判断数组中是否有该数据，有输出true，没有输出false
+        1.4 获取一个随机数，输出数组中对应的数据
+         */
+
+        // for循环里面 如果写了if+else  那么90%以上我们代码有问题 
+        // let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+        // 1.1
+        // let num = prompt('输入数据') - 0;
+        // let flage = -1;
+        // for(let i = 0; i < arr.length; i++) {
+        //     if(num === arr[i]) {
+        //         flage = i;
+        //     }
+        // }
+        // console.log(flage);
+        // console.log(arr.indexOf(num));
+
+        // 1.2
+        // let num = prompt('输入下标') - 0;
+        // //合法下标： 0 - 最大索引
+        // if(num >= 0 && num < arr.length) {
+        //     console.log(arr[num]);
+        // } else {
+        //     console.log('下标不合法');
+        // }
+
+        // 1.3 
+        // let num = prompt('输入数据') - 0;
+        // console.log(arr.includes(num));
+
+        // 1.4 获取一个随机数，输出数组中对应的数据
+        // 想要的是合法的下标
+        // Math.random()
+        // parseInt(Math.random() * 10) // 0 - 9
+        // parseInt(Math.random() * arr.length) // 0  -  数组长度 - 1
+        // let index = parseInt(Math.random() * arr.length);
+        // console.log(arr[index]);
+
+        /* 
+        3. 随机生成一个成都车牌号(川A AE86A)(5个字符，只能是数字或大写字母)
+            思路： 把字符，以数组方式放一起，然后再获取随机数，从数组中取值 */
+        // let arr = ['A', 'B', 'C', 'D', 'E', 1, 2, 3, 4, 5, 6];
+        // 获取随机数 一定是要合法的数字
+        // let str = '川A ';
+        // for(let i = 0; i < 5; i++) {
+        //     let num = parseInt(Math.random() * arr.length);
+        //     str += arr[num];
+        // }
+        // console.log(str);
+
+
+        // 4. 单次登录验证： 定义两个数组，保持长度一致，用于存放一批用户名和密码。然后验证用户输入的用户名和密码是否正确，正确的前提是用户名和密码在位置上是一一对应的。
+        // let users = ['pyy', 'wyz', 'gtl', 'cgx', 'lcw']; // 用户名
+        // let pwds = [123, 234, 345, 456, 567];// 密码
+        // let user = prompt('请输入用户名：'), pwd = prompt('请输入密码：');
+        // let flag = true;
+        // for(let i = 0; i < users.length; i++) {
+        //     if(users[i] === user && pwds[i] === pwd ) {
+        //         // console.log('登录成功！');
+        //         flag = false;
+        //     }
+        // }
+        // if(flag) {
+        //     console.log('登录失败');
+        // } else {
+        //     console.log('登录成功！');
+        // }
+
+        // if (users.includes(user)) { // 如果用户名数组存在了 那么就去判断密码数组中对应的这个位置 密码是否一致
+        //     let index = users.indexOf(user); // 当前这个用户在用户数组中的索引
+        //     if (pwds[index] === pwd) {
+        //         console.log('登录成功！');
+        //     } else {
+        //         console.log('登录失败');
+        //     }
+        // } else {
+        //     console.log('登录失败');
+        // }
+
+        // if (users.includes(user) && pwds[users.indexOf(user)] === pwd) { // 如果用户名数组存在了 那么就去判断密码数组中对应的这个位置 密码是否一致
+        //     console.log('登录成功！');
+        // } else {
+        //     console.log('登录失败');
+        // }
+
+        // (users.includes(user) && pwds[users.indexOf(user)] === pwd)?console.log('登录成功！'): console.log('登录失败');
+
+
+
+        // 判断两个数组是否完全一致
+        // 长度一致 并且 每个位置都一致 那么这两个数组就是一致的
+        // let arr1 = [1, 2, 3, 4];
+        // let arr2 = [1, 2, 5, 4];
+        // let flag = true;
+        // if(arr1.length === arr2.length) {
+        //     for(let i = 0; i < arr1.length; i++) {
+        //         // 
+        //         if(arr1[i] !== arr2[i]) { // 同样的位置 数组中两个的值不一样 那么就不是一致的
+        //             flag = false;
+        //             break;
+        //         }
+        //     }
+        // } else {
+        //     flag = false;
+        // }
+
+        // if(flag) {
+        //     console.log('一致');
+        // } else {
+        //     console.log('不一致');
+        // }
+
+
+        // 随机点名：定义一批学生姓名，随机抽取其中的5名学生来回答问题。
+        // 1. 每次随机获取一个合法的下标 去数组中取值 取完值之后 把这个值从数组中删除掉  ->   因为是删除，数组改变了  -> 长度变了
+        // 2. 每次随机获取一个合法的下标 去取数组中的一个数 ，把它添加到一个空数组arr中去： 在添加之前 先判断这个学生是否已经存在arr中去了  如果存在了 就不添加重新取 如果不存在 就添加到arr中去  -》 结束条件是arr的长度为5  -》 while
+        // let students = ['张三1','张三2','张三3','张三4','张三5','张三6','张三7','张三8','张三9'];
+        // for(let i = 0 ; i < 5; i++) {
+        //     let num = parseInt(Math.random() * arr.length);
+        //     console.log(students[num]);
+        //     students.splice(num, 1);
+        // }
+
+
+
+        /* 
+        7.单次登录验证的基础上： 3次用户登录验证：用户有3次机会输入用户名。用户名都输入错误，程序结束，用户名输入正确，则输入密码进行验证。
+            用户名输入错误，那么继续输入，最多3次，程序结束。但中间某一次输入正确，那么剩余的用户名输入次数做废。
+       */
+        // let users = ['pyy', 'wyz', 'gtl', 'cgx', 'lcw']; // 用户名
+        // let pwds = [123, 234, 345, 456, 567];// 密码
+        // for (let i = 0; i < 3; i++) {
+        //     prompt('xxxx')
+        // }
+
+
+
+        /*
+        8.上一题的基础上，用户名输入成功后，密码也有3次验证。
+         */
+        let users = ['admin', 'deng', '007', '9527'];
+        let passes = ['ad123', 'dd123', '007123', '9527123'];
+        //    let isover =false;
+        // 3次登录验证
+        for (let count = 1; count <= 3; count++) {
+            //单次用户登录判断
+            let userinput = prompt('请输入登录名');
+            for (let i = 0; i < users.length; i++) {
+                if (userinput == users[i]) {
+                    //用户名输入正确，剩余次数做废
+                    // isover = true;
+                    count = 3;
+                    //判断密码
+                    for (let num = 1; num <= 3; num++) {
+                        let userpass = prompt('请输入密码');
+                        if (userpass == passes[i]) {
+                            alert('登录成功');
+                            break;
+                        } else {
+                            alert(`密码错误,你还剩${3 - num}次机会`);
+                        }
+                    }
+                    break;
+                } else {
+                    //第二种
+                    if (i == users.length - 1) {
+                        alert(`用户名错误,你还剩${3 - count}次机会`);
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+
+        }
+        .red{
+            background-color: red;
+        }
+        .blue{
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div id="box1"></div> -->
+    <!-- <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div>
+    <div class="item"></div> -->
+    <!-- <div class="box">
+        <p>haha</p>
+        <p>heihei</p>
+        <span>ixxi</span>
+        <p>bubu</p>
+    </div>
+    <span>uiui</span>
+    <input type="text">
+    <button onclick="submit()">提交</button>
+    <img src="" alt="显示失败" title="显示成功" class="heihei"> -->
+
+    <!-- <div class="colorbox" style="background-color: red;"></div>
+    <button onclick="changeColor()">切换</button> -->
+    <div class="red" id="box"></div>
+    <button onclick="changeColor()">切换</button>
+
+
+    <script>
+        // let box1 = document.getElementById('box1');
+        // let box2 = document.getElementById('box2');//找不到将返回null
+        // console.log(box1);//找到满足条件的第一个节点进行返回
+        // console.log(box2);
+        // let obj = document.getElementsByClassName('item');//返回满足条件的元素节点集合
+        // console.log(obj);//返回htmlCollection集合，类似数组，可通过[索引]进行访问，但不能使用数组内置API
+        // console.log(obj[2]);//集合中包含的是元素，即一个完整的html标签元素
+        // let span = document.querySelector('.box span');//css选择器语法，选择满足条件的第一个元素节点
+        // console.log(span);
+        // let spans = document.querySelectorAll('span');//选择所有的span标签，返回元素节点集合
+        // console.log(spans);//返回类型为NodeList(),可使用forEach方法进行遍历
+        // spans.forEach(items =>{
+        //     console.log(items);
+        // })
+        //属性
+        // let span = document.querySelector('.box span');
+        // console.log(span);
+        // let box = span.parentNode;
+        // console.log(box);
+        // let p = box.childNodes;//返回所有子元素节点的集合
+        // console.log(p);//返回为NodeList(),其中将标签之间的换行及空格解析的子元素；
+        // let p1 = [];
+        // 如何将子元素集合中的空格及换行给清除掉
+        // p.forEach(item => {
+        //     console.log(item);
+        //     if (item.data != '↵        ') {
+        //         p1.push(item);
+        //     }
+        // })
+        // console.log(p1);
+        // let span = document.querySelector('.box span');
+        // console.log(span.previousSibling);
+        // console.log(span.previousElementSibling);
+        // console.log(span.nextSibling);
+        // console.log(span.nextElementSibling);//返回为html元素的上一个或下一个兄弟节点
+        // function submit() {//绑定点击后执行的函数
+        //     console.log('提交成功');
+        // }
+        // let img = document.querySelector('body img');
+        // console.log(img.title);
+        // img.title = '没有显示成功';
+        // console.log(img.title);
+        // 属性操作
+        // let img = document.querySelector('body img');
+        // console.log(img.getAttribute('alt'));
+        // // console.log(img.getAttribute('class'));//无该属性将返回null
+        // console.log(img.getAttribute('class'));//只能使用标准属性名，自定义的仪data-开头，不接受自定属性名作为参数
+        // img.setAttribute('alt', '就是显示失败了');
+        // console.log(img.alt);
+        // console.log(img.hasAttribute('class'));//有返回true，无返回false
+        // img.removeAttribute('alt');//删除指定属性名及其属性值
+        // console.log(img);
+
+        // 点击按钮，用于切换div的背景颜色   红色--蓝色切换
+        // function changeColor() {
+        //     let box = document.querySelector('body .colorbox');
+        //     // console.log(box.getAttribute('style'));
+        //     // console.log(box.style);//对象名.属性名访问属性的方式不适用于style，其内部有多个可设置的值，以及冒号和分号，不能顺利解析；替换为简单字符串就可以解析；
+        //     if (box.getAttribute('style') === "background-color: red;") {
+        //         box.setAttribute('style', 'background-color: blue;');
+        //     } else {
+        //         box.setAttribute('style', 'background-color: red;');
+        //     }
+        // }
+        // function changeColor() {
+        //     let box = document.querySelector('body #box');
+        //     if(box.className === 'red'){
+        //         box.setAttribute('class', 'blue');
+        //     }else{
+        //         box.setAttribute('class', 'red');
+        //     }
+        // }
+        
+
+
+
+
+    </script>
+</body>
+
+</html>

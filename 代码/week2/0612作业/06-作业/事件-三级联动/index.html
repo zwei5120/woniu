@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>三级联动</title>
+		
+		<link rel="stylesheet" type="text/css" href="css/layui.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mycss.css"/>
+		
+		
+	</head>
+	<body class="layui-bg-black">
+		<div id="box">
+			<img src="img/sf.png" >
+			<select class="layui-form-label" id="form1">
+			  <option>请选择省份</option>
+			</select>
+			<img src="img/cs.png" >
+			<select class="layui-form-label" id="form2">
+			  <option>请选择城市</option>
+			</select>
+			<img src="./img/qy.png" >
+			<select class="layui-form-label" id="form3">
+			  <option>请选择地区</option>
+			</select>
+			
+			<h1>详细地址</h1>
+			  <div class="layui-form-item layui-form-text">
+			    <div class="layui-input-block">
+			      <textarea name="desc" placeholder="请输入内容" class="layui-textarea" id="text"></textarea>
+			    </div>
+			</div>
+			<button type="button" class="layui-btn layui-btn-normal" id="btn">提交</button>
+		</div>
+		
+
+		<script src="js/data.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			console.log(data);
+
+		</script>
+		
+	</body>
+	
+
+</html>

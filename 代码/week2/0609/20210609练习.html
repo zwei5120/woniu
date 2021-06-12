@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .isShow{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="box1">
+        <button onclick="function1()" id="btn" on>控制</button>
+    </div>
+    <div class="box2">
+        <input type="text" id="pt">
+    </div>
+
+
+    <script>
+        function function1() {
+            let ap = document.getElementById('pt');
+            ap.toggleAttribute('disabled')
+            let btn = document.querySelector('.box1').childNodes;
+            console.log(btn[1]);
+            if(btn[1].innerHTML === '控制'){
+                btn[1].innerHTML = '失效';
+            }else if(btn[1].innerHTML === '失效'){
+                btn[1].innerHTML = '控制';
+            }
+        }
+    </script>
+</body>
+</html>

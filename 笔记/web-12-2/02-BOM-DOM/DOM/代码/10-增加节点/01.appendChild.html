@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+    <script>
+        // 语法：   父节点.appendChild(要添加的子节点)
+        // 理解：   爸爸   添加         哪个儿子
+
+        // 1. 先创建一个空的div标签
+        let div = document.createElement('div');
+
+        // 给div添加内容
+        div.innerHTML = '我是新来的';
+
+
+        // 2. 将这个div标签添加到box中去
+        let box = document.getElementById('box');
+        box.appendChild(div);
+
+    </script>
+</body>
+</html>

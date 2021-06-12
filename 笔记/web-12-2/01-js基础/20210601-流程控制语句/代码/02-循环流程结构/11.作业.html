@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span {
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+        }
+        div{
+            display: inline-block;
+            width: 13px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        /*
+            求1-100 能被3整除或者能被5整除的数字的总和
+            计算1-1000之间能被5整除的偶数的个数
+
+            小红为了方便拨号，给家人的电话号码设置了快捷键，小红输入一个数字，判断并输出拨打谁的电话。
+                1 妈妈的电话 2 爸爸的电话 3 奶奶的电话 4 爷爷的电话 其他数字： 无效电话。（switch和if两种）
+            抓球问题：有红球5个，黑球7个，白球9个，现取12个，一共有多少种取法。
+            打印99乘法表
+            打印彩色版本的99乘法表
+            根据用户输入的行数打印一个三角形。
+            根据用户输入的行数打印一个菱形。
+     */
+
+
+        // let num = prompt('请输入数字') - 0;
+        // switch (num) {
+        //     case 1:
+        //         console.log('妈妈的电话');
+        //         break;
+        //     case 2:
+        //         console.log('爸爸的电话');
+        //         break;
+        //     case 3:
+        //         console.log('奶奶的电话');
+        //         break;
+        //     case 4:
+        //         console.log('爷爷的电话');
+        //         break;
+        //     default:
+        //         console.log('无效电话');
+        // }
+
+
+        //  抓球问题：有红球5个，黑球7个，白球9个，现取12个，一共有多少种取法。
+        // let sum = 0;
+        // for (let red = 0; red <= 5; red++) {
+        //     for (let black = 0; black <= 7; black++) {
+        //         for (let white = 0; white <= 9; white++) {
+        //             if(red + black + white === 12) {
+        //                 document.write(`红球${red}个黑球${black}个白球${white}个`)
+        //                 sum++
+        //             }
+        //         }
+        //     }
+        // }
+        // console.log(sum);
+
+
+
+        //  打印99乘法表
+        // for (let i = 1; i < 10; i++) { // 9行
+        //     // i: 1 - 9
+        //     // for (let j = 1; j < 10; j++) {
+        //     //     if (j <= i) {
+        //     //         document.write(`<span>${j}*${i}=${i * j}</span>`)
+        //     //     }
+        //     // }
+        //     for (let j = 1; j <= i; j++) {
+        //         document.write(`<span>${j}*${i}=${i * j}</span>`)
+        //     }
+        //     document.write('<br />')
+        // }
+
+        // 随机颜色的99乘法表
+        // for (let i = 1; i < 10; i++) { // 9行
+        //     for (let j = 1; j <= i; j++) {
+        //         let num1 = parseInt(Math.random() * 256);
+        //         let num2 = parseInt(Math.random() * 256);
+        //         let num3 = parseInt(Math.random() * 256);
+        //         document.write(`<span style="background-color:rgb(${num1},${num2},${num3})">${j}*${i}=${i * j}</span>`)
+        //     }
+        //     document.write('<br />')
+        // }
+
+
+        // 根据用户输入的行数打印一个三角形。
+        let num = prompt('请输入行数')-0;
+        // 观察到 星星的个数是  2 * 行数 - 1 个
+        for(let i = 1; i <= num; i++) { // 行数
+            // 2.空格
+            // 空格 + 当前行 = 总的行数
+            //  空格 =  总的行数 - 当前行
+            for(let j = 0; j < num - i; j++) {
+                document.write('<div></div>')
+            }
+            // 1.星星
+            for(let j = 0; j < 2*i-1; j++) {
+                document.write('<div>*</div>')
+            }
+            document.write('<br />')
+        }
+
+        for(let i = num - 1; i >= 1; i--) { // 行数
+            // 2.空格
+            // 空格 + 当前行 = 总的行数
+            //  空格 =  总的行数 - 当前行
+            for(let j = 0; j < num - i; j++) {
+                document.write('<div></div>')
+            }
+            // 1.星星
+            for(let j = 0; j < 2*i-1; j++) {
+                document.write('<div>*</div>')
+            }
+            document.write('<br />')
+        }
+
+    </script>
+</body>
+
+</html>
