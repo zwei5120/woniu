@@ -1,46 +1,141 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<title>三级联动</title>
-		
-		<link rel="stylesheet" type="text/css" href="css/layui.css"/>
-		<link rel="stylesheet" type="text/css" href="css/mycss.css"/>
-		
-		
-	</head>
-	<body class="layui-bg-black">
-		<div id="box">
-			<img src="img/sf.png" >
-			<select class="layui-form-label" id="form1">
-			  <option>请选择省份</option>
-			</select>
-			<img src="img/cs.png" >
-			<select class="layui-form-label" id="form2">
-			  <option>请选择城市</option>
-			</select>
-			<img src="./img/qy.png" >
-			<select class="layui-form-label" id="form3">
-			  <option>请选择地区</option>
-			</select>
-			
-			<h1>详细地址</h1>
-			  <div class="layui-form-item layui-form-text">
-			    <div class="layui-input-block">
-			      <textarea name="desc" placeholder="请输入内容" class="layui-textarea" id="text"></textarea>
-			    </div>
+
+<head>
+	<meta charset="utf-8">
+	<title>三级联动</title>
+
+	<link rel="stylesheet" type="text/css" href="css/layui.css" />
+	<link rel="stylesheet" type="text/css" href="css/mycss.css" />
+
+
+</head>
+
+<body class="layui-bg-black">
+	<div id="box">
+		<img src="img/sf.png">
+		<select class="layui-form-label" id="form1" onchange="addCity()">
+			<option>请选择省份</option>
+		</select>
+		<img src="img/cs.png">
+		<select class="layui-form-label" id="form2" onchange="addAreas()">
+			<option>请选择城市</option>
+		</select>
+		<img src="./img/qy.png">
+		<select class="layui-form-label" id="form3">
+			<option>请选择地区</option>
+		</select>
+
+		<h1>详细地址</h1>
+		<div class="layui-form-item layui-form-text">
+			<div class="layui-input-block">
+				<textarea name="desc" placeholder="请输入内容" class="layui-textarea" id="text"></textarea>
 			</div>
-			<button type="button" class="layui-btn layui-btn-normal" id="btn">提交</button>
 		</div>
-		
+		<button type="button" class="layui-btn layui-btn-normal" id="btn" onclick="submit()">提交</button>
+	</div>
 
-		<script src="js/data.js" type="text/javascript" charset="utf-8"></script>
-		<script>
-			console.log(data);
 
-		</script>
-		
-	</body>
-	
+	<script src="js/data.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		// console.log(data);
+		console.log(data.provinces.length);
+		// 首先将省份选项放在form1的下拉列表中，根据其返回值修改form2的下拉列表选项
+		function addProvinces() {
+			// 获取省份表form1
+			let form1 = document.getElementById('form1');
+			data.provinces.forEach(item => {
+				// 创建新的option标签
+				let newOption = document.createElement('option');
+				console.log(item);
+				newOption.innerHTML = `${item.title}`;
+				newOption.setAttribute('value', item.name);
+				form1.appendChild(newOption);
+			});
+		}
+		addProvinces();
+
+		// 根据form1中的选项值对form2进行修改
+		function addCity() {
+			// 先获取form1的值
+			let province = document.getElementById('form1').value;
+			// 先获取表2
+			let form2 = document.getElementById('form2');
+			// console.log(form2);
+			form2.innerHTML = '';
+			let optionFirst = document.createElement('option');
+			optionFirst.innerHTML = '请选择城市';
+			form2.appendChild(optionFirst);
+			form2.value = '请选择城市';
+			//获取表3form3
+			let form3 = document.getElementById('form3');
+			form3.innerHTML = '';
+			let optionFirst1 = document.createElement('option');
+			optionFirst1.innerHTML = '请选择地区';
+			form3.appendChild(optionFirst1);
+			if (province !== '请选择省份') {
+				data.cities[province].forEach(item => {
+					// 创建新的option元素，添加内容及属性
+					let newOption = document.createElement('option');
+					newOption.innerHTML = item.title;
+					newOption.setAttribute('value', item.name);
+					form2.appendChild(newOption);
+				});
+			}
+
+		}
+
+		function addAreas() {
+			let city = document.getElementById('form2').value;
+			console.log(city);
+			//获取表3form3
+			let form3 = document.getElementById('form3');
+			form3.innerHTML = '';
+			let optionFirst = document.createElement('option');
+			optionFirst.innerHTML = '请选择地区';
+			form3.appendChild(optionFirst);
+			if (city !== '请选择城市') {
+				// 根据城市获取地区
+				data.areas[city].forEach(item => {
+					let newOption = document.createElement('option');
+					newOption.innerHTML = item.title;
+					newOption.setAttribute('value', item.name);
+					form3.appendChild(newOption);
+				});
+			}
+
+		}
+
+		// 提交内容
+		function submit() {
+			// 分别获取省市区和详细地址，使用alert将其弹出在页面上
+			let province = document.getElementById('form1').value;
+			let prolist = document.querySelectorAll('#form1 option')
+			prolist.forEach(item => {
+				if(item.value === province){
+					province = item.innerHTML;
+				}
+			});
+			let city = document.getElementById('form2').value;
+			let citylist = document.querySelectorAll('#form2 option')
+			citylist.forEach(item => {
+				if(item.value === city){
+					city = item.innerHTML;
+				}
+			});
+			let area = document.getElementById('form3').value;
+			let arealist = document.querySelectorAll('#form3 option')
+			arealist.forEach(item => {
+				if(item.value === area){
+					area = item.innerHTML;
+				}
+			});
+			let text = document.getElementById('text').value
+			alert(province + city + area + text);
+		}
+	</script>
+
+</body>
+
 
 </html>

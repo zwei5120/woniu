@@ -1,37 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .run{
+        .run {
             color: black;
             text-decoration: none;
         }
-        .done{
+
+        .done {
             color: red;
-            text-decoration:line-through;
+            text-decoration: line-through;
         }
-        a:visited{
+
+        a:visited {
             color: blue;
         }
     </style>
 </head>
+
 <body>
-    <input type="text" id="todo"><button id="add">addTODO</button>
+    <input type="text" id="todo"><button id="add" onclick="addOne(this)">addTODO</button>
     <ul>
-        <li class="done">JavaScript</li>
-        <li class="done">HTML</li>
-        <li class="run">CSS</li>
+        <li class="done" onclick="changeSty(this)">JavaScript</li>
+        <li class="done" onclick="changeSty(this)">HTML</li>
+        <li class="run" onclick="changeSty(this)">CSS</li>
     </ul>
-    <a >ALL</a>
-    <a href="#">Run</a>
-    <a href="#">Done</a>
+    <a onclick="showAll()">ALL</a>
+    <a href="#" onclick="showRun()">Run</a>
+    <a href="#" onclick="showDone()">Done</a>
 
     <script>
-      
-
+        // 添加元素
+        function addOne(item) {
+            //  先获取到ul标签元素节点
+            let ul = document.querySelector('body ul');
+            // console.log(ul);
+            // 新建元素，并获取到文本框的输入
+            let newLi = document.createElement('li');
+            let theContent = document.getElementById('todo').value;
+            // console.log(theContent);
+            newLi.innerHTML = `${theContent}`;
+            newLi.setAttribute('class', 'run');
+            newLi.setAttribute('onclick', 'changeSty(this)');
+            ul.appendChild(newLi);
+        }
+        
+        // 元素点击更改颜色，加删除线
+        function changeSty(item) {
+            if(item.className === 'run'){
+                item.setAttribute('class', 'done');
+            }else{
+                item.setAttribute('class', 'run');
+            }
+        }
+    
+        // 点击显示所有
+        function showAll() {
+            // 先获取所有的li标签，将他们的display设置为list-item
+            let lis = document.querySelectorAll('body ul li');
+            lis.forEach(item =>{
+                item.style.display = 'list-item';
+            });
+        }
+        // 显示正在进行中的列表
+        function showRun() {
+            // 先获取所有的li标签，将他们的display设置为list-item
+            let lis = document.querySelectorAll('body ul li');
+            lis.forEach(item =>{
+                item.style.display = 'list-item';
+                if(item.className !== 'run'){
+                    item.style.display = 'none';
+                }
+            });
+        }
+        // 显示已完成的列表
+        function showDone() {
+            // 先获取所有的li标签，将他们的display设置为list-item
+            let lis = document.querySelectorAll('body ul li');
+            lis.forEach(item =>{
+                item.style.display = 'list-item';
+                if(item.className !== 'done'){
+                    item.style.display = 'none';
+                }
+            });
+        }
+    
     </script>
 </body>
+
 </html>
