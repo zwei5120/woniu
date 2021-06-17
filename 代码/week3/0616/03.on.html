@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03.on</title>
+    <style></style>
+</head>
+
+<body>
+    <div id="box">
+        <p>item1</p>
+        <p>item2</p>
+        <p>item3</p>
+        <p>item4</p>
+    </div>
+    <button id="btn">按钮</button>
+
+    <script src="./js/jquery.js"></script>
+    <script>
+        // 1. 点击按钮 往box中添加一个p标签
+        // 2. 给所有p标签添加点击事件
+
+        $('#btn').click(function() {
+            let p = $('<p>我是新来的</p>');
+            $('#box').append(p);
+        });
+
+        // js动态添加的标签 不会生效
+        // 解决方案： on
+        // $('#box p').click(function() {
+        //     console.log('tttttt');
+        // });
+
+        // 语法： 父标签jq对象.on(事件名，后代标签名， 这个事件触发时执行的函数)
+        $('#box').on('click', 'p', function() {
+            // this是原生节点对象
+            // $(this)是jq节点对象
+
+            $(this).css('color', 'red');
+            console.log('llllll',this);
+        })
+
+    </script>
+</body>
+
+</html>

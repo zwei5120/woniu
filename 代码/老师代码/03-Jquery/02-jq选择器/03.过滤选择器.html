@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03.过滤选择器</title>
+    <style></style>
+</head>
+
+<body>
+    <ul>
+        <li>第1个li</li>
+        <li>第2个li</li>
+        <li id='third'>第3个li</li>
+        <li>第4个li</li>
+        <li>第5个li</li>
+        <li>第6个li</li>
+    </ul>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        // 1. 匹配第一个元素
+        // let $firstli = $('li:first');
+        // $firstli.css('color', 'red')
+
+        // // 2. 匹配最后一个元素
+        // let $lastLi = $('li:last');
+        // $lastLi.css('color', 'pink')
+
+        // 3. 索引为奇数\偶数的元素
+        // let $lis = $('li:even');
+        // $lis.css('color', 'pink')
+        // let $lis = $('li:odd');
+        // $lis.css('color', 'pink')
+
+        // 4， 去掉某些元素
+        // $('li:not(#third)').css('color', 'red')
+
+    </script>
+</body>
+
+</html>

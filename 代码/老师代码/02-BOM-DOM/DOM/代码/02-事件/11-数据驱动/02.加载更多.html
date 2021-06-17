@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+    总价： <span id="total"></span>
+    <button onclick="getMore()">加载更多</button>
+    <button onclick="reset()">重置</button>
+
+    <script>
+        let arr = [ // 总的数据源
+            { id: 1, name: '电风扇1', num: 1, price: 85 },
+            { id: 2, name: '电风扇2', num: 1, price: 1100 },
+            { id: 3, name: '电风扇3', num: 11, price: 1001 },
+            { id: 4, name: '电风扇4', num: 1, price: 1002 },
+            { id: 5, name: '电风扇5', num: 1, price: 1020 },
+            { id: 6, name: '电风扇6', num: 1, price: 1020 },
+            { id: 7, name: '电风扇7', num: 1, price: 1020 },
+            { id: 8, name: '电风扇8', num: 1, price: 1020 },
+            { id: 9, name: '电风扇9', num: 1, price: 1020 },
+            { id: 10, name: '电风扇10', num: 1, price: 1020 },
+            { id: 11, name: '电风扇11', num: 1, price: 1020 },
+            { id: 12, name: '电风扇12', num: 1, price: 1020 },
+            { id: 13, name: '电风扇13', num: 1, price: 1020 }
+        ];
+
+
+        let arr1 = arr.slice(0, 3); // 负责渲染
+        let n = 3;
+
+        // 1.页面上先显示3个商品
+        // 2. 点击加载更多 就多显示后面的3条数据在box中
+        // 3. 点击重置按钮 页面上又只显示前3个商品
+        render(arr1);
+        function render(arr) {
+            box.innerHTML = '';
+            arr.forEach(item => {
+                let div = document.createElement('div');
+                div.innerHTML = `
+                编号：${item.id} 名字：${item.name}  数量：${item.num}  价格：${item.price} 
+                总价：${item.num * item.price}
+                <button onclick='remove(${item.id})'>删除</button>
+                <button onclick= 'moreInfo(${item.id})'>前往详情页面</button>
+            `;
+                box.appendChild(div);
+            });
+
+            let totalNum = arr.reduce((acc, cur) => acc + cur.num * cur.price, 0);
+            total.innerHTML = totalNum;
+            // console.log(totalNum);
+        }
+        // 删除当前元素，进行重绘
+        function remove(id) {
+            arr1 = arr1.filter(item => item.id !== id);
+            render(arr1);
+            // n--;
+        }
+        // 详情页跳转，传递id参数
+        function moreInfo(id) {
+            // location.href = `./03.详情.html?id=${id}`;
+            open(`./03.详情.html?id=${id}`);
+        }
+        // 获取更多按钮
+        function getMore() {
+            let arr2 = arr.slice(n,n+3);
+            arr1 = arr1.concat(arr2);
+            render(arr1);
+            n += 3;
+        }
+        // 重置按钮
+        function reset() {
+            arr1 = arr.slice(0,3);
+            render(arr1);
+            n = 3;
+        }
+
+    </script>
+</body>
+
+</html>

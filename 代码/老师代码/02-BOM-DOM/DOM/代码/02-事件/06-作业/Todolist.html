@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .run {
+            color: black;
+            text-decoration: none;
+        }
+
+        .done {
+            color: red;
+            text-decoration: line-through;
+        }
+
+        a:visited {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="todo"><button id="add" onclick="btnClick()">addTODO</button>
+    <ul onclick="ulClick()">
+        <li class="done">JavaScript</li>
+        <li class="done">HTML</li>
+        <li class="run">CSS</li>
+    </ul>
+
+    <div onclick="divClick()">
+        <a>ALL</a>
+        <a href="#">Run</a>
+        <a href="#">Done</a>
+    </div>
+
+
+    <script>
+        function btnClick() {
+            let todo = document.getElementById('todo');
+            let value = todo.value;
+            let li = document.createElement('li');
+            li.innerHTML = value;
+            // li.setAttribute('class', 'run');
+            li.className = 'run';
+            let ul = document.querySelector('ul');
+            ul.appendChild(li);
+        }
+
+
+        function ulClick() {
+            // console.log('ulClick',event.target);
+            if (event.target.tagName === 'LI') {
+                // console.log(event.target.className);
+                if (event.target.className === 'run') {
+                    event.target.className = 'done';
+                } else {
+                    event.target.className = 'run';
+                }
+            }
+        }
+
+
+        function divClick() {
+            if (event.target.tagName === 'A') {
+                console.log('divClick', event.target.innerHTML);
+                // 1. 修改a标签的样式
+                // 1.1 把所有的a标签都添加href属性
+                let as = document.querySelectorAll('a');
+                as.forEach(item => {
+                    item.href = '#';
+                });
+                // 1.2 把当前点击的a标签的href去掉
+                event.target.removeAttribute('href');
+
+                // 2. 根据点击的a标签 来渲染不同的数据
+                if (event.target.innerHTML === 'ALL') {
+                    let lis = document.querySelectorAll('li');
+                    lis.forEach(item => {
+                        item.style.display = 'list-item';
+                    });
+
+                } else if (event.target.innerHTML === 'Run') {
+                    // 1. 隐藏class为done的li
+                    let doneLis = document.querySelectorAll('.done');
+                    doneLis.forEach(item => {
+                        item.style.display = 'none';
+                    });
+                    // 2. 显示class为run的li
+                    let runLis = document.querySelectorAll('.run');
+                    runLis.forEach(item => {
+                        item.style.display = 'list-item';
+                    });
+
+                } else if (event.target.innerHTML === 'Done') {
+                    let runLis = document.querySelectorAll('.run');
+                    runLis.forEach(item => {
+                        item.style.display = 'none';
+                    });
+                    let doneLis = document.querySelectorAll('.done');
+                    doneLis.forEach(item => {
+                        item.style.display = 'list-item';
+                    });
+                }
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>

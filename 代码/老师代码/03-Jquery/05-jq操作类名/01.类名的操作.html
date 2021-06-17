@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01.类名的操作</title>
+  <style></style>
+</head>
+<body>
+  <div id="box" class="oldClass newClass">
+    <p></p>
+  </div>
+    
+<script src="../js/jquery.js"></script>
+  <script>
+      // 1. 添加类名
+    // $('#box').addClass('newClass');
+
+
+    // 2. 删除类名
+    // 移除某个指定类名： jq对象.removeClass(要删除的类名)
+    // 移除所有类名： jq对象.removeClass()
+    // $('#box').removeClass('oldClass');
+    // $('#box').removeClass();
+
+    // 3. 是否拥有某个类名
+    let res = $('#box').hasClass('oldClass')
+    console.log(res);
+  </script>
+</body>
+</html>

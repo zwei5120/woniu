@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 点击标签的时候，调用函数btnclick 这个时候可以传递参数 : 传递this    this就是这个标签本身 -->
+   
+    <div>
+        <span>1</span>
+        <button onclick="btnclick(this)">+</button>
+    </div>
+    
+
+    <script>
+        // 在形参中 接收传递的标签
+        function btnclick(item) {
+            console.log('btnclick',item.previousElementSibling);
+
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" title="你瞅啥" data-foo='bar'>哈哈哈哈哈哈哈哈哈</div>
+    
+    <script>
+        let box = document.getElementById('box');
+     //节点.hasAttribute ('属性名') 是否拥有某个属性    
+        console.log(box.hasAttribute('title'));; //  有就返回true
+        console.log(box.hasAttribute('class'));;  // 没有就返回false
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        <span>数量： 17</span>
+        <span>价格： 100￥</span>
+        <!-- 方式1： this指的就是当前标签本身 -->
+        <!-- <button id="btn" onclick="btnclick(this)">删除</button> -->
+
+        <button id="btn" onclick="btnclick()">删除</button>
+
+        <a href="http://www.baidu.com" onclick="aClick()">百度</a>
+    </div>
+
+
+    <script>
+        // 获取当前点击标签的方式
+
+        // 方式1： 通过this来获取
+        // function btnclick(btn) {
+        //     console.log('btnclick', btn);
+        // }
+
+        // 方式2： 通过方法来获取
+        // function btnclick() {
+        //     let btn = document.getElementById('btn');
+        // }
+
+        // 方式3： 通过event来获取
+        function btnclick() {
+            console.log(event.target);
+        }
+
+
+        function aClick() {
+            event.preventDefault(); // 阻止默认行为   
+            // xxxx
+            // xxxx
+
+            // 用js来实现跳转
+            location.href  = 'http://www.baidu.com';
+        }
+
+    </script>
+</body>
+
+</html>

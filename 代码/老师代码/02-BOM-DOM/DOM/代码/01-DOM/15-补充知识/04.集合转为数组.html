@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p class="item">1</p>
+        <p class="item">7</p>
+        <p class="item">66</p>
+        <p class="item">3</p>
+        <p class="item">21</p>
+    </div>
+    
+    <script>
+        let items = document.querySelectorAll('#box .item');
+        // items是集合 不是数组 不能使用数组的部分方法
+
+        // 把items变为数组
+        let arr = [...items];
+
+        arr.sort((a,b) => a.innerHTML - b.innerHTML);
+        console.log(arr);
+
+        // 根据排序之后的arr  来进行渲染到box中去
+
+        // appendchild
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02.层级选择器</title>
+    <style></style>
+</head>
+
+<body>
+    <header>
+        我是内容1
+        <div>
+            我是子元素1号div
+            <p>我是子孙元素1号p</p>
+            <p>我是子孙元素2号p</p>
+        </div>
+        <p>我是子元素1号p</p>
+    </header>
+    <p>我是内容2</p>
+    <span>我是内容3</span>
+    <div>我是内容4</div>
+    <div>我是内容5</div>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        // 1. 获取元素的所有指定的某个后代标签
+        // let $ps = $('header p');
+        // $ps.css('color', 'red');
+        // console.log($ps);
+
+        // 2. 获取元素的所有指定的某个子标签
+        // let $ps = $('header>p');
+        // $ps.css('color', 'red');
+        // console.log($ps);
+
+        // 3.  获取元素后面的紧跟着的某个标签
+        // let $ps = $('header+p');
+        // $ps.css('color', 'red');
+        // console.log($ps);
+
+        // 4.  获取元素后面的紧跟着的某个兄弟元素
+        let $ps = $('header~div');
+        $ps.css('color', 'red');
+        console.log($ps);
+    </script>
+</body>
+
+</html>

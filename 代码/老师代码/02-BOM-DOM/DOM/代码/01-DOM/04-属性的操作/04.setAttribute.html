@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" title="你瞅啥" data-foo='bar'>哈哈哈哈哈哈哈哈哈</div>
+    
+    <script>
+        let box = document.getElementById('box');
+     //节点.setAttribute (设置谁, 设置成什么值)    
+        box.setAttribute('title', '我不看了'); // 有这个属性 就修改这个属性值
+        box.setAttribute('class', 'box'); // 没有这个属性  就添加这个属性
+    </script>
+</body>
+</html>

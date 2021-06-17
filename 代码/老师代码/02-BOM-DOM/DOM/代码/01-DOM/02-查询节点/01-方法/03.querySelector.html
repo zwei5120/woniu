@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <p class="item">item1</p>
+        <p class="item">item2</p>
+        <span>span1</span>
+        <p class="item">item3</p>
+    </div>
+    <span>11111</span>
+    
+    <script>
+        // querySelector: 通过css选择器来获取节点  获取的是一个元素节点
+        // let span = document.querySelector('#box span');
+        // console.log(span);
+
+        let span = document.querySelector('span'); // 只能获取满足条件的第一个
+        console.log(span);
+
+    </script>
+</body>
+</html>

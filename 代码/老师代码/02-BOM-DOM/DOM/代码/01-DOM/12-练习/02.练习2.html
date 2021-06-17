@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="ipt">
+    <button onclick="btnclick()">按钮</button>
+    <img src="" alt="" id="img">
+    <div id="box"></div>
+
+    <script>
+        /* 
+         3. 页面上有一个输入框，一个按钮，一个img标签,在输入框中输入值，点击按钮，
+                页面上就显示这张图
+        4. 页面上有一个输入框，一个按钮,一个div标签，在输入框中输入值，点击按钮，
+            往div标签中添加这张图
+        */
+
+        // 3.
+        // function btnclick() {
+        //     // 1. 获取输入框的值：
+        //     // 1.1 先获取输入框节点对象
+        //     let input = document.getElementById('ipt');
+        //     // 1.2 通过输入框节点对象.value 获取输入框的值
+        //     let value = input.value;
+        //     // console.log(value);
+
+        //     // 2. 使用输入框的值，去找对应的图片，赋值给img的src属性
+        //     // 2.1 获取img标签
+        //     let img = document.getElementById('img');
+        //     // 2.2 给这个img标签设置src属性值
+        //     // src是img的标准属性，所以可以直接 标签对象.标准属性名 来设置/获取/修改这个属性值
+        //     img.src = `./img/${value}.jpeg`;
+        // }
+
+        // 4
+        function btnclick() {
+            // 1. 获取输入框的值：
+            // 1.1 先获取输入框节点对象
+            let input = document.getElementById('ipt');
+            // 1.2 通过输入框节点对象.value 获取输入框的值
+            let value = input.value;
+            // console.log(value);
+
+            // 2. 往div中添加输入框输入的值对应的img图片
+            // 2.1 获取div
+            let box = document.getElementById('box');
+            // 2.2 创建一个img标签
+            let img = document.createElement('img');
+            // 2.3 给这个img标签添加src属性，属性值就是对应的输入框输入的值
+            img.src = `./img/${value}.jpeg`;
+            // 2.4 把这个img标签添加到box中去
+            box.appendChild(img);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" onfocus="myFocus()" onblur="myBlur()">
+
+    <script>
+        // 获得焦点的时候 触发
+        function myFocus() {
+            console.log('onfocus：获得焦点的时候 触发');
+        }
+
+        // 失去焦点的时候 触发
+        function myBlur() {
+            console.log('onblur： 失去焦点的时候 触发');
+        }
+    </script>
+</body>
+</html>

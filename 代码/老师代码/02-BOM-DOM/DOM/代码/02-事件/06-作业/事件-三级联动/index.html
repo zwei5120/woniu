@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>三级联动</title>
+
+	<link rel="stylesheet" type="text/css" href="css/layui.css" />
+	<link rel="stylesheet" type="text/css" href="css/mycss.css" />
+
+
+</head>
+
+<body class="layui-bg-black">
+	<div id="box">
+		<img src="img/sf.png">
+		<select class="layui-form-label" id="form1" onchange="selectChange()">
+			<option>请选择省份</option>
+		</select>
+		<img src="img/cs.png">
+		<select class="layui-form-label" id="form2" onchange="select2Change()">
+			<option>请选择城市</option>
+		</select>
+		<img src="./img/qy.png">
+		<select class="layui-form-label" id="form3">
+			<option>请选择地区</option>
+		</select>
+
+		<h1>详细地址</h1>
+		<div class="layui-form-item layui-form-text">
+			<div class="layui-input-block">
+				<textarea name="desc" placeholder="请输入内容" class="layui-textarea" id="text"></textarea>
+			</div>
+		</div>
+		<button type="button" class="layui-btn layui-btn-normal" id="btn" onclick="btnClick()">提交</button>
+	</div>
+
+
+	<script src="js/data.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		console.log(data.areas);
+		// 对象取值：
+		// 对象名.属性名   
+		// 对象名[属性名]
+		// 对象的属性值 只和属性名有关系 它是无序的
+
+		// 1. 省份  一进来的时候 就添加
+		// 1.1 获取所有的省份数组  遍历它 每个数组元素都生成一个option 添加到form1中去
+		// console.log(data.provinces);
+		let form1 = document.getElementById('form1');
+		let form2 = document.getElementById('form2');
+		let form3 = document.getElementById('form3');
+		let text = document.getElementById('text');
+		data.provinces.forEach(item => {
+			// 每个数组元素都生成一个option 添加到form1中去
+
+			// console.log(item);
+			let option = document.createElement('option');
+			option.innerHTML = item.title;
+			option.value = item.name;
+			// console.log(option);
+			form1.appendChild(option);
+		});
+
+
+		// 2. 选择了某个省  根据选择的这个省 去动态渲染这个省下面的城市 根据得到的城市数组 去遍历 每一个数组元素都得到一个option添加到 到form2中去
+		function selectChange() {
+			form2.innerHTML = '<option>请选择城市</option>';
+			form3.innerHTML = '<option>请选择地区</option>';
+			// console.log('selectChange',event.target.value);
+			let value = event.target.value;
+			// console.log(data);
+			// for(let key in data.cities) {
+			// 	// console.log(key);
+			// 	if(key === value) {
+			// 		console.log(key);
+			// 		console.log(data.cities[key]);
+			// 		console.log(data.cities[value]);
+			// 	}
+			// }
+			data.cities[value].forEach(item => {
+				let option = document.createElement('option');
+				option.innerHTML = item.title;
+				option.value = item.name;
+				// console.log(option);
+				form2.appendChild(option);
+			});
+		}
+
+		// 选择了城市   根据选择的这个城市 去动态渲染这个城市下面的地区 根据得到的地区数组 去遍历 每一个数组元素都得到一个option添加到 到form3中去
+		function select2Change() {
+			form3.innerHTML = '<option>请选择地区</option>';
+			// console.log('selectChange',event.target.value);
+			let value = event.target.value;
+			// console.log(data);
+			// for(let key in data.cities) {
+			// 	// console.log(key);
+			// 	if(key === value) {
+			// 		console.log(key);
+			// 		console.log(data.cities[key]);
+			// 		console.log(data.cities[value]);
+			// 	}
+			// }
+			data.areas[value].forEach(item => {
+				let option = document.createElement('option');
+				option.innerHTML = item.title;
+				option.value = item.name;
+				// console.log(option);
+				form3.appendChild(option);
+			});
+		}
+
+
+		function btnClick() {
+			console.log(`${form1.value},${form2.value},${form3.value},地址：${text.value}`);
+		}
+
+
+		// function selectChange(name, key) {
+		// 	console.log(name,key);
+			
+		// 	name==='form2'?form2.innerHTML = '<option>请选择城市</option>': form3.innerHTML = '<option>请选择地区</option>';
+		// 	// name.innerHTML = '<option>请选择城市</option>';
+		// 	let value = event.target.value;
+			
+		// 	// console.log(data.cities);
+		// 	// console.log(value);
+		// 	// console.log(data.cities[value]);
+		// 	data[key][value].forEach(item => {
+		// 		let option = document.createElement('option');
+		// 		option.innerHTML = item.title;
+		// 		option.value = item.name;
+		// 		// console.log(option);
+		// 		// name.appendChild(option);
+		// 		name==='form2'?form2.appendChild(option): form3.appendChild(option);
+		// 	});
+		// }
+
+
+		// 1. 打印法
+		// x.a.b()  -> a.b is not a function
+		/// x.a.b  ->  b of undefined
+		// 当你b of undefined / a.b is not a function
+		// 往前一个 打印 -》 打印x.a
+		// 再往前一个 打印 -》 打印x
+
+		
+	</script>
+
+</body>
+
+
+</html>

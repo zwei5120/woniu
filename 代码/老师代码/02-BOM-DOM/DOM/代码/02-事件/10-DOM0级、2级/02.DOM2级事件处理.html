@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        这是div里的内容
+        <p>这是p标签里的内容
+            <span>这是span标签的内容</span>
+        </p>
+    </div>
+
+
+    <script>
+
+        let p = document.querySelector('p');
+        let span = document.querySelector('span');
+        let div = document.querySelector('div');
+
+        // DOM2级可以注册多次
+        // 第三个参数为false 就是冒泡阶段处理  为true 就是在捕获阶段处理
+        // 捕获和冒泡相反
+        span.addEventListener('click', function() {
+            console.log('span标签被点击了');
+        }, false);
+
+        p.addEventListener('click', function() {
+            console.log('p标签被点击了');
+        }, false);
+       
+        div.addEventListener('click', function() {
+            console.log('div1标签被点击了');
+        }, false);
+        div.addEventListener('click', function() {
+            console.log('div2标签被点击了');
+        }, false);
+        div.addEventListener('click', function() {
+            console.log('div3标签被点击了');
+        }, false);
+
+
+        span.addEventListener('click', function() {
+            console.log('span标签被点击了');
+        }, true);
+
+        p.addEventListener('click', function() {
+            console.log('p标签被点击了');
+        }, true);
+       
+        div.addEventListener('click', function() {
+            console.log('div标签被点击了');
+        }, true);
+
+
+    </script>
+
+</body>
+
+</html>

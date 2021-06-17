@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+
+    </div>
+
+
+
+    <script>
+        let arr = [
+            { id: 1, name: '电风扇1', num: 1, price: 85 },
+            { id: 2, name: '电风扇2', num: 1, price: 1100 },
+            { id: 3, name: '电风扇3', num: 11, price: 1001 },
+            { id: 4, name: '电风扇4', num: 1, price: 1002 },
+            { id: 5, name: '电风扇5', num: 1, price: 1020 }
+        ];
+        let box = document.getElementById('box');
+        function render(arr) {
+            arr.forEach(item => {
+                let div = document.createElement('div');
+                div.innerHTML = `
+                编号：${item.id} 名字：${item.name} 数量：${item.num}  价格：${item.price} 
+                <button onclick='btnClick(${item.id})'>删除</button>
+            `;
+                box.appendChild(div);
+            });
+        }
+        render(arr);
+        function btnClick(id) {
+            box.innerHTML = '';
+            console.log('btnClick', id);
+            arr = arr.filter(item => item.id !== id);
+            render(arr);
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* input {
+            border: 5px solid red;
+        } */
+    </style>
+</head>
+<body>
+    <input type="text" id="ipt" oninput="myInput(this)" onchange="myChange()">
+    
+    <script>
+
+        /* 
+        1. 实现当输入框内容长度超过6且不超过12时，会有一个绿色的边框，否则就是一个红色的边框。
+        2. 输入完成时判断输入的内容，不足8位就弹框显示输入有误，够8位，再判断内容是否是`pyywyzgtl`再输出正确和错误 
+
+
+            选中某个标签的时候css中怎么写 js中就怎么写
+            你要实现什么功能 -》 你要改变什么 属性还是样式还是内容
+
+            你要监听的事件是哪一个事件
+        */
+
+        function myInput(ipt) {
+            let input = document.getElementById('ipt');
+            if(ipt.value.length > 6 && ipt.value.length < 12) {
+                input.style.border = '3px solid green';
+            } else {
+                input.style.border = '3px solid red';
+            }
+        }
+
+        function myChange(ipt) {
+            console.log(ipt); // myChange()调用的时候 没有传递参数  所以是undefined
+            let input = document.getElementById('ipt');
+            console.log(input.value);
+            if(input.value.length < 8) {
+                alert('输入有误')
+            } else {
+                if(input.value === 'pyywyzgtl') {
+                    alert('正确')
+                } else {
+                    alert('错误')
+                }
+            }
+        }
+
+
+        // function fn(a) {
+        //     console.log(a);
+        // }
+        // fn()
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02.hover</title>
+  <style></style>
+</head>
+<body>
+  <div id="box">
+   item
+  </div>
+    
+<script src="../js/jquery.js"></script>
+  <script>
+      // 2个参数的时候 第一个参数 函数，hover的时候触发  第二个参数 函数 离开的时候触发
+    // $('#box').hover(function() {
+    //     console.log('我进来了');
+    // }, function() {
+    //     console.log('我离开了 打我啊笨蛋');
+    // });
+
+    
+    // 1个参数的时候  hover的时候以及离开的时候 都触发它
+    $('#box').hover(function() {
+        console.log('我来了');
+    });
+  </script>
+</body>
+</html>

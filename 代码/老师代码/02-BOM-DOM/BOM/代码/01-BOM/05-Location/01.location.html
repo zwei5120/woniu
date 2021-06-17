@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // console.log(location.href); // 当前页面完整的url地址
+        // console.log(location.protocol); // 协议
+        // console.log(location.host); // 主机名和端口
+        // console.log(location.hostname); // 主机名
+        // console.log(location.port); // 端口
+        // console.log(location.pathname); // 路径名
+        // console.log(location.search); // 参数部分
+
+        // 补充： 参数： url中，？后面的就是参数 参数的规则：   标识1=值1 & 标识2 = 值2
+
+
+
+        let res = confirm('是否要跳转到注册页面？');
+        if(res) {
+            location.href = 'https://www.baidu.com/?tn=49055317_14_hao_pg'; // 替换当前url为指定的url地址
+        }
+
+
+    </script>
+
+</body>
+</html>

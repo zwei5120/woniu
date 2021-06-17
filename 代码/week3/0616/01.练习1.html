@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01.练习1</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: red;
+    }
+
+    .red {
+      background-color: red;
+    }
+
+    .blue {
+      background-color: blue;
+    }
+    img{
+      height: 200px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+  </div>
+  <button id="btn">切换</button>
+  <button id="changePic">图片</button>
+  <br>
+  <img src="" alt="">
+
+  <script src="./js/jquery.js"></script>
+  <script>
+    // 1. 点击按钮，用于切换div的背景颜色   红色--蓝色切换
+    $('#btn').click(() => { $('#box').toggleClass('blue'); })
+    /* let $btn = $('#btn');
+    console.log($btn);
+    let $box = $('#box')
+    console.log($box);
+    $btn.click(function(){
+      $box.toggleClass('blue');
+    }) */
+    // 2. 页面上有一个按钮、img标签。点击按钮，随机显示图片(本地的)
+    let picArr = [
+      '1.jpeg','2.jpeg','3.jpeg','4.jpeg','5.jpeg','11.jpeg'
+    ];
+    $('#changePic').click(() => {
+      let num = parseInt(Math.random() * 5) + 1;
+      // console.log(num);
+      $('img').prop('src', `./img/${picArr[num]}`);
+    })
+  </script>
+</body>
+
+</html>

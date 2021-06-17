@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" class="box" title="你瞅啥" data-foo='bar'>哈哈哈哈哈哈哈哈哈</div>  
+
+    <script>
+        let box = document.getElementById('box');
+        // console.log(box.getAttribute('title'));
+        console.log(box.getAttribute('className')); // 不存在 则返回null
+        console.log(box.getAttribute('class')); // 只接受属性的标准名称，不用改写保留字
+    </script>
+</body>
+</html>

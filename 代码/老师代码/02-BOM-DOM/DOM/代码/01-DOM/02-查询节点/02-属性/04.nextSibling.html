@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p class="item">item1</p>
+        <p class="item">item2</p>
+        <span id="span">span1</span>
+        <p class="item">item3</p>
+    </div>
+
+    <script>
+        // nextElementSibling 获取下一个兄弟元素节点
+        // nextSibling 获取下一个兄弟节点（Node）
+        
+
+        // 获取span
+        let span = document.getElementById('span');
+        // console.log(span.nextSibling); // 获取到的是 中间的空格节点
+        // console.log(span.nextSibling.nextSibling);
+        console.log(span.nextElementSibling); // 获取下一个兄弟元素节点
+    </script>
+</body>
+</html>

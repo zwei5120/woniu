@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box"></div>
+
+    <!-- 引入jquery需要在js的前面引入 -->
+    <script src="../js/jquery.js"></script>
+    <script>
+       let box = document.getElementById('box');
+       console.log(box); // 原生对象： 理解： 看着就是html标签 就是原生对象
+
+       let $box = $('#box');
+       console.log($box); // jq对象
+
+
+       // 转换
+       let $box1 = $(box); // 原生对象转jq对象： $(原生对象)
+        console.log($box1);
+
+        let box1 = $box[0];
+        console.log(box1); // jq对象转原生对象： .get(0) 或者 [0]
+
+
+       // 注意： 1. jq对象 习惯在变量名之前 加个$来区别原生对象
+        //       2. 相互转换 : 原生对象转jq对象： $(原生对象)  原生对象别加引号
+        //       3. 原生对象只能使用原生dom的属性和方法 ，jq对象只能使用jq的属性和方法
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .center {
+            text-align: center;
+        }
+
+        .natural tr:nth-child(odd) {
+            background-color: green;
+        }
+
+        .natural tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        .blue tr:nth-child(odd) {
+            background-color: skyblue;
+        }
+
+        .blue tr:nth-child(even) {
+            background-color: #ffffff;
+        }
+
+        /* tbody tr:nth-child(odd) {
+            background-color: skyblue;
+        } */
+    </style>
+</head>
+
+<body>
+    <button id="addBorder">添加边框</button>
+    <button onclick="textCenter()" id="textCenter">内容水平居中</button>
+    <button onclick="zebraColor()" id="zebraColor">斑马线1</button>
+    <button onclick="zebraColor2()" id="zebraColor2">海洋蓝-斑马线</button>
+    <button onclick="randomZebraColor();" id="randomZebraColor">随机斑马线效果</button>
+    <button onclick="addLast()" id="addLast">末尾添加商品</button>
+    <button onclick="addFirst()" id="addFirst">开头添加商品</button>
+    <button onclick="delLast()" id="delLast">删除末尾的商品</button>
+    <button onclick="delFirstGood();" id="delFirstGood">删除第一件商品</button>
+    <button onclick="delAll()" id="delAll">删除所有商品</button>
+    <br>
+    <input type="text" id="line-number">
+    <button onclick="delOne();" id="delOne">删除指定商品</button>
+    <table id="goods">
+        <thead>
+            <tr>
+
+                <th>商品名称</th>
+                <th>商品价格</th>
+                <th>商品描述</th>
+            </tr>
+        </thead>
+        <tbody class="">
+            <tr>
+                <td>卫龙辣条</td>
+                <td>9.9</td>
+                <td>好吃实惠</td>
+            </tr>
+            <tr>
+                <td>天线宝宝ins联名限量款</td>
+                <td>1999</td>
+                <td>送给孩子的最好礼物</td>
+            </tr>
+            <tr>
+                <td>八佰同款上衣</td>
+                <td>499</td>
+                <td>经典款式</td>
+            </tr>
+            <tr>
+                <td>air force 1 boost Jordan</td>
+                <td>799</td>
+                <td>超轻 又较重</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script src="./js/jquery.js"></script>
+    <script>
+        // 1. 先获取标签
+        // 2. 用这个标签再去操作
+
+        // 3. 我要改变哪个标签  改变这个标签的什么  可以实现功能
+
+        // 4. css中怎么去找这个标签  js中通过querySelector也就这么去找
+        let $table = $('table');
+        let $tbody = $('tbody');
+        // 添加边框
+        $('#addBorder').click(() => {
+            $table.prop('border') === '1px' ? $('table').prop('border', '0') : $('table').prop('border', '1px');
+        });
+        // 内容水平居中
+        $('#textCenter').click(() => {
+            $table.toggleClass('center');
+        });
+        // 斑马线1
+        $('#zebraColor').click(() => {
+            $('tbody tr').removeAttr('style');
+            $tbody.toggleClass('natural');
+        });
+        // 斑马线2
+        $('#zebraColor2').click(() => {
+            $('tbody tr').removeAttr('style');
+            $tbody.toggleClass('blue');
+        });
+        // 随机斑马线颜色
+        /* $('#randomZebraColor').on('click', this, function() {
+            // 生成3个随机数
+            let num1 = parseInt(Math.random() * 256);
+            let num2 = parseInt(Math.random() * 256);
+            let num3 = parseInt(Math.random() * 256);
+            $('tbody tr:nth-child(odd)').css('background-color', `rgb(${num1},${num2},${num3})`);
+
+        }); */
+        $('#randomZebraColor').click(() => {
+            // 生成3个随机数
+            let num1 = parseInt(Math.random() * 256);
+            let num2 = parseInt(Math.random() * 256);
+            let num3 = parseInt(Math.random() * 256);
+            $('tbody tr:nth-child(odd)').css('background-color', `rgb(${num1},${num2},${num3})`);
+
+        });
+
+
+        // 末尾添加商品
+        $('#addLast').click(() => {
+            $newTr = $(`
+            <tr>
+                <td>八佰同款上衣</td>
+                <td>499</td>
+                <td>经典款式</td>
+            </tr>
+            `);
+            $tbody.append($newTr)
+        });
+        // 开头添加商品
+        $('#addFirst').click(() => {
+            $newTr = $(`
+            <tr>
+                <td>八佰同款上衣</td>
+                <td>499</td>
+                <td>经典款式</td>
+            </tr>
+            `);
+            $tbody.prepend($newTr);
+        });
+
+        // 删除末尾商品
+        $('#delLast').click(() => {
+            $('tbody tr:last').remove();
+        });
+        // 删除首件商品
+        $('#delFirstGood').click(() => {
+            $('tbody tr:first').remove();
+        });
+        // 删除所有
+        $('#delAll').click(() => {
+            $('tbody').empty();
+        });
+        // 删除指定商品,需要获取一个数字输入
+        $('#delOne').click(() => {
+            let value = $('#line-number').val() - 1;
+            $(`tbody tr:eq(${value})`).remove();
+        });
+
+
+
+
+
+
+
+
+        // 添加边框
+        function addBorder() {
+
+
+        }
+        //内容水平居中
+        function textCenter() {
+
+        }
+
+        // 斑马线1
+        function zebraColor() {
+
+        }
+        // 斑马线2
+        function zebraColor2() {
+
+        }
+        //  随机斑马线
+        function randomZebraColor() {
+
+        }
+        //  删除第一件商品
+        function delFirstGood() {
+
+        }
+
+        //删除最后一个
+        function delLast() {
+
+        }
+        //删除所有
+        function delAll() {
+
+        }
+        //删除指定的商品(编号：1，2，3...  :  第一、二、三个)
+        function delOne() {
+
+
+        }
+        //末尾添加
+        function addLast() {
+
+        }
+        //开头添加商品
+        function addFirst() {
+
+        }
+    </script>
+</body>
+
+</html>

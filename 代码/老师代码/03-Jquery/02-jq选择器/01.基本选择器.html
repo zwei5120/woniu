@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01.基本选择器</title>
+  <style></style>
+</head>
+<body>
+  <div id="box">
+    <p class="item">item1</p>
+    <p class="item">item2</p>
+    <p class="item">item3</p>
+    <p class="item">item4</p>
+    <p class="item">item5</p>
+  </div>
+  <span class="item">span</span>
+    
+<script src="../js/jquery.js"></script>
+  <script>
+      // 1. 通过id去选中标签
+    // let $box =  $('#box');
+    // console.log($box);
+
+    // 2. 通过class去选中标签
+    // let $item = $('.item');
+    // console.log($item);
+
+    // 3.选中所有的某个标签
+    let $ps = $('.item');
+    $ps.css('color', 'red');
+    console.log($ps);
+  </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="ipt" onkeydown="myKeydown(this)" onkeyup="myKeyup(this)" oninput="ipt(this)">
+
+    <script>
+        function myKeydown(input) {
+            // console.log('当键盘按钮按下时候触发',input.value);
+            // console.log('myKeydown',input.value);
+            
+            // let ipt = document.getElementById('ipt');
+            // console.log(ipt.value);
+        }
+
+
+        function myKeyup(input) {
+            // console.log('myKeyup：当键盘按钮松开时触发', input.value);
+        }
+
+        function ipt(ipt) {
+            // console.log('oninput', ipt.value);
+
+            // let input = document.getElementById('ipt');
+            // console.log(input.value);
+        }
+    </script>
+</body>
+</html>

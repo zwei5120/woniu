@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .run {
+            color: black;
+            text-decoration: none;
+        }
+
+        .done {
+            color: red;
+            text-decoration: line-through;
+        }
+
+        a:visited {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" id="todo"><button id="add">addTODO</button>
+    <ul>
+        <li class="done">JavaScript</li>
+        <li class="done">HTML</li>
+        <li class="run">CSS</li>
+    </ul>
+
+    <div id="box">
+        <a>ALL</a>
+        <a href="#">Run</a>
+        <a href="#">Done</a>
+    </div>
+
+    <script src="./js/jquery.js"></script>
+    <script>
+        // 添加todo
+        $('#add').click(() => {
+            $('ul').append(`<li class="run">${$('#todo').val()}</li>`);
+        });
+        // 点击元素切换run或done状态
+        $('ul').on('click', 'li', function () {
+            $(this).prop('class') === 'run' ? $(this).prop('class', 'done') : $(this).prop('class', 'run');
+        });
+        // all run done 筛选显示切换
+        $('#box a:first').click(function () {
+            $('ul li').show();
+            $('#box a').prop('href', '#');
+            $(this).removeAttr('href');
+        })
+        $('#box a:odd').click(function () {
+            $('.done').hide();
+            $('.run').show();
+            $('#box a').prop('href', '#');
+            $(this).removeAttr('href');
+        })
+        $('#box a:last').click(function () {
+            $('.done').show();
+            $('.run').hide();
+            $('#box a').prop('href', '#');
+            $(this).removeAttr('href');
+        })
+
+    </script>
+</body>
+
+</html>

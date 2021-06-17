@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            height: 200px;
+            background-color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <!-- 尽量不要使用事件名来命名为函数名 -->
+    <div id="box" onmouseover="myMouseover()" onmouseout="myMouseOut()">顶顶顶顶</div>
+
+    <script>
+        function myMouseover() {
+            console.log('鼠标移入时触发');
+        }
+
+        function myMouseOut() {
+            console.log('鼠标移出时触发');
+        }
+    </script>
+</body>
+</html>

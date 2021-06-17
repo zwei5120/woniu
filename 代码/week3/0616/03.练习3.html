@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03.练习3</title>
+    <style></style>
+</head>
+
+<body>
+    <div id="box">
+        <p>p标签</p>
+    </div>
+    <button>添加</button>
+
+    <script src="./js/jquery.js"></script>
+    <script>
+        /*
+            练习1： 点击按钮，每点击一次，往div中添加一个新增的空的元素
+                2： 点击按钮，每点击一次，往div中添加一个有内容的元素
+         */
+        $('button').click(()=>{
+            $('#box').append($('<span>一个新的span元素</span>'));
+        });
+    </script>
+</body>
+
+</html>

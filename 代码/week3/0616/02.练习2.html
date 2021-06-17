@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>02.练习2</title>
+  <style></style>
+</head>
+<body>
+  <img src="" alt="" id="img">
+  <button id="btn">按钮</button>
+    
+<script src="../js/jquery.js"></script>
+  <script>
+     // 2. 页面上有一个按钮、img标签。点击按钮，随机显示图片(本地的)
+     $('#btn').click(function() {
+        let arr = ['1.jpeg', '2.jpeg', '3.jpeg','4.jpeg','5.jpeg','11.jpeg'];
+        // 生成一个随机的合法下标
+       let index = parseInt(Math.random() * arr.length);
+       // 通过这个合法下标 去数组中取值
+       let name = arr[index];
+
+       // 修改img的src属性  
+       $('#img').prop('src', `./img/${name}`);
+     });
+
+  </script>
+</body>
+</html>

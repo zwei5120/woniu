@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script src="./js/jquery.js"></script>
+    <script>
+        /* // 获取原生对象
+        let box = document.getElementById('box');
+        console.log(box);
+        // 获取jq对象
+        let $box = $('#box');
+        console.log($box);
+        // 原生对象转jq对象
+        let $box1 = $(box);
+        console.log($box1);
+        // jq对象转原生对象
+        let box1 = $box[0];
+        console.log(box1); */
+
+        let $box = $('#box');
+        console.log($box);
+        /* $box.css('width', '200px');
+        $box.css('height', '200px');
+        $box.css('background', 'yellowgreen'); */
+        $box.css({
+            'width': '200px',
+            'height': '200px',
+            'background': 'yellowgreen'
+        })
+        $box.click(function() {
+            console.log('123');
+        })
+    </script>
+</body>
+
+</html>

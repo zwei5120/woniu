@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    用户名：<input type="text" onchange="accChange()">
+    密码：  <input type="text">
+    <button>登录</button>
+
+    <script>
+        // 当表单标签中的值发生了改变 并且失去焦点的时候 触发 二者需要同时满足
+        function accChange() {
+            console.log('accChange');
+        }
+    </script>
+</body>
+</html>

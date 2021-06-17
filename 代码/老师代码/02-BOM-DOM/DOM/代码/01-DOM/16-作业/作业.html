@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>购物车</title>
+  <style>
+    input {
+      width: 30px;
+    }
+
+    .findInput {
+      width: 150px;
+    }
+
+    td {
+      text-align: center;
+      width: 200px;
+    }
+
+    table {
+      width: 1000px;
+    }
+
+    .todel {
+      width: 30px;
+    }
+
+
+    /* tbody tr td:nth-child(5) {
+      background-color: greenyellow;
+    } */
+  </style>
+</head>
+
+<body>
+
+  <div>
+    名字：<input type="text" class="findInput" id="addName">
+    单价：<input type="text" class="findInput" id="addNumber">
+    <button onclick="addGood()">添加</button>
+  </div>
+  <div style="margin: 20px 0;">
+    <input type="text" id="findInput" class="findInput">
+    <button onclick="findGood()">查找</button>
+  </div>
+  <div style="margin: 20px 0;">
+    <button onclick="goodSort()">点击根据总价排序</button>
+  </div>
+
+  <div style="margin: 20px 0;">
+    <input type="checkbox" onchange="switchCheckbox(this)">
+    <button onclick="delChoose()">删除所选</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button onclick="delAll()">删除所有商品</button>
+  </div>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th>选择</th>
+        <th>名称</th>
+        <th>单价</th>
+        <th>操作</th>
+        <th>总价</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr>
+        <td><input type="checkbox" class="todel"></td>
+        <td>香飘飘奶茶1</td>
+        <td>3.5</td>
+        <td>
+          <button onclick="sub(this)">-</button>
+          <input type="text" value="1" />
+          <button onclick="add(this)">+</button>
+          <button onclick="delGood(this)">删除</button>
+        </td>
+        <td>3.5</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="todel"></td>
+        <td>香飘飘奶茶2</td>
+        <td>6</td>
+        <td>
+          <button onclick="sub(this)">-</button>
+          <input type="text" value="1" />
+          <button onclick="add(this)">+</button>
+          <button onclick="delGood(this)">删除</button>
+        </td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td><input type="checkbox" class="todel"></td>
+        <td>香飘飘奶茶3</td>
+        <td>4</td>
+        <td>
+          <button onclick="sub(this)">-</button>
+          <input type="text" value="1" />
+          <button onclick="add(this)">+</button>
+          <button onclick="delGood(this)">删除</button>
+        </td>
+        <td>4</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>总价：<span id="totalPrice">0</span></p>
+  <script>
+    /*
+      1. 删除所有商品
+      2. 通过删除按钮来删除当前商品
+      3. 添加商品
+      
+      4. 完成商品数量的加减
+      5. 单件商品总价
+      6. 商品总价格
+
+      
+      7. 排序
+      8. 切换多选框状态
+      9. 删除所选
+      10. 模糊查询
+    */
+
+    // 我们要操作什么？？
+    // 我们要操作哪些标签？？？
+
+    // 删除商品
+    function delGood(item) {
+      // console.log(item);
+      // console.log(item.parentNode.parentNode);
+      let tbody = document.querySelector('tbody');
+      tbody.removeChild(item.parentNode.parentNode);
+
+      totalPrice();
+    }
+
+    // 添加
+    function addGood() {
+      // tbody  往tbody中去添加一个tr
+      let tbody = document.querySelector('tbody');
+
+      // 创建tr
+      let tr = document.createElement('tr');
+
+      // 给这个tr添加内容
+      // 获取输入框的值：  名字和单价
+      let addNameInput = document.getElementById('addName');
+      let name = addNameInput.value;
+      let addNumberInput = document.getElementById('addNumber');
+      let price = addNumberInput.value;
+
+      tr.innerHTML = `
+          <td><input type="checkbox" class="todel"></td>
+          <td>${name}</td>
+          <td>${price}</td>
+          <td>
+            <button onclick="sub(this)">-</button>
+            <input type="text" value="1" />
+            <button onclick="add(this)">+</button>
+            <button onclick="delGood(this)">删除</button>
+          </td>
+          <td>${price}</td>
+      `
+
+
+      tbody.appendChild(tr);
+
+      totalPrice();
+
+    }
+
+    // 删除所有商品
+    function delAll() {
+      let tbody = document.querySelector('tbody');
+      tbody.innerHTML = '';
+
+
+      totalPrice();
+    }
+
+    // 数量加
+    function add(item) {
+      // console.log(item.previousElementSibling.value);
+      // item.previousElementSibling
+      item.previousElementSibling.value++;
+
+      // 总价 = 单价 * 数量
+      // 单价
+      // 先找到单价的节点对象
+      let priceNode = item.parentNode.previousElementSibling;
+      // 再获取这个节点对象的值
+      let price = priceNode.innerHTML
+      console.log(price); // 单价
+
+      let num = item.previousElementSibling.value;
+      console.log(num); // 数量
+
+      let total = price * num; // 计算出这个商品的总价
+      console.log(total);
+
+      // 把计算之后的总价  赋值给总价的节点
+      let totalNode = item.parentNode.nextElementSibling;
+      totalNode.innerHTML = total;
+      // console.log(totalNode);
+
+
+      totalPrice();
+    }
+
+    // 数量减
+    function sub(item) {
+      // console.log(item.nextElementSibling);
+      if (item.nextElementSibling.value > 1) {
+        item.nextElementSibling.value--;
+
+        // 总价 = 单价 * 数量
+        // 单价
+        // 先找到单价的节点对象
+        let priceNode = item.parentNode.previousElementSibling;
+        // 再获取这个节点对象的值
+        let price = priceNode.innerHTML
+        console.log(price); // 单价
+
+        let num = item.nextElementSibling.value;
+        console.log(num); // 数量
+
+        let total = price * num; // 计算出这个商品的总价
+        console.log(total);
+
+        // 把计算之后的总价  赋值给总价的节点
+        let totalNode = item.parentNode.nextElementSibling;
+        totalNode.innerHTML = total;
+
+
+
+
+        totalPrice();
+      }
+    }
+
+
+    // 商品总价格
+    function totalPrice() {
+      let tds = document.querySelectorAll('tbody tr td:nth-child(5)');
+      // console.log(tds);
+      let sum = 0;
+      tds.forEach(item => {
+        // console.log(item.innerHTML);
+        sum += (item.innerHTML - 0);
+      });
+      // console.log(sum);
+      let totalPrice = document.getElementById('totalPrice');
+      totalPrice.innerHTML = sum;
+    }
+
+    // 排序
+    function goodSort() {
+
+    }
+
+    // 切换多选框状态
+    function switchCheckbox(delCheckbox) {
+      // let inputs = document.querySelectorAll('tbody tr td:first-child .todel');
+      // console.log(inputs);
+      // inputs.forEach(item => item.checked = true);
+
+    }
+
+    // 删除所选
+    function delChoose() {
+      
+    }
+
+
+    // 模糊搜索商品的名字
+    function findGood() {
+
+    }
+
+    totalPrice();
+
+  </script>

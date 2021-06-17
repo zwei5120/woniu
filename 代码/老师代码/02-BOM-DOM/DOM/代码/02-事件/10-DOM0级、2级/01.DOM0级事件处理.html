@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+        这是div里的内容
+        <p>这是p标签里的内容
+            <span>这是span标签的内容</span>
+        </p>
+    </div>
+
+    <script>
+        // 2. 节点注册
+        // let btn = document.getElementById('btn');
+        // btn.onclick = function () {}
+
+
+        // 1. 标签中注册（推荐使用）
+        // function pClick() {
+        //     console.log('pclick');
+        // }
+
+
+        let p = document.querySelector('p');
+        let span = document.querySelector('span');
+        let div = document.querySelector('div');
+        p.onclick = function () {
+            console.log('p标签被点击了1');
+        }
+        p.onclick = function () {
+            console.log('p标签被点击了2');
+        }
+        p.onclick = function () {
+            console.log('p标签被点击了3');
+        }
+        p.onclick = function () {
+            console.log('p标签被点击了4');
+        }
+
+        span.onclick = function () {
+            console.log('span标签被点击了');
+        }
+        div.onclick = function () {
+            console.log('div标签被点击了');
+        }
+        //body
+        document.body.onclick = function () {
+            console.log('body被点击了');
+        }
+        //html
+        document.documentElement.onclick = function () {
+            console.log('html被点击了');
+        }
+        //document
+        document.onclick = function () {
+            console.log('document被点击了');
+        }
+        //window 
+        window.onclick = function () {
+            console.log('window被点击了');
+        }
+
+
+
+
+
+
+
+
+
+        // 注意： 1. 只支持冒泡
+        //        2. 同一类型 只能注册一次
+    </script>
+</body>
+
+</html>

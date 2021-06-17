@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">嘿嘿嘿</div>
+    <div id="box">嘿1嘿1嘿1</div>
+
+    <script>
+        // getElementById 是通过id找到元素节点
+        let box = document.getElementById('box');
+        let box1 = document.getElementById('box1'); // 不存在的id  返回null
+        console.log(box); // 如果有多个id存在 选中第一个
+        console.log(box1);
+        
+        // 获取的是一个元素节点  不是一个集合
+    </script>
+</body>
+</html>

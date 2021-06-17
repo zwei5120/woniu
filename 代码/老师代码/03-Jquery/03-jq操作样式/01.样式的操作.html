@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>01.样式的操作</title>
+  <style>
+      #box {
+          color: red;
+          width: 100px;
+      }
+  </style>
+</head>
+<body>
+  <div id="box">
+    <p>item1</p>
+    <p>item2</p>
+    <p>item3</p>
+    <p>item4</p>
+    <p>item5</p>
+    <p>item6</p>
+  </div>
+    
+<script src="../js/jquery.js"></script>
+  <script>
+    // 1. 获取样式 :  jq对象.css('样式名')
+    // console.log($('#box').css('width'));
+
+
+    // 2. 设置样式
+    // 2.1 设置单个样式
+    // $('#box').css('height', '200px');
+    // 2.2 设置多个样式
+    // jq对象.css({ 样式名1： 值1, 样式名2： 值, xxxxxx})
+    $('#box p').css({
+        "color": "pink",
+        "height": "40px"
+    });
+  </script>
+</body>
+</html>

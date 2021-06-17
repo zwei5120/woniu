@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box">
+        <p class="item">item1</p>
+        <p class="item">item2</p>
+        <span id="span">span1</span>
+        <p class="item">item3</p>
+    </div>
+
+    <script>
+        let box = document.getElementById('box');
+        console.log(box.firstChild); // 获取的是node节点
+        console.log(box.firstElementChild); // 获取的是元素节点
+        // console.log(box.lastChild);
+        // console.log(box.lastElementChild);
+    </script>
+</body>
+</html>
