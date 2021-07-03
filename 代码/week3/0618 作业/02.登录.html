@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    用户名:
+    <input type="text" id="acc">
+    密码:
+    <input type="text" id="pwd">
+    <button id="login">登录</button>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        // 定义一个数组来存储注册的用户信息
+        let arr = [];
+        // 每次刷新页面时arr被清空，新增加的用户将覆盖原先注册的用户信息
+        // 需要在每次注册前获取本地信息出来，一起处理
+        let res = JSON.parse(localStorage.getItem('user'));
+        arr = res;
+        $('#login').click(() => {
+            let username = $('#acc').val();
+            let pwd = $('#pwd').val();
+            if (arr.some(item => (item.username === username && item.pwd === pwd))) {
+                // alert('登录成功');
+                location.href = './03.首页.html';
+            } else {
+                alert('用户名或密码错误');
+            }
+        });
+    </script>
+</body>
+
+</html>

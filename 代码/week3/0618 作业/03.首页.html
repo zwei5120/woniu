@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品页面</title>
+    <style></style>
+</head>
+
+<body>
+    <!-- 放置一个加载更多的按钮 -->
+    <button id="getMore">加载更多</button>
+    <div id="box">
+        <p></p>
+    </div>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        /*
+            1. 在商品列表页面 通过ajax请求全部的商品数据
+            2. 初始化只渲染前面3条数据
+            3. 点击加载更多，就再显示后面3条数据
+            4. 点击商品列表中的详情按钮，就跳转到详情页面
+            5. 详情页面加载我点击的商品的信息（通过ajax去请求所有的商品数据来筛选再显示）
+        */
+        //    定义一个数组来存储请求回来的数据
+        let goodArr = [];
+        // 定义一个过渡数组，以它来驱动渲染函数
+        let arr1 = [];
+        let num = 3;
+        //    首先通过Ajax请求数据
+        $.ajax({
+            url: "../json/a.json",
+            type: 'get',
+            success: function (res) {
+                // 成功拿取到数组内的数据
+                // console.log(res.data);
+                goodArr = [...res.data];
+                // 页面初始化时只加载前三条数据，从res.data中截取出前3个
+                arr1 = goodArr.slice(0, 3);
+                render(arr1);
+            }
+        });
+        // 定义一个数据驱动的渲染函数
+        function render(arr) {
+            $('#box').html('');
+            $('#box').html(arr.map(item => ` <p> 编号：${item.id} 名称：${item.name} 数量：${item.num} 价格：${item.price} <button data-id='${item.id}' id='moreInfo'>详情</button></p> `).join(''));
+        }
+        // 加载更多
+        $('#getMore').click(() => {
+            arr1 = arr1.concat(goodArr.slice(num, num + 3));
+            render(arr1);
+            num += 3;
+        });
+        // 跳转到详情页面
+        $('#moreInfo').click(() => {
+            console.log('123');
+            let id = $(this).attr('data-id');
+            location.href = `./01.作业_ajax商品页面及跳转详情页面.html?id=${id}`;
+        });
+        // box中的内容是动态添加的，需要在父标签上绑定on函数来监听其click事件
+        $('#box').on('click', 'button', function () {
+            console.log('123');
+            let id = $(this).attr('data-id');
+            /* $(this).attr('data-id', 5);
+            let id = $(this).attr('data-id'); */
+            location.href = `./04.详情页面.html?id=${id}`;
+        });
+    </script>
+</body>
+
+</html>

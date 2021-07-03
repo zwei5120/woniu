@@ -80,13 +80,11 @@
     </table>
 
 
-    <script src="./js/jquery.js"></script>
+    <script src="../js/jquery.js"></script>
     <script>
         // 1. 先获取标签
         // 2. 用这个标签再去操作
-
         // 3. 我要改变哪个标签  改变这个标签的什么  可以实现功能
-
         // 4. css中怎么去找这个标签  js中通过querySelector也就这么去找
         let $table = $('table');
         let $tbody = $('tbody');
@@ -109,24 +107,28 @@
             $tbody.toggleClass('blue');
         });
         // 随机斑马线颜色
-        /* $('#randomZebraColor').on('click', this, function() {
-            // 生成3个随机数
-            let num1 = parseInt(Math.random() * 256);
-            let num2 = parseInt(Math.random() * 256);
-            let num3 = parseInt(Math.random() * 256);
-            $('tbody tr:nth-child(odd)').css('background-color', `rgb(${num1},${num2},${num3})`);
-
-        }); */
         $('#randomZebraColor').click(() => {
             // 生成3个随机数
             let num1 = parseInt(Math.random() * 256);
             let num2 = parseInt(Math.random() * 256);
             let num3 = parseInt(Math.random() * 256);
-            $('tbody tr:nth-child(odd)').css('background-color', `rgb(${num1},${num2},${num3})`);
-
+            // $('tbody tr:nth-child(odd)').css('background-color', `rgb(${num1},${num2},${num3})`);
+            // 定义一个字符串，包含随即斑马线样式，添加到style内部，再给tbody添加指定class名
+            let randomStr = `
+                .randomZebraColor tr:nth-child(odd) {
+                background-color: rgb(${num1},${num2},${num3});
+            }
+            `;
+            let newStr = $('style').html() + randomStr;
+            if (!$tbody.hasClass('randomZebraColor')) {
+                $('style').html(newStr);
+                $tbody.addClass('randomZebraColor');
+            } else {
+                let newStr = $('style').html().replace(randomStr, '');
+                $('style').html(newStr);
+                $tbody.removeClass('randomZebraColor');
+            }
         });
-
-
         // 末尾添加商品
         $('#addLast').click(() => {
             $newTr = $(`

@@ -1,0 +1,61 @@
+[{
+  "regionImg": "https://g.alicdn.com/alipay-movie-client/movie-cdn/svgfiles/taobao-movie1.svg",
+  "regionName": "新幕寰亚洲立影城（红唐LUXE店）",
+  "regionAddress": "高新区天府大道中段1388号红唐购物广场5楼",
+  "regionPhone": "电话：028-83373277",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=62989&n_s=new#seat"
+}, {
+  "regionImg": "https://gw.alicdn.com/tfscom/i4/TB1eMyjjbwrBKNjSZPcXXXpapXa_.jpg",
+  "regionName": "成都百丽宫影城（凯德天府店）",
+  "regionAddress": "高新区天仁路388号凯德天府购物中心五层",
+  "regionPhone": "电话：028-61032995",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=31277&n_s=new#seat"
+}, {
+  "regionImg": "https://g.alicdn.com/alipay-movie-client/movie-cdn/svgfiles/taobao-movie1.svg",
+  "regionName": "幸福蓝海国际影城（成都仁和新城IMAX店）",
+  "regionAddress": "高新区府城大道505号仁和新城5层528号幸福蓝海国际影城三号门一号电梯",
+  "regionPhone": "电话：028-61039088",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=56878&n_s=new#seat"
+}, {
+  "regionImg": "https://g.alicdn.com/alipay-movie-client/movie-cdn/svgfiles/taobao-movie1.svg",
+  "regionName": "橙天国际影城（成都Upark公园店）",
+  "regionAddress": "高新区盛治街838号C栋3楼",
+  "regionPhone": "电话：028-61381314",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=55601&n_s=new#seat"
+}, {
+  "regionImg": "https://gw.alicdn.com/tfscom/i4/TB1vAIVi9YTBKNjSZKbXXXJ8pXa_.jpg",
+  "regionName": "保利国际影城-成都奥克斯店",
+  "regionAddress": "高新区锦城大道西段666号奥克斯广场4楼",
+  "regionPhone": "电话：028-85980808",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=9786&n_s=new#seat"
+}, {
+  "regionImg": "https://gw.alicdn.com/tfscom/i2/TB1IbZxjiMnBKNjSZFzXXc_qVXa_.jpg",
+  "regionName": "保利国际影城-成都复城店",
+  "regionAddress": "高新区益州大道722号复城国际广场4楼",
+  "regionPhone": "电话：028-61551688",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=22606&n_s=new#seat"
+}, {
+  "regionImg": "https://gw.alicdn.com/tfscom/i4/TB1AIT0jcj_B1NjSZFHXXaDWpXa_.jpg",
+  "regionName": "UME影城（成都高新店）",
+  "regionAddress": "高新区天府大道北段1199号银泰中心in99L6层613号、L7层728号",
+  "regionPhone": "电话：028-61677335",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=41581&n_s=new#seat"
+}, {
+  "regionImg": "https://gw.alicdn.com/tfscom/i2/TB1i6Zni26TBKNjSZJiXXbKVFXa_.jpg",
+  "regionName": "CGV影城(高新IMAX ScreenX店)",
+  "regionAddress": "高新区剑南大道中段世豪广场5楼",
+  "regionPhone": "电话：028-83401010",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=19824&n_s=new#seat"
+}, {
+  "regionImg": "https://g.alicdn.com/alipay-movie-client/movie-cdn/svgfiles/taobao-movie1.svg",
+  "regionName": "EVO艺威影院（龙湖时代天街店）",
+  "regionAddress": "高新区合作路89号25幢3层01号",
+  "regionPhone": "电话：028-86511650",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=62833&n_s=new#seat"
+}, {
+  "regionImg": "https://tbvideo-taobao-film.oss-cn-hangzhou.aliyuncs.com//110445/1554037234749b6ce966a350b3a1eb967a009580b8fb.jpg",
+  "regionName": "橙天嘉禾影城（凯德广场店）",
+  "regionAddress": "高新区盛和一路99号凯德广场4楼（近宜家家居、原凯丹广场）",
+  "regionPhone": "电话：028-65035901",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=8070&n_s=new#seat"
+}]

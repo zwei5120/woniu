@@ -1,0 +1,61 @@
+[{
+  "regionImg": "https://g.alicdn.com/alipay-movie-client/movie-cdn/svgfiles/taobao-movie1.svg",
+  "regionName": "深影橙天国际影城",
+  "regionAddress": "青羊区日月大道一段万和中心三栋负一层",
+  "regionPhone": "电话：028-68481318",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=63304&n_s=new#seat"
+}, {
+  "regionImg": "https://g.alicdn.com/alipay-movie-client/movie-cdn/svgfiles/taobao-movie1.svg",
+  "regionName": "太平洋影城（新城市店）",
+  "regionAddress": "青羊区西大街1号新城市广场A栋2楼",
+  "regionPhone": "电话：028-86252355",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=6024&n_s=new#seat"
+}, {
+  "regionImg": "https://gw.alicdn.com/tfscom/i2/TB1vKf3jkomBKNjSZFqXXXtqVXa_.jpg",
+  "regionName": "峨影1958电影城",
+  "regionAddress": "青羊区清江东路360号(麦德龙斜对面)",
+  "regionPhone": "电话：028-62322261",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=5532&n_s=new#seat"
+}, {
+  "regionImg": "https://gw.alicdn.com/tfscom/i2/TB1hc7kjljTBKNjSZFwXXcG4XXa_.jpg",
+  "regionName": "万达影城（青羊万达广场店）",
+  "regionAddress": "青羊区日月大道一段978号万达广场四楼",
+  "regionPhone": "电话：400-0806060,2",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=37537&n_s=new#seat"
+}, {
+  "regionImg": "https://gw.alicdn.com/tfscom/i2/TB1c8_ejbsrBKNjSZFpXXcXhFXa_.jpg",
+  "regionName": "成都金逸IMAX影城（鹏瑞利店）",
+  "regionAddress": "青羊区光华北三路55号鹏瑞利青羊广场L3-4",
+  "regionPhone": "电话：028-86125582",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=18855&n_s=new#seat"
+}, {
+  "regionImg": "https://gw.alicdn.com/tfscom/i3/TB1J.mVjb3nBKNjSZFMXXaUSFXa_.jpg",
+  "regionName": "成都华夏星光激光影城（东原时光道店）",
+  "regionAddress": "青羊区光华南三路199号东原时光道负一楼（迪卡侬旁）",
+  "regionPhone": "电话：028-65231908",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=42407&n_s=new#seat"
+}, {
+  "regionImg": "https://gw.alicdn.com/tfscom/i4/TB1VUFUjf6TBKNjSZJiXXbKVFXa_.jpg",
+  "regionName": "成都百丽宫影城（恒大广场店）",
+  "regionAddress": "青羊区提督街99号恒大广场4层（原华置广场）",
+  "regionPhone": "电话：028-86982326",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=26547&n_s=new#seat"
+}, {
+  "regionImg": "https://gw.alicdn.com/tfscom/i4/TB1rd1kjdknBKNjSZKPXXX6OFXa_.jpg",
+  "regionName": "成都市和平电影院",
+  "regionAddress": "青羊区草市街71号",
+  "regionPhone": "电话：028-86027969",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=5853&n_s=new#seat"
+}, {
+  "regionImg": "https://gw.alicdn.com/tfscom/i4/TB1hcq_egZC2uNjSZFnXXaxZpXa_.jpg",
+  "regionName": "太平洋影城（西村店）",
+  "regionAddress": "青羊区贝森北路1号西村大院负一层",
+  "regionPhone": "电话：028-86586156",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=36587&n_s=new#seat"
+}, {
+  "regionImg": "https://g.alicdn.com/alipay-movie-client/movie-cdn/svgfiles/taobao-movie1.svg",
+  "regionName": "太平洋影城（金沙店）",
+  "regionAddress": "青羊区清江西路51号中大君悦广场4层",
+  "regionPhone": "电话：028-87316228",
+  "regionDetailHref": "https://dianying.taobao.com/cinemaDetail.htm?cinemaId=5359&n_s=new#seat"
+}]

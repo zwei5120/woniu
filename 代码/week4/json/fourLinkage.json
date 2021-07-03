@@ -1,0 +1,372 @@
+{
+    "movieData": {
+        "yingyuan": [
+            {
+                "name": "taipingyang",
+                "title": "太平洋影院"
+            },
+            {
+                "name": "wanda",
+                "title": "万达影院"
+            },
+            {
+                "name": "xingxing",
+                "title": "星星影院"
+            },
+            {
+                "name": "yueliang",
+                "title": "月亮影院"
+            }
+        ],
+        "dianying": {
+            "taipingyang": [
+                {
+                    "name": "gongfu",
+                    "title": "功夫"
+                },
+                {
+                    "name": "aomenfengyun",
+                    "title": "澳门风云"
+                }
+            ],
+            "wanda": [
+                {
+                    "name": "suduyujiqing",
+                    "title": "速度与激情"
+                },
+                {
+                    "name": "xiaoshenkejiushu",
+                    "title": "肖申克救赎"
+                }
+            ],
+            "xingxing": [
+                {
+                    "name": "suduyujiqing1",
+                    "title": "速度与激情6"
+                },
+                {
+                    "name": "xiaoshenkejiushu1",
+                    "title": "肖申克救赎"
+                }
+            ],
+            "yueliang": [
+                {
+                    "name": "suduyujiqing2",
+                    "title": "速度与激情"
+                },
+                {
+                    "name": "xiaoshenkejiushu2",
+                    "title": "肖申克救赎"
+                }
+            ]
+        },
+        "shijian": {
+            "gongfu": [
+                {
+                    "name": "time1",
+                    "title": "2021-01-05"
+                },
+                {
+                    "name": "time2",
+                    "title": "2021-01-06"
+                }
+            ],
+            "aomenfengyun": [
+                {
+                    "name": "time3",
+                    "title": "2021-01-05"
+                },
+                {
+                    "name": "time4",
+                    "title": "2021-01-06"
+                }
+            ],
+            "suduyujiqing": [
+                {
+                    "name": "time5",
+                    "title": "2021-01-04"
+                },
+                {
+                    "name": "time6",
+                    "title": "2021-01-05"
+                }
+            ],
+            "xiaoshenkejiushu": [
+                {
+                    "name": "time7",
+                    "title": "2021-01-03"
+                },
+                {
+                    "name": "time8",
+                    "title": "2021-01-04"
+                }
+            ],
+            "suduyujiqing1": [
+                {
+                    "name": "time9",
+                    "title": "2021-01-04"
+                },
+                {
+                    "name": "time10",
+                    "title": "2021-01-05"
+                }
+            ],
+            "xiaoshenkejiushu1": [
+                {
+                    "name": "time11",
+                    "title": "2021-01-03"
+                },
+                {
+                    "name": "time12",
+                    "title": "2021-01-04"
+                }
+            ],
+            "suduyujiqing2": [
+                {
+                    "name": "time13",
+                    "title": "2021-01-04"
+                },
+                {
+                    "name": "time14",
+                    "title": "2021-01-05"
+                }
+            ],
+            "xiaoshenkejiushu2": [
+                {
+                    "name": "time15",
+                    "title": "2021-01-03"
+                },
+                {
+                    "name": "time16",
+                    "title": "2021-01-04"
+                }
+            ]
+        },
+        "changci": {
+            "time1": [
+                {
+                    "name": "hours1",
+                    "title": "10:20"
+                },
+                {
+                    "name": "hours2",
+                    "title": "11:20"
+                },
+                {
+                    "name": "hours3",
+                    "title": "12:20"
+                }
+            ],
+            "time2": [
+                {
+                    "name": "hours2_1",
+                    "title": "13:20"
+                },
+                {
+                    "name": "hours2_2",
+                    "title": "14:20"
+                },
+                {
+                    "name": "hours2_3",
+                    "title": "15:20"
+                }
+            ],
+            "time3": [
+                {
+                    "name": "hours3_1",
+                    "title": "16:20"
+                },
+                {
+                    "name": "hours3_2",
+                    "title": "17:20"
+                },
+                {
+                    "name": "hours3_3",
+                    "title": "18:20"
+                }
+            ],
+            "time4": [
+                {
+                    "name": "hours4_1",
+                    "title": "19:20"
+                },
+                {
+                    "name": "hours4_2",
+                    "title": "20:20"
+                },
+                {
+                    "name": "hours4_3",
+                    "title": "21:20"
+                }
+            ],
+            "time5": [
+                {
+                    "name": "hours5_1",
+                    "title": "10:20"
+                },
+                {
+                    "name": "hours5_2",
+                    "title": "15:20"
+                },
+                {
+                    "name": "hours5_3",
+                    "title": "18:20"
+                }
+            ],
+            "time6": [
+                {
+                    "name": "hours6_1",
+                    "title": "10:20"
+                },
+                {
+                    "name": "hours6_2",
+                    "title": "15:20"
+                },
+                {
+                    "name": "hours6_3",
+                    "title": "18:20"
+                }
+            ],
+            "time7": [
+                {
+                    "name": "hours7_1",
+                    "title": "10:20"
+                },
+                {
+                    "name": "hours7_2",
+                    "title": "15:20"
+                },
+                {
+                    "name": "hours7_3",
+                    "title": "18:20"
+                }
+            ],
+            "time8": [
+                {
+                    "name": "hours8_1",
+                    "title": "10:20"
+                },
+                {
+                    "name": "hours8_2",
+                    "title": "15:20"
+                },
+                {
+                    "name": "hours8_3",
+                    "title": "18:20"
+                }
+            ],
+            "time9": [
+                {
+                    "name": "hours8_1",
+                    "title": "10:20"
+                },
+                {
+                    "name": "hours8_2",
+                    "title": "15:20"
+                },
+                {
+                    "name": "hours8_3",
+                    "title": "18:20"
+                }
+            ],
+            "time10": [
+                {
+                    "name": "hours8_1",
+                    "title": "10:20"
+                },
+                {
+                    "name": "hours8_2",
+                    "title": "15:20"
+                },
+                {
+                    "name": "hours8_3",
+                    "title": "18:20"
+                }
+            ],
+            "time11": [
+                {
+                    "name": "hours8_1",
+                    "title": "10:20"
+                },
+                {
+                    "name": "hours8_2",
+                    "title": "15:20"
+                },
+                {
+                    "name": "hours8_3",
+                    "title": "18:20"
+                }
+            ],
+            "time12": [
+                {
+                    "name": "hours8_1",
+                    "title": "10:20"
+                },
+                {
+                    "name": "hours8_2",
+                    "title": "15:20"
+                },
+                {
+                    "name": "hours8_3",
+                    "title": "18:20"
+                }
+            ],
+            "time13": [
+                {
+                    "name": "hours8_1",
+                    "title": "10:20"
+                },
+                {
+                    "name": "hours8_2",
+                    "title": "15:20"
+                },
+                {
+                    "name": "hours8_3",
+                    "title": "18:20"
+                }
+            ],
+            "time14": [
+                {
+                    "name": "hours8_1",
+                    "title": "10:20"
+                },
+                {
+                    "name": "hours8_2",
+                    "title": "15:20"
+                },
+                {
+                    "name": "hours8_3",
+                    "title": "18:20"
+                }
+            ],
+            "time15": [
+                {
+                    "name": "hours8_1",
+                    "title": "10:20"
+                },
+                {
+                    "name": "hours8_2",
+                    "title": "15:20"
+                },
+                {
+                    "name": "hours8_3",
+                    "title": "18:20"
+                }
+            ],
+            "time16": [
+                {
+                    "name": "hours8_1",
+                    "title": "10:20"
+                },
+                {
+                    "name": "hours8_2",
+                    "title": "15:20"
+                },
+                {
+                    "name": "hours8_3",
+                    "title": "18:20"
+                }
+            ]
+        }
+    }
+}

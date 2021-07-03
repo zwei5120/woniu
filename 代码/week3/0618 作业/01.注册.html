@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0618练习_注册</title>
+    <style>
+        .makePic {
+            width: 300px;
+            height: 200px;
+            border: 1px solid yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <canvas class="makePic" id="p1"></canvas> -->
+    用户名:<input type="text" id="acc"> 密码:<input type="text" id="pwd">
+    <button id="register">注册</button><button id="getInfo">查询</button>
+    <button id="toLogin">前往登录页面</button>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        // 定义一个数组来存储注册的用户信息
+        let arr = [];
+        // 每次刷新页面时arr被清空，新增加的用户将覆盖原先注册的用户信息
+        // 需要在每次注册前获取本地信息出来，一起处理
+        let res = JSON.parse(localStorage.getItem('user'));
+        arr = res;
+        // 注册实现存储到浏览器本地
+        $('#register').click(() => {
+            let username = $('#acc').val();
+            let pwd = $('#pwd').val();
+            let user = {
+                username: username,
+                pwd: pwd
+            };
+            // 初始化页面时也要进行判断,若本地信息为空，则第一个空值不应该添加进arr数组
+            if (!arr) {
+                arr = [];
+            }
+            // 还需要去重复，用户名不能重复，需要遍历arr数组内的对象的username属性
+            if (arr.some(item => item.username === username)) {
+                alert('用户名重复');
+            } else {
+                arr.push(user);
+                localStorage.setItem('user', JSON.stringify(arr));
+            }
+        });
+        $('#getInfo').click(() => {
+            let newArr = [JSON.parse(localStorage.getItem('user'))];
+            console.log(newArr);
+        });
+        // 前往登录页面
+        $('#toLogin').click(() => {
+            location.href = './02.登录.html';
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        /* let p1 = document.getElementById('p1');
+        let pencil = p1.getContext('2d');
+        pencil.strokeStyle = 'red';
+        pencil.lineWidth = 5;
+        pencil.moveTo(150, 50);
+        pencil.lineTo(100, 25);
+        pencil.lineTo(75, 50);
+        pencil.lineTo(150, 150);
+        pencil.lineTo(225, 50);
+        pencil.lineTo(200, 25);
+        pencil.lineTo(150, 50);
+        pencil.stroke(); */
+    </script>
+</body>
+
+</html>

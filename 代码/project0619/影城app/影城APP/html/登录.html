@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录</title>
+    <link rel="stylesheet" href="../fontawesome/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/登录.min.css">
+</head>
+
+<body>
+
+    <head>
+        <div class="content">
+            <span class="fa fa-arrow-circle-left" onclick="backStep()"></span>
+            <p>登录</p>
+        </div>
+        <!-- 以下为用户输入区域 -->
+        <div class="ipt_content">
+            <p>用户名</p>
+            <input type="text" id="username" placeholder="Randy">
+            <div class="line2">
+                <p>密码</p>
+                <p class="findPwd">忘记密码?</p>
+                <i class="fa fa-eye-slash" aria-hidden="true" onclick="showPwd(this)"></i>
+            </div>
+            <input type="password" id="pwd" placeholder="......">
+            <button onclick="loginClick()">立即登录</button>
+            <a href="./注册.html">立即注册</a>
+        </div>
+
+        <!-- 动态调整html根标签的font-size值，间接调整rem的值 -->
+        <script src="../js/adjustRemSrc.js"></script>
+        <script src="../js/jquery.js"></script>
+        <script src="../js/Mock.js"></script>
+        <script src="../js/登录.js"></script>
+    </head>
+</body>
+
+</html>

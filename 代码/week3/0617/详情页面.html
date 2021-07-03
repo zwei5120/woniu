@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        // 定义一个商品列表数据库
+        let goodArr = [
+            { id: 1, name: '笔记本电脑1', num: 1 },
+            { id: 2, name: '笔记本电脑2', num: 1 },
+            { id: 3, name: '笔记本电脑3', num: 1 },
+            { id: 4, name: '笔记本电脑4', num: 1 },
+            { id: 5, name: '笔记本电脑5', num: 1 },
+            { id: 6, name: '笔记本电脑6', num: 1 }
+        ];
+        // 定义一个函数，解析地址栏带过来的参数
+        function getId(param, id) {
+            let params = new URLSearchParams(param);
+            let value = parseInt(params.get(id));
+            return value;
+        }
+
+        // 先测试函数是否解析成功
+        console.log(getId(location.search, 'id'));
+        // 解析成功，在数据库中找到该id对应的商品，在页面中绘制出来
+        goodArr.forEach(item => {
+            if (item.id === getId(location.search, 'id')) {
+                let $p = $(` <p>编号： ${item.id} 名称： ${item.name} 数量： ${item.num}</p> `);
+                $('#box').append($p);
+            }
+        });
+
+    </script>
+</body>
+
+</html>

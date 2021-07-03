@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer" />
+    <title>主页</title>
+    <link rel="stylesheet" href="../js/css/bootstrap.min.css">
+    <script src="../js/js/jquery-3.6.0.slim.min.js"></script>
+    <script src="../js/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/index.min.css">
+</head>
+
+<body>
+    <!-- 顶部登录注册部分 -->
+    <div class="top">
+        <div class="content">
+            <a href="">
+                <img src="../images/main/icon1.png" alt="">
+            </a>
+            <a href="">
+                <img src="../images/main/icon2.png" alt="">
+            </a>
+            <ul>
+                <li class="item">
+                    <a href="./登陆.html" id="toLogin">登录</a>
+                    <span onclick="quit()" class="quit">退出当前账户</span>
+                </li>
+                <li class="item">
+                    <a href="./注册.html">注册</a>
+                </li>
+                <li class="item">
+                    <span> 全国服务热线：888-8888888</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- logo区域 -->
+    <div class="logo">
+        <div class="content" id="toChangeCity">
+            <div class="logo_icon"></div>
+            <div class="city">
+                <p id="cityName" onclick="showCity()">佛山</p>
+                <!-- span标签用于更换城市 -->
+                <span>[更换城市]</span>
+                <div class="changeCity">
+                    <ul class="char">
+                        <li class="item">
+                            <ul>
+                                <li class="cities">阿拉善盟</li>
+                                <li class="cities">鞍山</li>
+                                <li class="cities">安庆</li>
+                                <li class="cities">安阳</li>
+                                <li class="cities">阿坝</li>
+                                <li class="cities">安顺</li>
+                            </ul>
+
+                        </li>
+                        <li class="item">
+                            <ul>
+                                <li class="cities">北京</li>
+                                <li class="cities">保定</li>
+                                <li class="cities">蚌埠</li>
+                                <li class="cities">包头</li>
+                                <li class="cities">本溪</li>
+                                <li class="cities">巴彦</li>
+                            </ul>
+                            
+                        </li>
+                        <li class="item">
+                            <ul>
+                                <li class="cities">重庆</li>
+                                <li class="cities">成都</li>
+                                <li class="cities">长沙</li>
+                                <li class="cities">常州</li>
+                                <li class="cities">长春</li>
+                                <li class="cities">沧州</li>
+                            </ul>
+                            
+                        </li>
+                        <li class="item">
+                            <ul>
+                                <li class="cities">大连</li>
+                                <li class="cities">东莞</li>
+                                <li class="cities">大庆</li>
+                                <li class="cities">大同</li>
+                                <li class="cities">丹东</li>
+                                <li class="cities">大兴安岭</li>
+                            </ul>
+                            
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 导航栏区域 -->
+    <nav>
+        <div class="content">
+            <ul class="nav">
+                <li class="item">
+                    <a href="./index主页.html">首页</a>
+                </li>
+                <li class="item">
+                    <a href="./影片.html">影片</a>
+                </li>
+                <li class="item">
+                    <a href="./影城.html">影城</a>
+                </li>
+                <li class="item">
+                    <a href="./购票.html">购票</a>
+                </li>
+                <li class="item">
+                    <a href="./影城活动.html">影城活动</a>
+                </li>
+                <li class="item">
+                    <a onclick="toVip()">会员服务</a>
+                </li>
+                <li class="item">
+                    <a href="./顾客互动.html">顾客互动</a>
+                </li>
+            </ul>
+            <div class="input_search">
+                <input type="text" class="ipt_search" oninput="judgeNull(this)" placeholder="搜索影片">
+                <a class="btn_search" onclick="movieSearch()"> </a>
+            </div>
+        </div>
+    </nav>
+    <!-- 轮播图区域 -->
+    <div class="banner">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="#">
+                        <img src="../images/main/banner1.jpg" class="d-block w-100" alt="...">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img src="../images/main/banner2.jpg" class="d-block w-100" alt="...">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img src="../images/main/banner3.jpg" class="d-block w-100" alt="...">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#">
+                        <img src="../images/main/banner4.jpg" class="d-block w-100" alt="...">
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- 购票区域 -->
+    <div class="buyTicket">
+        <ul>
+            <li class="item">
+                <div class="icon"></div>
+                <div class="text">
+                    <p>快速购票</p>
+                    <span>QUICK TICKET</span>
+                </div>
+            </li>
+            <li class="item">
+                <div class="content">
+                    <div class="icon_front icon1"></div>
+                    <select name="" id="cinema" onchange="toMovie(this)">
+                        <option value="">选择影院</option>
+                    </select>
+                    <div class="icon_back" onclick="chooseCinema(this)"></div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="content">
+                    <div class="icon_front icon2"></div>
+                    <select name="" id="movie" onchange="toTime(this)">
+                        <option value="">选择电影</option>
+                    </select>
+                    <div class="icon_back" onclick="chooseCinema(this)"></div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="content">
+                    <div class="icon_front icon3"></div>
+                    <select name="" id="time" onchange="toSession(this)">
+                        <option value="">选择时间</option>
+                    </select>
+                    <div class="icon_back" onclick="chooseCinema(this)"></div>
+                </div>
+            </li>
+            <li class="item">
+                <div class="content">
+                    <div class="icon_front icon4"></div>
+                    <select name="" id="session">
+                        <option value="">选择场次</option>
+                    </select>
+                    <div class="icon_back" onclick="chooseCinema(this)"></div>
+                </div>
+            </li>
+            <li class="item">
+                <button onclick="quickTicketToSeat()">快速购票</button>
+            </li>
+        </ul>
+    </div>
+    <!-- main区域，分左右两边 -->
+    <main>
+        <!-- 左边为热映，上映标签 -->
+        <div class="left_content">
+            <div class="title">
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#nowvideo" role="tab"
+                            aria-controls="home" aria-selected="true">正在热映</a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tovideo" role="tab"
+                            aria-controls="profile" aria-selected="false">即将上映</a>
+                    </li>
+
+                </ul>
+                <!-- 查看全部的链接放这里 -->
+                <div class="all">
+                    <div class="icon"></div>
+                    <a href="">查看全部</a>
+                </div>
+            </div>
+
+            <div class="left_body">
+                <!-- Tab panes -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="nowvideo" role="tabpanel" aria-labelledby="home-tab">
+                        <div class="content" id="nowplaying">
+                            <!-- 定义一个卡片，包含一张图片和一段文字 -->
+
+                        </div>
+
+                    </div>
+                    <div class="tab-pane" id="tovideo" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="content" id="upcoming">
+                            <!-- 定义一个卡片，包含一张图片和一段文字 -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- 放置一个加载更多的按钮，每点击一次再加载6个电影元素 -->
+                <button onclick="getMoreMovie()" class="getMoreMovie">加载更多</button>
+            </div>
+        </div>
+        <!-- 右边为影城活动区域 -->
+        <div class="right_content">
+            <div class="body_item">
+                <div class="title">
+                    <div class="left">影城活动</div>
+                    <div class="right">
+                        <a href="">更多>></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <img src="../images/main/img13.jpg" alt="">
+                    <div class="card_content">
+                        <div class="item">
+                            <img src="../images/main/img14.jpg" alt="">
+                            <p>《敢死队》7月18日与你约</p>
+                        </div>
+                        <div class="item">
+                            <img src="../images/main/img15.jpg" alt="">
+                            <p>《摆渡人》9月18日与你</p>
+                        </div>
+                        <div class="item">
+                            <img src="../images/main/img16.jpg" alt="">
+                            <p>《哪吒之魔童降世》8月18</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="body_item body_item2">
+                <div class="title">
+                    <div class="left">服务公告</div>
+                    <div class="right">
+                        <a href="">更多>></a>
+                    </div>
+                </div>
+                <div class="content2">
+                    <a href="">2013韩国电影展8月开幕</a>
+                    <a href="">吴宇森灾难文艺片"太平轮"手稿曝光</a>
+                    <a href="">2013韩国电影展8月开幕</a>
+                    <a href="">吴宇森灾难文艺片"太平轮"手稿曝光</a>
+                    <a href="">2013韩国电影展8月开幕稿曝光</a>
+                    <a href="">吴宇森灾难文艺片"太平轮"手稿曝光</a>
+                    <a href="">2013韩国电影展8月开幕</a>
+                </div>
+            </div>
+            <div class="body_item body_item3">
+                <div class="title">
+                    <div class="left">品牌资讯</div>
+                    <div class="right">
+                        <a href="">更多>></a>
+                    </div>
+                </div>
+                <div class="content2">
+                    <a href="">2013韩国电影展8月开幕</a>
+                    <img src="../images/main/img17.jpg" alt="">
+                    <a href="">吴宇森灾难文艺片"太平轮"手稿曝光</a>
+                    <a href="">2013韩国电影展8月开幕</a>
+                    <a href="">吴宇森灾难文艺片"太平轮"手稿曝光</a>
+                    <a href="">2013韩国电影展8月开幕稿曝光</a>
+                    <a href="">吴宇森灾难文艺片"太平轮"手稿曝光</a>
+                    <a href="">2013韩国电影展8月开幕</a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </main>
+
+    <!-- 过渡动画区域 -->
+    <div class="bigbox">
+        <!-- 舞台 -->
+        <div class="container">
+            <!-- 3D盒子 -->
+            <div class="box">
+                <!-- 动画子元素 -->
+                <div class="item item1"></div>
+                <div class="item item2"></div>
+                <div class="item item3"></div>
+                <div class="item item4"></div>
+                <div class="item item5"></div>
+                <div class="item item6"></div>
+                <div class="item item7"></div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- foot区域 -->
+    <footer>
+        <div class="content1">
+            <div class="foot-body">
+                <ul>
+                    <li class="item">
+                        <div class="title">
+                            <div class="icon"></div>
+                            <p>新手上路</p>
+                        </div>
+                        <a href="" class="tolink">注册登录问题</a>
+                        <a href="" class="tolink">用户绑定会员卡问题</a>
+                        <a href="" class="tolink">影票相关问题</a>
+                        <a href="" class="tolink">票价和支付问题</a>
+                        <a href="" class="tolink">取票凭证吗和取票问题</a>
+                    </li>
+                    <li class="item">
+                        <div class="title">
+                            <div class="icon icon2"></div>
+                            <p>购票指南</p>
+                        </div>
+                        <a href="" class="tolink">注册登录问题</a>
+                        <a href="" class="tolink">用户绑定会员卡问题</a>
+                        <a href="" class="tolink">影票相关问题</a>
+                        <a href="" class="tolink">票价和支付问题</a>
+                        <a href="" class="tolink">取票凭证吗和取票问题</a>
+                    </li>
+                    <li class="item">
+                        <div class="title">
+                            <div class="icon icon3"></div>
+                            <p>会员权益</p>
+                        </div>
+                        <a href="" class="tolink">注册登录问题</a>
+                        <a href="" class="tolink">用户绑定会员卡问题</a>
+                        <a href="" class="tolink">影票相关问题</a>
+                        <a href="" class="tolink">票价和支付问题</a>
+                        <a href="" class="tolink">取票凭证吗和取票问题</a>
+                    </li>
+                    <li class="item">
+                        <div class="title">
+                            <div class="icon icon4"></div>
+                            <p>联系我们</p>
+                        </div>
+                        <a href="" class="tolink">注册登录问题</a>
+                        <a href="" class="tolink">用户绑定会员卡问题</a>
+                        <a href="" class="tolink">影票相关问题</a>
+                        <a href="" class="tolink">票价和支付问题</a>
+                        <a href="" class="tolink">取票凭证吗和取票问题</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="content2">
+            <div class="foot-bottom">
+                <p>公司介绍 - 合作咨询 - 友情链接 - 网站地图 - 站长统计 - 网站声明</p>
+                <span>Copyright © 2013 ed by </span>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/Mock.js"></script>
+    <script src="../javaScript/主页.js"></script>
+</body>
+
+</html>

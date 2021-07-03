@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>03.练习</title>
+    <style></style>
+</head>
+
+<body>
+    <div id="box">
+        用户名： <input type="text" id="acc">
+        密码： <input type="text" id="pwd">
+        <button id="register">注册</button>
+        <button id="getLocalInfo">查看缓存</button>
+    </div>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        /* // 点击按钮  用两个标识 保存用户名和密码在本地
+        $('#register').click(() => {
+            let username = $('#acc').val();
+            let pwd = $('#pwd').val();
+            localStorage.setItem('username', username);
+            localStorage.setItem('pwd', pwd);
+        });
+        // 点击按钮查看已存在的本地缓存
+        $('#getLocalInfo').click(() => {
+            console.log(localStorage.getItem('username'));
+            console.log(localStorage.getItem('pwd'));
+        }); */
+        $('#register').click(() => {
+            let username = $('#acc').val();
+            let pwd = $('#pwd').val();
+            // 定义对象接收数据，再将对象整个存储进localStorage中
+            let user = {
+                username: username,
+                pwd: pwd
+            };
+            // 参数传入为一个对象，使用内置方法转化了
+            localStorage.setItem('user', JSON.stringify(user));
+        });
+        // 点击按钮查看已存在的本地缓存
+        $('#getLocalInfo').click(() => {
+            // 提取一个字符串，使用内置方法转化为对象
+            console.log(JSON.parse(localStorage.getItem('user')).username);
+        });
+    </script>
+</body>
+
+</html>

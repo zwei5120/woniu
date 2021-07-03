@@ -1,0 +1,37 @@
+body{
+    margin: 0px;
+}
+@keyframes changeLi {
+    from{
+        transform: rotateZ(45deg);
+    }
+    to{
+        transform: rotateZ(-45deg);
+    }
+}
+.container{
+    width: 300px;
+    height: 200px;
+    border: 1px solid red;
+    margin: 100px auto;
+    ul{
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li{
+            width: 30px;
+            height: 5px;
+            border-radius: 50%;
+            background-color: yellowgreen;
+            animation: changeLi 1s linear infinite alternate;
+            &:nth-child(2n+1){
+                animation-direction: alternate-reverse;
+            }
+        }
+    }
+}

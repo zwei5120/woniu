@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01.注册</title>
+    <style></style>
+</head>
+
+<body>
+    <div id="box">
+        用户名： <input type="text" id="acc">
+        密码： <input type="text" id="pwd">
+        <button>注册</button>
+    </div>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        // let accArr = [];
+        // let pwdArr = [];
+        // $('button').click(function () {
+        //     let acc = $('#acc').val();
+        //     let pwd = $('#pwd').val();
+        //     accArr.push(acc);
+        //     pwdArr.push(pwd);
+        // });
+
+        // 需要使用数值对象格式   一个对象就是一个用户
+        let arr = [];
+        $('button').click(function () {
+            let acc = $('#acc').val();
+            let pwd = $('#pwd').val();
+            // 拿取到输入的用户名和密码的值 组装成对象
+            let user = {
+                // acc: acc
+                // 属性名： 变量acc（属性值）
+                acc: acc,
+                pwd: pwd
+            }
+            // 将这对象添加到数组arr中去
+            arr.push(user);
+            // 一个对象就是一个用户
+            // 所以我们就把当前输入的信息 添加到了用户数组中去 -》  完成了新增用户的操作
+
+            console.log(arr);
+        });
+
+    </script>
+</body>
+
+</html>

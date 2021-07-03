@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="../fontawesome/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/注册.min.css">
+</head>
+
+<body>
+
+    <head>
+        <div class="content">
+            <span class="fa fa-arrow-circle-left" onclick="backStep()"></span>
+            <p>注册</p>
+        </div>
+    </head>
+    <!-- 以下为用户输入区域 -->
+    <div class="ipt_content">
+        <p>用户名</p>
+        <input type="text" id="username" placeholder="Randy" onchange="verifyAcc(this)" oninput="backcss1(this)">
+        <p>密码</p>
+        <i class="fa fa-eye-slash icon1" aria-hidden="true" onclick="showPwd(this)"></i>
+        <i class="fa fa-eye-slash icon2" aria-hidden="true" onclick="showPwd2(this)"></i>
+        <input type="password" id="pwd" placeholder="......" onchange="verifyPwd(this)" oninput="backcss2(this)">
+        <p>确认密码</p>
+        <input type="password" id="pwd2" placeholder="......" onchange="verifyPwd2(this)" oninput="backcss3(this)">
+        <button onclick="register(this)">立即注册</button>
+    </div>
+
+    <!-- 动态调整html根标签的font-size值，间接调整rem的值 -->
+    <script src="../js/adjustRemSrc.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/Mock.js"></script>
+    <script src="../js/注册.js"></script>
+
+</body>
+
+</html>

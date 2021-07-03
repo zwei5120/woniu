@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="authCode">
+    <img src="" alt="">
+    <button onclick="btn()">验证</button>
+
+
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/Mock.js"></script>
+    <script>
+        let theCode;
+        Mock.mock('./welogin.html', 'get', function () {
+            let code = Mock.mock({ 'reg': /^\w{5}$/ }.reg);
+            let theUrl = Mock.Random.dataImage('50x30', code);
+            return {
+                'name': 1,
+                'randomNum|0-100': 1,
+                'code': code,
+                'imgUrl': theUrl
+            }
+        });
+
+        $.ajax({
+            url: './welogin.html',
+            type: 'get',
+            success: function (res) {
+                let obj = JSON.parse(res);
+                $('img').prop('src', obj.imgUrl);
+                theCode = obj.code;
+            }
+        });
+        $('img').click(() => {
+            $.ajax({
+                url: './welogin.html',
+                type: 'get',
+                success: function (res) {
+                    let obj = JSON.parse(res);
+                    $('img').prop('src', obj.imgUrl);
+                    theCode = obj.code;
+                }
+            });
+            $('#authCode').val('');
+        });
+        function btn() {
+            let ipt = $('#authCode').val();
+            ipt = ipt.toLowerCase();
+            theCode = theCode.toLowerCase();
+            if (ipt === theCode) {
+                alert('验证成功');
+            } else {
+                alert('验证码错误');
+            }
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,17 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
+    <!-- 商品绘制容器 -->
+    <div id="box"></div>
+
     <script src="../js/jquery.js"></script>
     <script>
-        $('#').click(() => {
-          
+        // 定义一个商品列表数据库
+        let goodArr = [
+            { id: 1, name: '笔记本电脑1', num: 1 },
+            { id: 2, name: '笔记本电脑2', num: 1 },
+            { id: 3, name: '笔记本电脑3', num: 1 },
+            { id: 4, name: '笔记本电脑4', num: 1 },
+            { id: 5, name: '笔记本电脑5', num: 1 },
+            { id: 6, name: '笔记本电脑6', num: 1 }
+        ];
+        // 绘制商品内容
+        goodArr.forEach(item => {
+            let $p = $(` <p>编号： ${item.id} 名称： ${item.name} 数量： ${item.num}</p> <button data-id='${item.id}'>详情</button> `);
+            $('#box').append($p);
+        });
+
+        $('button').click(function () {
+            console.log(this);
+            console.log($(this).attr('data-id'));
+            let id = $(this).attr('data-id');
+            location.href = `./详情页面.html?id=${id}`;
         });
     </script>
 </body>
+
 </html>

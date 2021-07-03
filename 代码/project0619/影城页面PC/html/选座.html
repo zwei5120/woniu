@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>选座</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/choose.css">
+  <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">
+</head>
+
+<body>
+  <!-- 顶部小图标 -->
+  <div class="topHead">
+    <div class="contaner">
+      <div></div>
+      <ul>
+        <li><img src="../images/ticket/icon1.png" alt=""></li>
+        <li><img src="../images/ticket/icon2.png" alt=""></li>
+        <li><a href="./登陆.html" id="toLogin">登录</a><span class="quit" onclick="quit()">退出当前账户</span></li>
+        <li></li>
+        <li><a href="./注册.html">注册</a></li>
+        <li></li>
+        <li><a href="#">全国服务热线：888-8888888</a></li>
+      </ul>
+    </div>
+  </div>
+  <!-- logo区域 -->
+  <div class="head">
+    <div class="contaner">
+      <div class="logo"></div>
+      <div><img src="../images/ticket/jianbian1.png" alt=""></div>
+      <div class="city">
+        <ul>
+          <li class="choose">
+            <span id="chooseds">佛山</span>
+          </li>
+          <li class="replace">
+            <button id="replaces">[更换城市]</button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- 头部导航 -->
+  <nav>
+    <div class="contaner">
+      <ul>
+        <li><a href="./index主页.html">首页</a></li>
+        <li><a href="./影片.html">影片</a></li>
+        <li><a href="./影城.html">影城</a></li>
+        <li><a href="./购票.html">购票</a></li>
+        <li><a href="./影城活动.html">影城活动</a></li>
+        <li><a href="./会员中心.html">会员服务</a></li>
+        <li><a href="./顾客互动.html">顾客互动</a></li>
+      </ul>
+      <div class="input"><input type="search" placeholder="搜索影片" class="search">
+        <button class="mirror fa fa-search"></button>
+      </div>
+    </div>
+  </nav>
+  <!-- 核心内容区域 -->
+  <div class="core_content">
+    <!-- 购票 -->
+    <div class="title">
+      <div class="rectangular">购票
+        <div class="triangle"></div>
+      </div>
+      <div class="previous_step">
+        <img src="../images/ticket/directional-arrow.png" alt="">
+        <a onclick="backToLastStep()">返回上一步</a>
+      </div>
+    </div>
+    <!-- 指向标 -->
+    <div class="a_direction">
+      <div class="select_session">1.选择影片及场次</div>
+      <div class="mobile_phone">2.选择座位并手机号
+        <div class="mobile_phones"></div>
+      </div>
+      <div class="confirm_payment">3.确认订单并支付</div>
+    </div>
+    <!-- 购票 -->
+    <div id="first_box">
+      <div class="details_box" id="detail-box">
+        <ul>
+          <li><img src="../images/ticket/pian1.png" alt=""></li>
+          <li>
+            <p>影片：哪吒之魔童降世</p>
+            <p>场次：2014-02-10 13:30</p>
+            <p>正价：￥80.00</p>
+          </li>
+          <li>
+            <p>影院：星星国际影城</p>
+            <p>片长：94分钟</p>
+            <p>网购价:￥<span id="onlinePrice">68.00</span></p>
+          </li>
+          <li>
+            <p>影厅：IMAX厅</p>
+            <p>语言：粤语</p>
+            <p><span>会员价按会员折扣标准执行</span></p>
+          </li>
+        </ul>
+      </div>
+      <!-- 选座位的盒子 -->
+      <div class="choose_seat">
+        <!-- 座位内部选座 -->
+        <div class="choose_seat_box">
+          <div class="ceiling"></div>
+          <div class="screen">
+            <img src="../images/ticket/screen.png" alt="">
+            <span class="screen_text">银幕</span>
+          </div>
+          <div class="click_select">
+            <ul>
+              <li>
+                <span>1#</span>
+                <div class="switch_picture" id="line1">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                </div>
+                <span>1#</span>
+              </li>
+              <li>
+                <span>2#</span>
+                <div class="switch_picture" id="line2">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                </div>
+                <span>2#</span>
+              </li>
+              <li class=" corridor"></li>
+              <li class=" corridor"></li>
+              <li>
+                <span>3#</span>
+                <div class="switch_picture" id="line3">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                </div>
+                <span>3#</span>
+              </li>
+              <li>
+                <span>4#</span>
+                <div class="switch_picture" id="line4">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                </div>
+                <span>4#</span>
+              </li>
+              <li>
+                <span>5#</span>
+                <div class="switch_picture" id="line5">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/green.png" alt="">
+                  <img src="../images/ticket/green.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/red.png" alt="">
+                  <img src="../images/ticket/red.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                </div>
+                <span>5#</span>
+              </li>
+              <li>
+                <span>6#</span>
+                <div class="switch_picture" id="line6">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                </div>
+                <span>6#</span>
+              </li>
+              <li>
+                <span>7#</span>
+                <div class="switch_picture" id="line7">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                </div>
+                <span>7#</span>
+              </li>
+              <li><span>8#</span>
+                <div class="switch_picture" id="line8">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                </div>
+                <span>8#</span>
+              </li>
+              <li>
+                <span>9#</span>
+                <div class="switch_picture" id="line9">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                </div>
+                <span>9#</span>
+              </li>
+              <li>
+                <span>10#</span>
+                <div class="switch_picture" id="line10">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                  <img src="../images/ticket/white.png" alt="">
+                </div>
+                <span>10#</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 选座信息介绍 -->
+        <div class="introduce_box">
+          <div class="introduce_text">
+            <p>选择座位</p>
+            <div class="icon_introduce">
+              <div class="icon_color"><img src="../images/ticket/green.png" alt=""><span>已选座位</span></div>
+              <div class="icon_color"><img src="../images/ticket/red.png" alt=""><span>已售座位</span></div>
+              <div class="icon_color"><img src="../images/ticket/white.png" alt=""><span>可选座位</span></div>
+            </div>
+            <div class="horizontal_line"></div>
+            <div class="text_content">
+              单击左侧座位图选择座位，再次单击座位取消选择。
+            </div>
+            <div class="button_group" id="button_group">
+              
+            </div>
+          </div>
+          <!-- 立即购票 -->
+          <div class="introduce_text2">
+            <p>请输入取票的手机号码</p>
+            <div class="text2_box">
+              <h5>手机号码</h5>
+              <input type="text" id="phone-number" onchange="verifyPhoneNum(this)" onfocus="phoneNum(this)">
+              <h5>验证码</h5>
+              <div class="ipt_text">
+                <input type="text" id="iptAuthCode" onchange="authCodeCompare(this)" onfocus="codeNum(this)"><img src="" alt="" id="authCode" onclick="changeAuthCode()"><span onclick="changeAuthCode()">看不清,换一张.</span>
+              </div>
+              <h3><a id="immediately_ticket">立即购票</a></h3>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="use_instructions">
+        <h3>使用说明：</h3>
+        <ol class="regulations">
+          <li>1、选择你要预订的座位单击选中，重复点击取消所选座位。</li>
+          <li>2、每笔订单最多可选购4张电影票。</li>
+          <li>3、每人每天限购3次。</li>
+          <li>4、选座时，请尽量选择相邻座位，请不要留下单个座位。</li>
+          <li>5、点击“立即购票”进入付款页面后，请在15分钟内完成支付，超时系统将释放你选定的座位。</li>
+          <li>6、开场前三小时内无法执行退票操作。</li>
+        </ol>
+      </div>
+    </div>
+    <!-- 购票-支付 -->
+    <div id="second_box">
+      <div class="aside_left">
+        <p>请选择支付方式</p>
+        <div class="pay_Method">
+          <input type="radio" name="1"><img src="../images/ticket/membership-card.png" alt="" class="img">
+          <div class="members">
+            <ul>
+              <li>
+                <span><input type="checkbox" id="vipname">会员卡</span>
+                <span id="vipcard">卡号：无</span>
+                <span id="charge">余额:￥00.00</span>
+                <span id="totalPrice">会员价:￥00.00</span>
+              </li>
+            </ul>
+          </div>
+          <div class="payment_button">
+            <span></span>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">立即支付</button>
+          </div>
+          <div class="third_party_pay">
+            <div class="Method_pay">
+              <input type="radio" name="1"><img src="../images/ticket/Alipay.png" alt="" class="img">
+            </div>
+            <div class="Method_pay">
+              <input type="radio" name="1">
+              <img src="../images/ticket/unionpay.png" alt="" class="img">
+            </div>
+            <div class="payment_button">
+              <span></span>
+              <button type="button" class="btn btn-primary" data-toggle="modal"
+                data-target="#exampleModal">立即支付</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- 支付倒计时 -->
+      <div class="aside_right">
+        <!-- 倒计时的动态设置 -->
+        <div class="countdown_box">
+          <span>请在 15分钟内完成付款，
+            否则系统将自动释放已选座位。
+          </span>
+          <div id="countdown"></div>
+        </div>
+        <!-- 注意事项 -->
+        <div class="attention_things">
+          <!-- 注意事项的标题 -->
+          <div class="things_box">
+            注意事项：
+          </div>
+          <!-- 注意事项的文本内容 -->
+          <div class="things_text">
+            <p> 1、 请仔细核对您的购票信息，确认后 选择支付方式进行支付操作；</p>
+            <p>2、 请于电影上映前，请凭手机短信或 打印的订单前往影城柜台兑换当天电影票；</p>
+            <p>3、 如不小心删除手机短信，可前往我的订单中重新发送；</p>
+            <p>4、 如排片表有所更改，以影城当天排片为准；</p>
+            <p>5、 已取票订单一律不退不换。</p>
+            <p>6、 目前各影院只提供当天影片的取票服务。非当天影片请您于观影当天前往柜台取票。</p>
+            <p>7、开场前三小时内无法执行退票操作。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- 模态框 -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="fa fa-credit-card"></span>
+          <h5 class="modal-title" id="exampleModalLabel">订单信息</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <h4>订单号：
+            <span>2014021088888888</span>
+          </h4>
+          <p>
+            影片：
+            <span>澳门风云</span>
+          </p>
+          <p>
+            影厅：
+            <span>IMAX厅</span>
+          </p>
+          <p>
+            影城：
+            <span>星星国际影城</span>
+          </p>
+          <p>
+            时间：
+            <span>2014-02-10 13:30</span>
+          </p>
+          <p>
+            数量：<titlt>5张</titlt>
+            <span class="a_table">
+              <a class="a">5排12座</a>
+              <a class="a">8排10座</a>
+              <a class="a">8排11座</a>
+              <a class="a">8排12座</a>
+              <a class="a">8排13座</a>
+            </span>
+          </p>
+          <p>
+            单价：
+            <span>元/张,总金额：元</span>
+          </p>
+          <p>
+            手机号码：
+            <span class="number">13318702255</span>
+          </p>
+        </div>
+        <div class="modal-footer">
+          <!-- 支付按钮 -->
+          <button type="button" class="btn btn-primary" id="payment" onclick="payToSeat()">确定支付</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 过渡动画 -->
+  <div class="bigbox">
+    <div class="container">
+        <div class="item item1"></div>
+        <div class="item item2"></div>
+        <div class="item item3"></div>
+        <div class="item item4"></div>
+        <div class="item item5"></div>
+    </div>
+</div>
+
+
+  <!-- 底部 -->
+  <div class="tail">
+    <div class="box">
+      <div class="businessCard">
+        <div class="icon">
+          <img src="../images/ticket/icon3.png" alt="">
+          <span>新手上路</span>
+        </div>
+        <div class="box_text">
+          <p><a href="#">注册登录问题</a></p>
+          <p><a href="#">用户绑定会员卡问题</a></p>
+          <p><a href="#">影票相关问题</a></p>
+          <p><a href="#">票价和支付问题</a></p>
+          <p><a href="#">取票凭证吗和取票问题</a></p>
+        </div>
+      </div>
+      <div class="businessCard">
+        <div class="icon">
+          <img src="../images/ticket/icon4.png" alt="">
+          <span>购票指南</span>
+        </div>
+        <div class="box_text">
+          <p><a href="#">用户购票流程</a></p>
+          <p><a href="#">取票观影指南</a></p>
+          <p><a href="#">会员卡支付相关说明</a></p>
+          <p><a href="#">网银支付相关说明</a></p>
+        </div>
+      </div>
+      <div class="businessCard">
+        <div class="icon">
+          <img src="../images/ticket/icon5.png" alt="">
+          <span>会员权益</span>
+        </div>
+        <div class="box_text">
+          <p><a href="#">会员订票权益</a></p>
+          <p><a href="#">会员积分权益</a></p>
+          <p><a href="#">入会资格</a></p>
+          <p><a href="#">会员卡折扣说明</a></p>
+        </div>
+      </div>
+      <div class="businessCard">
+        <div class="icon">
+          <img src="../images/ticket/icon6.png" alt="">
+          <span>联系我们</span>
+        </div>
+        <div class="box_text">
+          <p><a href="#">手机客户端介绍与下载</a></p>
+          <p><a href="#">影片信息查询</a></p>
+          <p><a href="#">手机自助购票</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>公司介绍 - 合作咨询 - 友情链接 - 网站地图 - 站长统计 - 网站声明</p>
+    <p>Copyright © 2013 ed by </p>
+  </footer>
+
+
+
+
+  <!-- <script src="../js/data.js"></script> -->
+  <script src="../js/jquery.js"></script>
+  <script src="../js/bootstrap.bundle.js"></script>
+  <!-- <script src="../js/public.js"></script> -->
+  <!-- <script src="../js/ticket.js"></script> -->
+  <script src="../js/Mock.js"></script>
+  <script src="../javaScript/选座.js"></script>
+  <!-- <script>
+  $('#second_box').css('display','none');
+$('#immediately_ticket').click(function() {
+  // 只有切换页面效果
+  $('#first_box').css('display','none');
+  $('#second_box').css('display','flex');
+  $('.mobile_phones').css('border-left','18px solid #eaeaea');
+  $('.mobile_phone').css({
+    'background-color':'#eaeaea',
+    'color':'#666666'
+  });
+  $('.confirm_payment').css({
+    'background-color':'#f57921',
+    'color':'white'
+  });
+})
+</script> -->
+</body>
+
+</html>

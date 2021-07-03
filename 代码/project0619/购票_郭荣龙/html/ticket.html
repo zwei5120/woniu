@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ticket</title>
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/ticket.css">
+  <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.css">
+</head>
+<body>
+  <!-- 顶部小图标 -->
+  <div class="topHead">
+    <div class="contaner">
+      <div></div>
+      <ul>
+        <li><img src="../images/ticket/icon1.png" alt=""></li>
+        <li><img src="../images/ticket/icon2.png" alt=""></li>
+        <li><a href="#">登录</a></li>
+        <li></li>
+        <li><a href="#">注册</a></li>
+        <li></li>
+        <li><a href="#">全国服务热线：888-8888888</a></li>
+      </ul>
+    </div>
+  </div>
+<!-- logo区域 -->
+  <div class="head">
+    <div class="contaner">
+      <div class="logo"></div>
+      <div><img src="../images/ticket/jianbian1.png" alt=""></div>
+      <div class="city">
+        <ul>
+          <li class="choose">
+              <span id="chooseds">佛山</span>
+             </li>
+          <li class="replace">
+              <button id="replaces">[更换城市]</button>
+            </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+    <!-- 头部导航 -->
+  <nav>
+    <div class="contaner">
+      <ul>
+        <li><a href="#">首页</a></li>
+        <li><a href="#">影片</a></li>
+        <li><a href="#">影城</a></li>
+        <li><a href="./ticket.html">购票</a></li>
+        <li><a href="#">影城活动</a></li>
+        <li><a href="#">会员服务</a></li>
+        <li><a href="./customerInteraction.html">顾客互动</a></li>
+      </ul>
+      <div class="input"><input type="search" placeholder="搜索影片" class="search">
+        <button class="mirror fa fa-search"></button></div>
+    </div>
+  </nav>
+  <!-- 内容区域 -->
+  <div class="centralContent">
+  <div class="content">
+    <div class="content_row">
+      <div class="title nav nav-tabs" id="nav-tab" role="tablist">
+          <a class="nav-link active" id="nav-rowPiece-tab" data-toggle="tab" href="#nav-rowPiece" role="tab" aria-controls="nav-rowPiece" aria-selected="true">排片
+            <span class="span"></span>
+          </a>
+          <a class="nav-link" id="nav-guide-tab" data-toggle="tab" href="#nav-guide" role="tab" aria-controls="nav-guide" aria-selected="false">购买指南
+            <span class="span"></span>
+          </a>
+      </div>
+      <div class="tab-content tab-content_this" id="myTabContent">
+        <div class="tab-pane fade show active" id="nav-rowPiece" role="tabpanel" aria-labelledby="rowPiece-tab">
+          <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" id="Wednesday-tab" data-toggle="tab" href="#Wednesday" role="tab" aria-controls="Wednesday" aria-selected="true"> 2013年9月11日（周三）</a></li>
+            <li class="nav-item" role="presentation">
+              <a class="nav-link" id="Thursday-tab" data-toggle="tab" href="#Thursday" role="tab" aria-controls="Thursday" aria-selected="false">2013年9月12日（周四）</a> </li>
+          </ul>
+          <div class="tab-content tab-content_text" id="myTabContent">
+            <div class="tab-pane fade show active" id="Wednesday" role="tabpanel" aria-labelledby="Wednesday-tab">
+              <div class="cinema"><h4>选择影院：</h4>
+                <ol class="ol" id="theBox">
+                  <li>广州华影万晟国际影城</li>
+                  <li>广州华影青宫电影城</li>
+                  <li>广州星汇电影城</li>
+                  <li>广州保利国际影城 </li>
+                  <li>广州左岸国际电影城</li>
+                  <li>广州花都太子电影城</li>
+                  <li>广州沙湾3D数字电影院</li>
+                  <li>广州华影青宫电影城</li>
+                  <li>广州星汇电影城</li>
+                  <li>广州左岸国际电影城</li>
+                </ol>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="Thursday" role="tabpanel" aria-labelledby="Thursday-tab"><div class="cinema"><h4>选择影院：</h4>
+              <ol class="ol" id="theBox">
+                <li>杭州华影万晟国际影城</li>
+                <li>杭州华影青宫电影城</li>
+                <li>杭州星汇电影城</li>
+                <li>杭州保利国际影城 </li>
+                <li>杭州左岸国际电影城</li>
+                <li>杭州花都太子电影城</li>
+                <li>杭州沙湾3D数字电影院</li>
+                <li>杭州华影青宫电影城</li>
+                <li>杭州星汇电影城</li>
+                <li>杭州左岸国际电影城</li>
+              </ol>
+            </div></div>
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-guide" role="tabpanel" aria-labelledby="guide-tab">
+          请手动购买，暂无简介
+        </div>
+      </div>
+
+    </div>
+    <p>当前找影院的电影：</p>
+    <div class="movie">
+      <div class="card">
+        <div class="img">
+          <img src="../images/ticket/pian1.png" alt="">
+        </div>
+        <h5>哪吒之魔童降世</h5>
+        <h5>片长：120分钟</h5>
+      </div>
+      <div class="screening">
+        <table>
+          <thead>
+            <tr>
+              <td>放映时间</td>
+              <td>影厅空位</td>
+              <td>语言/版本</td>
+              <td>影厅</td>
+              <td>优惠信息</td>
+              <td>网购价</td>
+              <td><button><a href="#">立即购票</a>  </button></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>12:20</td>
+              <td>余139/150</td>
+              <td>英语<span>3D</span></td>
+              <td>5号厅</td>
+              <td><img src="../images/ticket/jifen.png" alt=""></td>
+              <td>￥65.00</td>
+              <td><button><a href="choose.html">立即购票</a> </button></td>
+            </tr>
+            <tr>
+              <td>12:20</td>
+              <td>余139/150</td>
+              <td>英语<span>3D</span></td>
+              <td>5号厅</td>
+              <td><img src="../images/ticket/jifen.png" alt=""></td>
+              <td>￥65.00</td>
+              <td><button><a href="#">立即购票</a> </button></td>
+            </tr>
+            <tr>
+              <td>12:20</td>
+              <td>余139/150</td>
+              <td>英语<span>3D</span></td>
+              <td>5号厅</td>
+              <td><img src="../images/ticket/jifen.png" alt=""></td>
+              <td>￥65.00</td>
+              <td><button><a href="#">立即购票</a> </button></td>
+            </tr>
+            <tr>
+              <td>12:20</td>
+              <td>余139/150</td>
+              <td>英语<span>3D</span></td>
+              <td>5号厅</td>
+              <td><img src="../images/ticket/jifen.png" alt=""></td>
+              <td>￥65.00</td>
+              <td><button><a href="#">立即购票</a> </button></td>
+            </tr>
+            <tr>
+              <td>12:20</td>
+              <td>余139/150</td>
+              <td>英语<span>3D</span></td>
+              <td>5号厅</td>
+              <td><img src="../images/ticket/jifen.png" alt=""></td>
+              <td>￥65.00</td>
+              <td><button><a href="#">立即购票</a> </button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="movie">
+      <div class="card">
+        <div class="img">
+          <img src="../images/ticket/pian2.png" alt="">
+        </div>
+        <h5>哪吒之魔童降世</h5>
+        <h5>片长：120分钟</h5>
+      </div>
+      <div class="screening">
+        <table>
+          <thead>
+            <tr>
+              <td>放映时间</td>
+              <td>影厅空位</td>
+              <td>语言/版本</td>
+              <td>影厅</td>
+              <td>优惠信息</td>
+              <td>网购价</td>
+              <td><button><a href="#">立即购票</a> </button></td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>12:20</td>
+              <td>余139/150</td>
+              <td>英语<span>3D</span></td>
+              <td>5号厅</td>
+              <td><img src="../images/ticket/jifen.png" alt=""></td>
+              <td>￥65.00</td>
+              <td><button><a href="#">立即购票</a> </button></td>
+            </tr>
+            <tr>
+              <td>12:20</td>
+              <td>余139/150</td>
+              <td>英语<span>3D</span></td>
+              <td>5号厅</td>
+              <td><img src="../images/ticket/jifen.png" alt=""></td>
+              <td>￥65.00</td>
+              <td><button><a href="#">立即购票</a> </button></td>
+            </tr>
+            <tr>
+              <td>12:20</td>
+              <td>余139/150</td>
+              <td>英语<span>3D</span></td>
+              <td>5号厅</td>
+              <td><img src="../images/ticket/jifen.png" alt=""></td>
+              <td>￥65.00</td>
+              <td><button><a href="#">立即购票</a> </button></td>
+            </tr>
+            <tr>
+              <td>12:20</td>
+              <td>余139/150</td>
+              <td>英语<span>3D</span></td>
+              <td>5号厅</td>
+              <td><img src="../images/ticket/jifen.png" alt=""></td>
+              <td>￥65.00</td>
+              <td><button><a href="#">立即购票</a> </button></td>
+            </tr>
+            <tr>
+              <td>12:20</td>
+              <td>余139/150</td>
+              <td>英语<span>3D</span></td>
+              <td>5号厅</td>
+              <td><img src="../images/ticket/jifen.png" alt=""></td>
+              <td>￥65.00</td>
+              <td><button><a href="#">立即购票</a> </button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
+  </div>
+  <a onclick="pageScroll()">
+    <div class="return">
+      <span>回到顶部</span>
+      <div class="cross"></div>
+      <div class="triangle"></div>
+      <div class="rectangular"></div>
+  </a> 
+</div>
+
+
+
+
+
+
+
+<div></div>
+
+
+
+<!-- 底部 -->
+  <div class="tail">
+    <div class="box">
+      <div class="businessCard">
+        <div class="icon">
+          <img src="../images/ticket/icon3.png" alt="">
+          <span>新手上路</span>
+        </div>
+        <div class="box_text">
+          <p><a href="#">注册登录问题</a></p>
+          <p><a href="#">用户绑定会员卡问题</a></p>
+          <p><a href="#">影票相关问题</a></p>
+          <p><a href="#">票价和支付问题</a></p>
+          <p><a href="#">取票凭证吗和取票问题</a></p>
+        </div>
+      </div>
+      <div class="businessCard">
+        <div class="icon">
+          <img src="../images/ticket/icon4.png" alt="">
+          <span>购票指南</span>
+        </div>
+        <div class="box_text">
+          <p><a href="#">用户购票流程</a></p>
+          <p><a href="#">取票观影指南</a></p>
+          <p><a href="#">会员卡支付相关说明</a></p>
+          <p><a href="#">网银支付相关说明</a></p>
+        </div>
+      </div>
+      <div class="businessCard">
+        <div class="icon">
+          <img src="../images/ticket/icon5.png" alt="">
+          <span>会员权益</span>
+        </div>
+        <div class="box_text">
+          <p><a href="#">会员订票权益</a></p>
+          <p><a href="#">会员积分权益</a></p>
+          <p><a href="#">入会资格</a></p>
+          <p><a href="#">会员卡折扣说明</a></p>
+        </div>
+      </div>
+      <div class="businessCard">
+        <div class="icon">
+          <img src="../images/ticket/icon6.png" alt="">
+          <span>联系我们</span>
+        </div>
+        <div class="box_text">
+          <p><a href="#">手机客户端介绍与下载</a></p>
+          <p><a href="#">影片信息查询</a></p>
+          <p><a href="#">手机自助购票</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <p>公司介绍  -  合作咨询  -  友情链接  -  网站地图  -  站长统计  -  网站声明</p>
+    <p>Copyright © 2013  ed by </p>
+  </footer>
+
+
+
+
+
+
+
+
+
+  <!-- <script src="../js/data.js"></script> -->
+  <script src="../js/jquery.js"></script>
+  <script src="../js/bootstrap.bundle.js"></script>
+  <!-- <script src="../js/public.js"></script> -->
+  <!-- <script src="../js/ticket.js"></script> -->
+  <script>
+  </script>
+</body>
+</html>

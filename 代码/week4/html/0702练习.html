@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ajax</title>
+</head>
+
+<body>
+
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/Mock.js"></script>
+    <script>
+        console.log(window.XMLHttpRequest);
+        let tmphttp;
+        // 定义mock拦截请求
+        Mock.mock('get', './接收请求.html', {
+            name: '12'
+        });
+        if (window.XMLHttpRequest) {
+            tmphttp = new XMLHttpRequest();
+            console.log(tmphttp);
+            tmphttp.onreadystatechange = function () {
+                if (tmphttp.readyState == 4 && tmphttp.status == 200) {
+                    console.log('请求成功啦');
+                    console.log(tmphttp.responseText);
+                    console.log(tmphttp.responseXML);
+                }
+            }
+            tmphttp.open('get', './test.xml', true);
+            tmphttp.send();
+        }
+    </script>
+</body>
+
+</html>

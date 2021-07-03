@@ -1,0 +1,279 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+//  头部
+.head {
+  background-color: #f6f6f6;
+  height: 28px;
+  .head-1 {
+    width: 65%;
+    height: 28px;
+    // border: 1px solid black;
+    margin: auto;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    div {
+      width: 150px;
+      display: flex;
+      justify-content: space-evenly;
+      font-size: 12px;
+      color: #666666;
+      a {
+        text-decoration: none;
+        color: #666666;
+      }
+    }
+  }
+}
+// logo部分
+.logo {
+  height: 93px;
+  width: 100%;
+  // border: 1px solid black;
+  background-color: white;
+  .logo-1 {
+    width: 60%;
+    height: 93px;
+    margin: auto;
+    // border: 1px solid black;
+    display: flex;
+    .logo-1-left {
+      display: flex;
+      height: 93px;
+      // justify-content: flex-end;
+      align-items: center;
+    }
+    .logo-1-right {
+      display: flex;
+      height: 93px;
+      margin-left: 15px;
+      align-items: center;
+    }
+  }
+}
+// 登陆部分
+.main {
+  width: 100%;
+  // 由内容撑开，暂时设置固定的值
+  height: 600px;
+  background-color: #f2f2f2;
+  .main-1 {
+    width: 55%;
+    height: 600px;
+    // background-color: red;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    .main-1-left {
+      width: 540px;
+      height: 510px;
+      background-color: #ffffff;
+      .main-1-left-1 {
+        height: 78px;
+        width: 450px;
+        border-bottom: 1px dashed gray;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        span {
+          font-size: 19px;
+          font-weight: bold;
+          font-stretch: normal;
+          line-height: 16px;
+          letter-spacing: 0px;
+          color: #666666;
+          margin-left: 15px;
+        }
+      }
+      .main-1-left-2 {
+        width: 430px;
+        margin: auto;
+        padding-left: 10px;
+        margin-top: 30px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        // border: 1px solid black;
+        input {
+          outline: 0px;
+          width: 333px;
+          height: 34px;
+        }
+      }
+      .main-1-left-3 {
+        width: 430px;
+        margin: auto;
+        // margin-left: 10px;
+        margin-bottom: 15px;
+        padding-left: 25px;
+        box-sizing: border-box;
+        // border: 1px solid black;
+        input {
+          outline: 0px;
+          width: 333px;
+          height: 34px;
+        }
+      }
+      .main-1-left-4 {
+        width: 430px;
+        height: 42px;
+        margin: auto;
+
+        box-sizing: border-box;
+        margin-bottom: 16px;
+        // border: 1px solid black;
+        display: flex;
+        align-items: center;
+        // justify-content: space-between;
+
+        div:nth-child(2) {
+          // border: 1px solid black;
+          margin-left: 45px;
+          height: 42px;
+          display: flex;
+          align-items: center;
+          // justify-content: center;
+        }
+        input {
+          outline: 0px;
+          width: 200px;
+          height: 34px;
+        }
+      }
+      .main-1-left-5 {
+        // text-align: center;
+        box-sizing: border-box;
+        padding-left: 140px;
+        // border: 1px solid black;
+        font-size: 12px;
+        // vertical-align: middle;
+        color: #666666;
+      }
+      .main-1-left-6 {
+        box-sizing: border-box;
+        padding-left: 140px;
+        // border: 1px solid black;
+        a {
+          color: black;
+          font-size: 12px;
+          text-decoration: none;
+          color: #666666;
+        }
+      }
+      .main-1-left-7 {
+        margin-top: 20px;
+        box-sizing: border-box;
+        padding-left: 80px;
+        div {
+          width: 218px;
+          height: 42px;
+          margin-left: 60px;
+          background-color: red;
+          text-align: center;
+          line-height: 42px;
+          a {
+            text-decoration: none;
+            color: white;
+          }
+        }
+      }
+    }
+    .main-1-right {
+      width: 295px;
+      height: 510px;
+      background-color: #f5f5f5;
+      background-image: url(../image/登陆/注册_15.gif);
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position-y: 150px;
+      p {
+        margin-top: 330px;
+        text-align: center;
+        color: #666666;
+        span {
+          color: red;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+// 尾部
+.tail {
+  height: 200px;
+  // border: 1px solid black;
+  .tail-1 {
+    width: 65%;
+    height: 200px;
+    margin: auto;
+    // border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    a {
+      text-decoration: none;
+      color: #666666;
+    }
+    .tail-1-1 {
+      width: 120px;
+      height: 140px;
+      color: #666666;
+      font-size: 12px;
+
+      // border: 1px solid black;
+      p {
+        margin: 2px;
+      }
+    }
+    .tail-1-2 {
+      width: 120px;
+      height: 140px;
+      color: #666666;
+      font-size: 12px;
+      // border: 1px solid black;
+      p {
+        margin: 0;
+      }
+    }
+    .tail-1-3 {
+      width: 120px;
+      height: 140px;
+      color: #666666;
+      font-size: 12px;
+      // border: 1px solid black;
+      p {
+        margin: 0;
+      }
+    }
+    .tail-1-4 {
+      width: 120px;
+      height: 140px;
+      color: #666666;
+      font-size: 12px;
+      // border: 1px solid black;
+      p {
+        margin: 0;
+      }
+    }
+  }
+}
+// 页尾
+.footer {
+  height: 93px;
+  width: 100%;
+  background-color: #c4c4c4;
+  display: flex;
+  align-items: center;
+  div {
+    width: 350px;
+    height: 60px;
+    margin: auto;
+    font-size: 12px;
+    // border: 1px solid black;
+
+    p {
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+    "data": [
+        { "id": 1, "name": "电风扇1", "num": 1, "price": 199 },
+        { "id": 2, "name": "电风扇2", "num": 1, "price": 299 },
+        { "id": 3, "name": "电风扇3", "num": 1, "price": 399 },
+        { "id": 4, "name": "电风扇4", "num": 1, "price": 499 },
+        { "id": 5, "name": "电风扇5", "num": 1, "price": 599 },
+        { "id": 6, "name": "电风扇6", "num": 1, "price": 699 },
+        { "id": 7, "name": "电风扇7", "num": 1, "price": 799 },
+        { "id": 8, "name": "电风扇8", "num": 1, "price": 899 }
+    ]
+}

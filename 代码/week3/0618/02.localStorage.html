@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01.localStorage</title>
+    <style></style>
+</head>
+
+<body>
+    <div id="box">
+        <input type="text" id="ipt">
+        <button id="add">保存</button>
+        <button id="look">查看</button>
+        <button id="remove">删除</button>
+    </div>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        $('#add').click(function() {
+           let value = $('#ipt').val();
+           console.log(value);
+
+           // 1. localStorage.setItem(标识, 值)
+           // 如果没有这个标识 就添加这个标识 赋值为添加的这个值
+           // 如果已经存在这个标识 那么就修改这个标识对应的值
+           // 不会同时存在相同的标识 否则程序不知道读取的是哪一个
+           localStorage.setItem('test1', value);
+        });
+
+        $('#look').click(function() {
+            //2. localStorage.getItem(标识)
+            // 如果存在这个标识 就获取这个标识对应的值
+            // 如果不存在这个标识    就返回空(null)
+            let res = localStorage.getItem('test2');
+            console.log(res);
+        });
+
+        $('#remove').click(function() {
+            // 删除指定的key
+            // localStorage.removeItem('test1');
+
+            // 删除全部item       尽量不要使用
+            localStorage.clear();     
+        });
+
+    </script>
+</body>
+
+</html>

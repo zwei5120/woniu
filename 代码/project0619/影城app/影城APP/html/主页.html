@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer" />
+    <title>主页</title>
+    <link rel="stylesheet" href="../fontawesome/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/主页.min.css">
+</head>
+
+<body>
+    <div class="main-container">
+
+        <head>
+            <div class="content">
+                <i class="fa fa-diamond" aria-hidden="true"></i>
+                <p>你好，<span id="showAcc"></span>先生</p>
+            </div>
+        </head>
+
+        <!-- 地区切换区域 -->
+        <div class="changeArea">
+            <div class="left">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <p>成都</p>
+            </div>
+            <div class="right">
+                <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+            </div>
+        </div>
+        <!-- 以下为影片展示区域 -->
+        <div class="movie-content">
+            <div class="nowplaying">
+                <div class="title">
+                    <p>正在热映</p>
+                    <a onclick="showMore1()">查看更多</a>
+                </div>
+                <div class="show-body" id="show-body1">
+                    <!-- 每个子元素样式相同，类似卡片，需要a链接 -->
+                    <div class="movie-card">
+                        <a href="">
+                            <img src="../images/主页/img1.jpg" alt="">
+                        </a>
+                        <p>哥斯拉大战金刚</p>
+                    </div>
+                    <div class="movie-card">
+                        <a href="">
+                            <img src="../images/主页/img2.jpg" alt="">
+                        </a>
+                        <p>哥斯拉大战金刚</p>
+                    </div>
+                    <div class="movie-card">
+                        <a href="">
+                            <img src="../images/主页/img3.jpg" alt="">
+                        </a>
+                        <p>哥斯拉大战金刚</p>
+                    </div>
+                    <div class="movie-card">
+                        <a href="">
+                            <img src="../images/主页/img4.jpg" alt="">
+                        </a>
+                        <p>哥斯拉大战金刚</p>
+                    </div>
+                </div>
+            </div>
+            <div class="upcoming">
+                <div class="title">
+                    <p>即将上映</p>
+                    <a onclick="showMore2()">查看更多</a>
+                </div>
+                <div class="show-body" id="show-body2">
+                    <!-- 每个子元素样式相同，类似卡片，需要a链接 -->
+                    <div class="movie-card">
+                        <a href="">
+                            <img src="../images/主页/img5.jpg" alt="">
+                        </a>
+                        <p>哥斯拉大战金刚</p>
+                    </div>
+                    <div class="movie-card">
+                        <a href="">
+                            <img src="../images/主页/img6.jpg" alt="">
+                        </a>
+                        <p>哥斯拉大战金刚</p>
+                    </div>
+                    <div class="movie-card">
+                        <a href="">
+                            <img src="../images/主页/img7.jpg" alt="">
+                        </a>
+                        <p>哥斯拉大战金刚</p>
+                    </div>
+                    <div class="movie-card">
+                        <a href="">
+                            <img src="../images/主页/img8.jpg" alt="">
+                        </a>
+                        <p>哥斯拉大战金刚</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 评分榜区域 -->
+            <div class="score-list">
+                <div class="title">
+                    <p>评分榜</p>
+                    <a href="">查看更多</a>
+                </div>
+                <!-- 评分榜单电影展示区域 -->
+                <div class="show-score" id="show-score">
+                    <!-- 每部影片独占一行，类似于一个卡片，往下滑动 -->
+                    <div class="score-card">
+                        <div class="left">
+                            <img src="../images/主页/img1.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <p id="movie-name">霸王别姬</p>
+                            <p id="score">9.7</p>
+                            <p>类型：<span>喜剧</span></p>
+                            <p>语言：<span>中文</span></p>
+                            <p>时长：<span>115分钟</span></p>
+                            <p>地区：<span>大陆</span></p>
+                        </div>
+                    </div>
+                    <div class="score-card">
+                        <div class="left">
+                            <img src="../images/主页/img2.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <p id="movie-name">霸王别姬</p>
+                            <p id="score">9.7</p>
+                            <p>类型：<span>喜剧</span></p>
+                            <p>语言：<span>中文</span></p>
+                            <p>时长：<span>115分钟</span></p>
+                            <p>地区：<span>大陆</span></p>
+                        </div>
+                    </div>
+                    <div class="score-card">
+                        <div class="left">
+                            <img src="../images/主页/img3.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <p id="movie-name">霸王别姬</p>
+                            <p id="score">9.7</p>
+                            <p>类型：<span>喜剧</span></p>
+                            <p>语言：<span>中文</span></p>
+                            <p>时长：<span>115分钟</span></p>
+                            <p>地区：<span>大陆</span></p>
+                        </div>
+                    </div>
+                    <div class="score-card">
+                        <div class="left">
+                            <img src="../images/主页/img4.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <p id="movie-name">霸王别姬</p>
+                            <p id="score">9.7</p>
+                            <p>类型：<span>喜剧</span></p>
+                            <p>语言：<span>中文</span></p>
+                            <p>时长：<span>115分钟</span></p>
+                            <p>地区：<span>大陆</span></p>
+                        </div>
+                    </div>
+                    <div class="score-card">
+                        <div class="left">
+                            <img src="../images/主页/img5.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <p id="movie-name">霸王别姬</p>
+                            <p id="score">9.7</p>
+                            <p>类型：<span>喜剧</span></p>
+                            <p>语言：<span>中文</span></p>
+                            <p>时长：<span>115分钟</span></p>
+                            <p>地区：<span>大陆</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- 点击查看更多，当前内容消失，切换到热映和将上映的页面  -->
+        <!-- 顶部区域 -->
+        <div class="top-content">
+            <div class="title">
+                <span class="fa fa-arrow-circle-left" onclick="backStep1()"></span>
+                <p>特色电影</p>
+            </div>
+            <div class="button-content">
+                <div class="changeType">
+                    <a class="show" onclick="aClick1(this)">正在上映</a>
+                    <a onclick="aClick2(this)">即将上映</a>
+                </div>
+            </div>
+
+        </div>
+        <!-- 对应展示区域 -->
+        <div class="body-show2">
+            <div class="playing-show" id="playing-show">
+                <!-- 每部影片独占一行，类似于一个卡片，往下滑动 -->
+                <div class="movie-card">
+                    <div class="left">
+                        <img src="../images/主页/img1.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <div class="up">
+                            <p id="movie-name">霸王别姬</p>
+                            <p id="score">评分：<span>9.7</span></p>
+                            <p>类型：<span>喜剧</span></p>
+                            <p>时长：<span>115分钟</span></p>
+                        </div>
+                        <button>立即购票</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <span id="playing-coming" style="display: block;font-size: 0.12rem;margin-bottom: 2rem;">以下为即将上映区域</span> -->
+            <div class="coming-show" id="coming-show"></div>
+        </div>
+    </div>
+
+
+
+
+    <!-- 我的界面 -->
+    <div class="user-page">
+        <div class="top">
+            <p>我的</p>
+            <div class="icon">
+
+            </div>
+            <span id="username">先生</span>
+        </div>
+        <div class="user-body">
+            <ul>
+                <li class="item">
+                    <p>编辑付款方式</p>
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                </li>
+                <li class="item" onclick="changePwdPage()">
+                    <p>修改密码</p>
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                </li>
+                <li class="item">
+                    <p>退出登录</p>
+                    <i class="fa fa-arrow-circle-right" aria-hidden="true"></i>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 修改密码界面 -->
+        <div class="changePwd-page">
+            <div class="title">
+                <span class="fa fa-arrow-circle-left" onclick="backToUserPage()"></span>
+                <p>修改密码</p>
+            </div>
+            <div class="body">
+                <i class="fa fa-eye-slash icon1" aria-hidden="true" onclick="showPwd1(this)"></i>
+                <i class="fa fa-eye-slash icon2" aria-hidden="true" onclick="showPwd2(this)"></i>
+                <i class="fa fa-eye-slash icon3" aria-hidden="true" onclick="showPwd3(this)"></i>
+                <p>旧密码</p>
+                <input type="password" id="oldPwd" placeholder="......">
+                <p>新密码</p>
+                <input type="password" id="pwd" placeholder="......">
+                <p>确认新密码</p>
+                <input type="password" id="pwd2" placeholder="......">
+                <button onclick="changePwd()">修改密码</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 影院界面 -->
+    <div class="cinema-page">
+        <div class="cinema-content1">
+            <div class="title">
+                <i class="fa fa-film" aria-hidden="true"></i>
+                <p>试试我们最好的电影院</p>
+            </div>
+            <!-- 地区切换区域 -->
+            <div class="changeArea">
+                <div class="left">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <p>成都</p>
+                </div>
+                <div class="right">
+                    <i class="fa fa-chevron-circle-down" aria-hidden="true"></i>
+                </div>
+            </div>
+            <!-- 影院展示区域 -->
+            <div class="cinema-show">
+                <!-- 每个影院都是一个卡片 -->
+                <div class="cinema-card">
+                    <div class="left">
+                        <img src="../images/影院/cinema1.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <p id="cinema-name">UME影城（成都成华店）</p>
+                        <div class="address">
+                            <div class="icon"></div>
+                            <span id="distance">1.0km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cinema-card">
+                    <div class="left">
+                        <img src="../images/影院/cinema1.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <p id="cinema-name">UME影城（成都成华店）</p>
+                        <div class="address">
+                            <div class="icon"></div>
+                            <span id="distance">1.0km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cinema-card">
+                    <div class="left">
+                        <img src="../images/影院/cinema1.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <p id="cinema-name">UME影城（成都成华店）</p>
+                        <div class="address">
+                            <div class="icon"></div>
+                            <span id="distance">1.0km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cinema-card">
+                    <div class="left">
+                        <img src="../images/影院/cinema1.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <p id="cinema-name">UME影城（成都成华店）</p>
+                        <div class="address">
+                            <div class="icon"></div>
+                            <span id="distance">1.0km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cinema-card">
+                    <div class="left">
+                        <img src="../images/影院/cinema1.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <p id="cinema-name">UME影城（成都成华店）</p>
+                        <div class="address">
+                            <div class="icon"></div>
+                            <span id="distance">1.0km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cinema-card">
+                    <div class="left">
+                        <img src="../images/影院/cinema1.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <p id="cinema-name">UME影城（成都成华店）</p>
+                        <div class="address">
+                            <div class="icon"></div>
+                            <span id="distance">1.0km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cinema-card">
+                    <div class="left">
+                        <img src="../images/影院/cinema1.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <p id="cinema-name">UME影城（成都成华店）</p>
+                        <div class="address">
+                            <div class="icon"></div>
+                            <span id="distance">1.0km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cinema-card">
+                    <div class="left">
+                        <img src="../images/影院/cinema1.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <p id="cinema-name">UME影城（成都成华店）</p>
+                        <div class="address">
+                            <div class="icon"></div>
+                            <span id="distance">1.0km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cinema-card">
+                    <div class="left">
+                        <img src="../images/影院/cinema1.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <p id="cinema-name">UME影城（成都成华店）</p>
+                        <div class="address">
+                            <div class="icon"></div>
+                            <span id="distance">1.0km</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="cinema-card">
+                    <div class="left">
+                        <img src="../images/影院/cinema1.jpg" alt="">
+                    </div>
+                    <div class="right">
+                        <p id="cinema-name">UME影城（成都成华店）</p>
+                        <div class="address">
+                            <div class="icon"></div>
+                            <span id="distance">1.0km</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 影片界面，从首页点击影片跳转到影片详情页，有简介和排片，点击购票可以选座 -->
+    <div class="movie-page">
+        <div class="movie-content1">
+            <div class="top">
+                <span class="fa fa-arrow-circle-left" onclick="backToMainPage()"></span>
+            </div>
+            <div class="title">
+                <div class="left">
+                    <img src="../images/影片详情/img1.jpg" alt="">
+                </div>
+                <div class="right">
+                    <p id="detail-id">哥斯拉大战金刚</p>
+                    <div class="line2">
+                        <span>类型</span>
+                        <p id="detail-type">动作,冒险,科幻</p>
+                    </div>
+                    <div class="line3">
+                        <span>片长</span>
+                        <p id="detail-duration">113分钟</p>
+                    </div>
+                    <div class="line4">
+                        <span>评分</span>
+                        <p id="detail-score">8.5</p>
+                    </div>
+                </div>
+            </div>
+            <!-- 间隔 -->
+            <div class="gapline"></div>
+            <!-- 以下为两个切换按钮，以及对应展示区域 -->
+            <ul class="btn">
+                <li class="item show" onclick="movieShowPlan(this)">排片</li>
+                <li class="item" onclick="movieShowIntro(this)">简介</li>
+            </ul>
+            <div class="movie-item-show">
+                <div class="film-plan">
+                    <div class="weekdays">
+                        <div class="item locked-show">
+                            <p>星期一</p>
+                            <p>7月5日</p>
+                        </div>
+                        <div class="item">
+                            <p>星期一</p>
+                            <p>7月5日</p>
+                        </div>
+                        <div class="item">
+                            <p>星期一</p>
+                            <p>7月5日</p>
+                        </div>
+                        <div class="item">
+                            <p>星期一</p>
+                            <p>7月5日</p>
+                        </div>
+                        <div class="item">
+                            <p>星期一</p>
+                            <p>7月5日</p>
+                        </div>
+                        <div class="item">
+                            <p>星期一</p>
+                            <p>7月5日</p>
+                        </div>
+                        <div class="item">
+                            <p>星期一</p>
+                            <p>7月5日</p>
+                        </div>
+                    </div>
+                    <!-- 影城与排片卡片式出现 -->
+                    <div class="plan-card-content">
+                        <div class="plan-card">
+                            <p class="card-title">成都双楠电影城</p>
+                            <div class="line-address">
+                                <div class="icon"></div>
+                                <span>54.0km • 四川升成都市温江区文化路1号人民商场门口至...</span>
+                            </div>
+                            <div class="line-lang">
+                                <span>英文 2D • ￥30.00</span>
+                            </div>
+                            <ul class="line-sessions">
+                                <li class="item gray">11:00</li>
+                                <li class="item gray">13:00</li>
+                                <li class="item">15:00</li>
+                                <li class="item blue">17:00</li>
+                                <li class="item">19:00</li>
+                                <li class="item">20:00</li>
+                                <li class="item">21:00</li>
+                            </ul>
+                        </div>
+                        <div class="plan-card">
+                            <p class="card-title">成都双楠电影城</p>
+                            <div class="line-address">
+                                <div class="icon"></div>
+                                <span>54.0km • 四川升成都市温江区文化路1号人民商场门口至...</span>
+                            </div>
+                            <div class="line-lang">
+                                <span>英文 2D • ￥30.00</span>
+                            </div>
+                            <ul class="line-sessions">
+                                <li class="item gray">11:00</li>
+                                <li class="item gray">13:00</li>
+                                <li class="item">15:00</li>
+                                <li class="item">17:00</li>
+                                <li class="item">19:00</li>
+                                <li class="item">20:00</li>
+                                <li class="item">21:00</li>
+                            </ul>
+                        </div>
+                        <div class="plan-card">
+                            <p class="card-title">成都双楠电影城</p>
+                            <div class="line-address">
+                                <div class="icon"></div>
+                                <span>54.0km • 四川升成都市温江区文化路1号人民商场门口至...</span>
+                            </div>
+                            <div class="line-lang">
+                                <span>英文 2D • ￥30.00</span>
+                            </div>
+                            <ul class="line-sessions">
+                                <li class="item gray">11:00</li>
+                                <li class="item gray">13:00</li>
+                                <li class="item">15:00</li>
+                                <li class="item">17:00</li>
+                                <li class="item">19:00</li>
+                                <li class="item">20:00</li>
+                                <li class="item">21:00</li>
+                            </ul>
+                        </div>
+                        <div class="plan-card">
+                            <p class="card-title">成都双楠电影城</p>
+                            <div class="line-address">
+                                <div class="icon"></div>
+                                <span>54.0km • 四川升成都市温江区文化路1号人民商场门口至...</span>
+                            </div>
+                            <div class="line-lang">
+                                <span>英文 2D • ￥30.00</span>
+                            </div>
+                            <ul class="line-sessions">
+                                <li class="item gray">11:00</li>
+                                <li class="item gray">13:00</li>
+                                <li class="item">15:00</li>
+                                <li class="item">17:00</li>
+                                <li class="item">19:00</li>
+                                <li class="item">20:00</li>
+                                <li class="item">21:00</li>
+                            </ul>
+                        </div>
+                        <div class="plan-card">
+                            <p class="card-title">成都双楠电影城</p>
+                            <div class="line-address">
+                                <div class="icon"></div>
+                                <span>54.0km • 四川升成都市温江区文化路1号人民商场门口至...</span>
+                            </div>
+                            <div class="line-lang">
+                                <span>英文 2D • ￥30.00</span>
+                            </div>
+                            <ul class="line-sessions">
+                                <li class="item gray">11:00</li>
+                                <li class="item gray">13:00</li>
+                                <li class="item">15:00</li>
+                                <li class="item">17:00</li>
+                                <li class="item">19:00</li>
+                                <li class="item">20:00</li>
+                                <li class="item">21:00</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 购票按钮固定在页面底部，不移动 -->
+                    <div class="btn-cont">
+                        <button onclick="toSeatPage()">立即选座</button>
+                    </div>
+
+                </div>
+                <div class="intro">
+                    影片中，这两位宛如神祇一般强大的对手于一场壮观的战争中相遇，彼时世界命运正悬于一线。为了找到真正的家园，金刚与他的保护者们踏上了一次艰难的旅程。与他们一道前行的还有一个年轻的孤儿女孩——吉雅，这个女孩与金刚之间存在着一种独特而强大的紧密联系。但意想不到的是，他们在前行的航道上与愤怒的哥斯拉狭路相逢，也由此在全球引起了一系列破坏。一股无形的力量造成了这两只巨兽之间的巨大冲突，深藏在地心深处的奥秘也由此揭开。
+                </div>
+            </div>
+        </div>
+
+        <!-- 从上一个页面，点击立即选座跳转到选座页面 -->
+        <div class="seat-page">
+            <div class="seat-content">
+                <div class="title">
+                    <span class="fa fa-arrow-circle-left" onclick="backToSessionPage()"></span>
+                    <p>选座</p>
+                </div>
+                <div class="seat-body">
+                    <div class="left">
+                        <div class="line">
+                            <div class="item" data-seat-id='A1'>A1</div>
+                            <div class="item" data-seat-id='A2'>A2</div>
+                            <div class="item" data-seat-id='A3'>A3</div>
+                        </div>
+                        <div class="line">
+                            <div class="item" data-seat-id='B1'>B1</div>
+                            <div class="item" data-seat-id='B2'>B2</div>
+                            <div class="item" data-seat-id='B3'>B3</div>
+                        </div>
+                        <div class="line">
+                            <div class="item" data-seat-id='C1'>C1</div>
+                            <div class="item" data-seat-id='C2'>C2</div>
+                            <div class="item" data-seat-id='C3'>C3</div>
+                        </div>
+                        <div class="line">
+                            <div class="item" data-seat-id='D1'>D1</div>
+                            <div class="item" data-seat-id='D2'>D2</div>
+                            <div class="item" data-seat-id='D3'>D3</div>
+                        </div>
+                        <div class="line">
+                            <div class="item" data-seat-id='E1'>E1</div>
+                            <div class="item" data-seat-id='E2'>E2</div>
+                            <div class="item" data-seat-id='E3'>E3</div>
+                        </div>
+                        <div class="line">
+                            <div class="item" data-seat-id='F1'>F1</div>
+                            <div class="item" data-seat-id='F2'>F2</div>
+                            <div class="item" data-seat-id='F3'>F3</div>
+                        </div>
+
+                    </div>
+                    <div class="right">
+                        <div class="line">
+                            <div class="item" data-seat-id='A4'>A4</div>
+                            <div class="item" data-seat-id='A5'>A5</div>
+                            <div class="item" data-seat-id='A6'>A6</div>
+                        </div>
+                        <div class="line">
+                            <div class="item" data-seat-id='B4'>B4</div>
+                            <div class="item" data-seat-id='B5'>B5</div>
+                            <div class="item" data-seat-id='B6'>B6</div>
+                        </div>
+                        <div class="line">
+                            <div class="item" data-seat-id='C4'>C4</div>
+                            <div class="item" data-seat-id='C5'>C5</div>
+                            <div class="item" data-seat-id='C6'>C6</div>
+                        </div>
+                        <div class="line">
+                            <div class="item" data-seat-id='D4'>D4</div>
+                            <div class="item" data-seat-id='D5'>D5</div>
+                            <div class="item" data-seat-id='D6'>D6</div>
+                        </div>
+                        <div class="line">
+                            <div class="item" data-seat-id='E4'>E4</div>
+                            <div class="item" data-seat-id='E5'>E5</div>
+                            <div class="item" data-seat-id='E6'>E6</div>
+                        </div>
+                        <div class="line">
+                            <div class="item" data-seat-id='F4'>F4</div>
+                            <div class="item" data-seat-id='F5'>F5</div>
+                            <div class="item" data-seat-id='F6'>F6</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="tips">
+                    <div class="tip tip1">
+                        <div class="icon"></div>
+                        <p>可选座位</p>
+                    </div>
+                    <div class="tip tip2">
+                        <div class="icon"></div>
+                        <p>已选座位</p>
+                    </div>
+                    <div class="tip tip3">
+                        <div class="icon"></div>
+                        <p>已售座位</p>
+                    </div>
+                </div>
+            </div>
+            <div class="seatSelectShow">
+                <p class="film-name">哥斯拉大战金刚</p>
+                <p class="address-info">成都双楠电影城 • 2020-04-16 星期一 19：00 </p>
+                <div class="tickets-show">
+                    <div class="left">
+                        <p>已选座位</p>
+                        <div class="show-content">
+                            <div class="item">F4</div>
+                            <div class="item">F4</div>
+                            <div class="item">F4</div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <p>总价</p>
+                        <div class="totalPrice">
+                            ￥120.00
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-cont">
+                    <button onclick="reviewOrder()">立即购票</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <!-- 定义一个底部区域，滑动到底进行提示 -->
+    <p class="page-bottom">没有啦，不要再滑啦~~~</p>
+
+
+    <!-- 页面底部固定区域 -->
+    <footer>
+        <div class="foot-content">
+            <ul id="foot-item">
+                <li class="item show">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                    <span>首页</span>
+                </li>
+                <li class="item">
+                    <i class="fa fa-opera" aria-hidden="true"></i>
+                    <span>影院</span>
+                </li>
+                <li class="item">
+                    <i class="fa fa-film" aria-hidden="true"></i>
+                    <span>影片</span>
+                </li>
+                <li class="item">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span>我的</span>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <!-- 动态调整html根标签的font-size值，间接调整rem的值 -->
+    <script src="../js/adjustRemSrc.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/Mock.js"></script>
+    <script src="../js/主页.js"></script>
+
+</body>
+
+</html>

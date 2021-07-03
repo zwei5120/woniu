@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 200px;
+            height: 200px;
+            background-color: yellowgreen;
+        }
+        #box1 {
+            width: 400px;
+            height: 400px;
+            background-color: aqua;
+        }
+    </style>
+</head>
+
+<body draggable="true" ondragstart="fn1()" ondragover="fn2()" ondrop="fn3()">
+    <span id="span" draggable="true" ondragstart="fn1()" ondragover="fn2()" ondrop="fn3()">span</span>
+    <div id="box" draggable="true" ondragstart="fn1()" ondragover="fn2()" ondrop="fn3()"></div>
+    <div id="box1" draggable="true" ondragstart="fn1()" ondragover="fn2()" ondrop="fn3()"></div>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        function fn1() {
+            event.dataTransfer.setData('id', event.target.id);
+            console.log(event.target.id);
+        }
+        function fn2() {
+            event.preventDefault();
+        }
+        function fn3() {
+            event.preventDefault();
+            let id = event.dataTransfer.getData('id');
+            event.target.appendChild(document.getElementById(id));
+        }
+    </script>
+</body>
+
+</html>

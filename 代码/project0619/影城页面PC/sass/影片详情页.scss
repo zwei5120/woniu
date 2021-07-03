@@ -1,0 +1,1023 @@
+* {
+    margin: 0px;
+}
+
+// 顶部登录注册部分
+.top {
+    width: 100%;
+    height: 28px;
+    background-color: #fafafa;
+
+    .content {
+        width: 990px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        &>a {
+            display: inline-block;
+            width: 18px;
+            height: 100%;
+            padding: 1px 0px 0px;
+            margin: 0px 7px;
+            // height: 100%;
+        }
+
+        ul {
+            padding: 0px;
+            list-style: none;
+            display: flex;
+            font-size: 12px;
+            color: #666666;
+            align-items: center;
+            margin: 0px;
+
+            .item {
+                height: 12px;
+                padding: 0px 10px;
+                border-right: 1px solid #666666;
+                position: relative;
+
+                .quit {
+                    display: block;
+                    height: 25px;
+                    position: absolute;
+                    font-size: 12px;
+                    line-height: 12px;
+                    bottom: -15px;
+                    right: 10px;
+                    padding-top: 15px;
+                    display: none;
+                }
+
+                &:first-child:hover .quit {
+                    display: block;
+                }
+
+                .quit:hover {
+                    display: block;
+                    cursor: pointer;
+                    color: #333333;
+                    font-weight: bold;
+                }
+
+                &:last-child {
+                    border: 0px;
+                }
+
+                a {
+                    display: block;
+                    font-size: 12px;
+                    text-decoration: none;
+                    color: #666666;
+                    margin-top: -3px;
+                }
+
+                span {
+                    display: block;
+                    margin-top: -3px;
+                }
+            }
+        }
+    }
+}
+
+// logo区域
+.logo {
+    width: 100%;
+    height: 90px;
+
+    .content {
+        width: 990px;
+        height: 90px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+
+        .logo_icon {
+            width: 215px;
+            height: 50px;
+            background-image: url(../images/main/logo.png);
+            background-repeat: no-repeat;
+            background-position: center center;
+            margin: 0px 10px;
+        }
+
+        .city {
+            display: flex;
+            flex-direction: column;
+            padding-left: 20px;
+
+            p {
+                font-size: 22px;
+                color: #000000;
+                margin: 0px;
+            }
+
+            span {
+                font-size: 12px;
+                color: #666666;
+            }
+        }
+    }
+}
+
+// 导航栏区域
+nav {
+    width: 100%;
+    height: 40px;
+    background-color: #7a7777;
+    border-top: 2px solid #414141;
+
+    .content {
+        width: 990px;
+        height: 38px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .nav {
+            height: 38px;
+            padding: 0px;
+            list-style: none;
+            display: flex;
+
+            .item {
+                height: 100%;
+                padding: 0px 30px;
+                display: flex;
+                align-items: center;
+
+                &:hover {
+                    background-color: #e60020;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #f8e8e8;
+                }
+            }
+        }
+
+        .input_search {
+            width: 240px;
+            height: 30px;
+            box-sizing: border-box;
+            border: 1px solid #3d3d3d;
+            display: flex;
+
+            .ipt_search {
+                height: 100%;
+                border: 0px;
+                outline: 0px;
+                padding: 0px;
+                vertical-align: middle;
+                flex-grow: 1;
+                padding-left: 4px;
+            }
+
+            .btn_search {
+                height: 100%;
+                width: 34px;
+                border: 0px;
+                vertical-align: middle;
+                background-image: url(../images/main/icon3.png);
+                background-repeat: no-repeat;
+                background-position: center center;
+                background-color: #4b4b4b;
+                outline: 0px;
+            }
+        }
+    }
+}
+
+// main区域
+main {
+    width: 990px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+
+    .main-left {
+        width: 720px;
+
+        &>p {
+            width: 100%;
+            height: 35px;
+            padding-left: 10px;
+            background-color: #eeeeee;
+            font-size: 12px;
+            line-height: 35px;
+            color: #666666;
+
+            span {
+                color: #e60020;
+            }
+        }
+
+        .body-item {
+            width: 100%;
+            height: 290px;
+            box-sizing: border-box;
+            // border-bottom: 1px solid #d1d1d1;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 23px;
+
+            .title {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-bottom: 5px;
+                border-bottom: 1px dashed #d1d1d1;
+                margin-bottom: 12px;
+
+                p {
+                    font-size: 20px;
+                    color: #000000;
+                    margin: 0px;
+                }
+
+
+            }
+
+            .content {
+                display: flex;
+
+                .left {
+                    // padding: 5px;
+                    width: 170px;
+                    height: 240px;
+
+                    // border: 1px solid #e2e2e2;
+                    img {
+                        width: 170px;
+                        height: 240px;
+                    }
+                }
+
+                .right {
+                    height: 240px;
+                    flex-grow: 1;
+                    padding-left: 16px;
+                    display: flex;
+                    flex-direction: column;
+
+
+
+                    .content {
+                        flex-grow: 1;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+
+                        .text {
+                            p {
+                                font-size: 12px;
+                                line-height: 15px;
+                                color: #333333;
+                                // margin: 0px;
+                                margin: 12px 0px;
+
+                                &::first-letter {
+                                    letter-spacing: 45px;
+                                }
+
+                                i {
+                                    font-style: normal;
+                                    color: #666666;
+                                }
+
+                                &:nth-child(2),
+                                &:nth-child(3),
+                                &:nth-child(6) {
+
+                                    // line-height: 25px;
+                                    &::first-letter {
+                                        letter-spacing: 2px;
+                                    }
+                                }
+                            }
+                        }
+
+                        button {
+                            width: 106px;
+                            height: 33px;
+                            padding-left: 40px;
+                            background-color: #e50020;
+                            font-size: 12px;
+                            color: #ffffff;
+                            line-height: 33px;
+                            border: 0px;
+                            outline: 0px;
+                            background-image: url(../images/cinema/icon6.png);
+                            background-repeat: no-repeat;
+                            background-position: 15px 50%;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        // 分页导航区域
+        .nav-page {
+            width: 100%;
+
+            .nav-title {
+                border-bottom: 3px solid #f0343c;
+                margin-bottom: 35px;
+
+                ul {
+                    border: 0px;
+                }
+
+                a {
+                    width: 116px;
+                    height: 35px;
+                    background-color: #eeeeee;
+                    font-size: 15px;
+                    color: #333333;
+                    line-height: 35px;
+                    padding: 0px;
+                    text-align: center;
+                    border-radius: 0px;
+                }
+
+                .active {
+                    background-color: #f0343c;
+                    color: #ffffff;
+                    border: 0px;
+                }
+            }
+
+            .nav-content {
+                .tab-pane {
+                    .content {
+                        width: 100%;
+
+                        .introduction {
+                            padding: 0px 18px 30px;
+
+                            p {
+                                font-size: 20px;
+                                color: #000000;
+                                margin-bottom: 15px;
+                                font-weight: bold;
+                            }
+
+                            div {
+                                margin: 20px 0px 15px;
+                                font-size: 12px;
+                                color: #666666;
+                                height: 88px;
+                                overflow: hidden;
+                            }
+
+                            img {
+                                width: 684px;
+                                height: 214px;
+                                // height: 220px;
+                            }
+                        }
+
+                        .comments {
+                            width: 100%;
+
+                            .title {
+                                width: 100%;
+                                height: 50px;
+                                background-color: #eeeeee;
+                                font-size: 14px;
+                                font-weight: bold;
+                                color: #333333;
+                                line-height: 50px;
+                                padding-left: 10px;
+                            }
+
+                            .com-text {
+                                width: 100%;
+                                margin-top: 20px;
+
+                                .text-input {
+                                    width: 100%;
+                                    display: flex;
+
+                                    .icon {
+                                        width: 80px;
+                                        height: 80px;
+                                        background-image: url(../images/moviedetails/icon1.png);
+                                        background-repeat: no-repeat;
+                                        background-position: center center;
+                                        margin-right: 18px;
+                                    }
+
+                                    .text {
+                                        flex-grow: 1;
+
+                                        .input {
+                                            width: 100%;
+                                            height: 120px;
+                                            box-sizing: border-box;
+                                            border: 2px solid #b40921;
+                                            display: flex;
+                                            flex-direction: column;
+                                            position: relative;
+
+                                            .star {
+                                                width: 100%;
+                                                display: flex;
+                                                align-items: center;
+                                                height: 33px;
+                                                background-color: #ffebee;
+                                                padding-left: 10px;
+
+                                                p {
+                                                    margin: 0px;
+                                                    font-size: 12px;
+                                                    color: #333333;
+
+                                                    span {
+                                                        font-size: 20px;
+                                                        font-family: Georgia, 'Times New Roman', Times, serif;
+                                                        color: #e60020;
+                                                    }
+                                                }
+
+                                                .star-num {
+                                                    margin: 0px;
+                                                    padding: 0px;
+
+                                                    list-style: none;
+                                                    display: flex;
+                                                    margin: 0px 8px;
+
+                                                    .item {
+                                                        width: 20px;
+                                                        height: 20px;
+                                                        background-image: url(../images/moviedetails/grayStar.png);
+                                                        background-repeat: no-repeat;
+                                                        background-position: center center;
+                                                    }
+
+                                                    .goldStar {
+                                                        background-image: url(../images/moviedetails/goldStar.png);
+                                                    }
+                                                }
+                                            }
+
+                                            textarea {
+                                                flex-grow: 1;
+                                                width: 100%;
+                                                outline: 0px;
+                                                border: 0px;
+                                                z-index: 1;
+                                            }
+
+                                            // 左侧突出三角形边框绘制
+                                            &::before {
+                                                content: "";
+                                                display: block;
+                                                width: 15px;
+                                                height: 15px;
+                                                background-color: white;
+                                                box-sizing: border-box;
+                                                border: 2px solid #b40921;
+                                                transform: rotateZ(45deg);
+                                                position: absolute;
+                                                top: 35px;
+                                                left: -8px;
+                                            }
+                                        }
+
+                                        .tosubmit {
+                                            width: 100%;
+                                            height: 40px;
+                                            display: flex;
+                                            justify-content: space-between;
+                                            align-items: center;
+
+                                            .icon {
+                                                width: 22px;
+                                                height: 22px;
+                                                background-image: url(../images/moviedetails/icon3.png);
+                                                background-repeat: no-repeat;
+                                                background-position: center center;
+                                            }
+
+                                            .btn {
+                                                height: 100%;
+                                                padding: 0px;
+                                                border: 0px;
+                                                display: flex;
+                                                align-items: center;
+
+                                                p {
+                                                    font-size: 12px;
+                                                    color: #666666;
+                                                    margin: 0px;
+                                                    margin-right: 10px;
+
+                                                    span {
+                                                        font-family: Georgia, 'Times New Roman', Times, serif;
+                                                    }
+                                                }
+
+                                                button {
+                                                    width: 105px;
+                                                    height: 100%;
+                                                    font-size: 12px;
+                                                    color: #f0ced3;
+                                                    background-color: #b40921;
+                                                    border: 0px;
+                                                    outline: 0px;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // 显示评论
+                                .show-comments {
+                                    width: 100%;
+                                    padding-left: 100px;
+
+                                    .com-item {
+                                        width: 100%;
+                                        display: flex;
+                                        height: 110px;
+                                        padding-top: 25px;
+                                        border-top: 1px solid #f2f2f2;
+                                        margin-top: 10px;
+                                        margin-bottom: 15px;
+
+                                        .icon {
+                                            width: 60px;
+                                            height: 60px;
+                                            background-image: url(../images/moviedetails/icon2.png);
+                                            background-repeat: no-repeat;
+                                            background-position: center center;
+                                        }
+
+                                        .context {
+                                            // flex-grow: 1;
+                                            width: 555px;
+                                            margin-left: 10px;
+
+                                            .line1 {
+                                                width: 100%;
+                                                height: 20px;
+                                                display: flex;
+                                                align-items: center;
+
+                                                p {
+                                                    margin: 0px;
+                                                    font-size: 14px;
+                                                    color: #e60020;
+                                                    font-weight: bold;
+                                                }
+
+                                                .star {
+                                                    flex-grow: 1;
+                                                    display: flex;
+                                                    align-items: center;
+                                                    height: 22px;
+                                                    // background-color: #ffebee;
+                                                    // padding-left: 10px;
+
+                                                    p {
+                                                        margin: 0px;
+                                                        font-size: 12px;
+                                                        color: #333333;
+
+                                                        span {
+                                                            font-size: 20px;
+                                                            font-family: Georgia, 'Times New Roman', Times, serif;
+                                                            color: #e60020;
+                                                        }
+                                                    }
+
+                                                    .date {
+                                                        font-size: 13px;
+                                                        color: #666666;
+                                                        margin-left: 8px;
+                                                    }
+
+                                                    .star-num {
+                                                        margin: 0px;
+                                                        padding: 0px;
+
+                                                        list-style: none;
+                                                        display: flex;
+                                                        margin: 0px 8px;
+
+                                                        .item {
+                                                            width: 20px;
+                                                            height: 20px;
+                                                            background-image: url(../images/moviedetails/grayStar.png);
+                                                            background-repeat: no-repeat;
+                                                            background-position: center center;
+                                                        }
+
+                                                        .goldStar {
+                                                            background-image: url(../images/moviedetails/goldStar.png);
+                                                        }
+                                                    }
+                                                }
+                                            }
+
+                                            .line2 {
+                                                height: 50px;
+                                                overflow: hidden;
+                                                font-size: 12px;
+                                                color: #666666;
+                                                margin-top: 12px;
+                                            }
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+                    }
+                }
+
+                .trailer-content {
+                    width: 100%;
+
+                    p {
+                        font-size: 16px;
+                        font-weight: bold;
+                        margin: 15px 0px;
+                        color: #000000;
+                    }
+
+                    .trailer {
+                        width: 100%;
+                        height: 300px;
+                        padding: 3px;
+                        border-radius: 2px;
+                        border: 1px solid #d1d1d1;
+
+                        video {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .changePage {
+            padding-left: 5px;
+            font-size: 12px;
+            line-height: 16px;
+            color: #666666;
+            margin-bottom: 40px;
+
+            .item {
+                display: inline-block;
+                text-decoration: none;
+                color: #666666;
+                margin-right: 10px;
+
+                &:hover {
+                    background-color: #e80023;
+                    color: #ffffff;
+                }
+            }
+
+            .item1,
+            .item8 {
+                width: 42px;
+                height: 20px;
+                border: 1px solid #d1d1d1;
+                text-align: center;
+            }
+
+            .item2,
+            .item7 {
+                width: 62px;
+                height: 20px;
+                border: 1px solid #d1d1d1;
+                background-image: url(../images/cinema/left.png);
+                background-repeat: no-repeat;
+                background-position: 15% 50%;
+                padding-left: 18px;
+            }
+
+            .item7 {
+                background-image: url(../images/cinema/right.png);
+                padding-left: 5px;
+                background-position: 85% 50%;
+            }
+
+            .item3,
+            .item4,
+            .item5,
+            .item6 {
+                width: 25px;
+                height: 20px;
+                border: 1px solid #d1d1d1;
+                text-align: center;
+
+            }
+        }
+
+    }
+
+    .main-right {
+        width: 250px;
+
+        .quick-ticket {
+            background-color: #e9e9e9;
+            padding: 0px 18px;
+            padding-bottom: 22px;
+
+            .line1 {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .text {
+                    p {
+                        font-size: 20px;
+                        line-height: 16px;
+                        color: #333333;
+                        font-weight: bold;
+                        margin: 0px;
+                    }
+
+                    span {
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: #7b7b7b;
+                    }
+                }
+
+                .icon {
+                    width: 60px;
+                    height: 60px;
+                    background-image: url(../images/cinema/icon1.png);
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                }
+            }
+
+            .item {
+                position: relative;
+                margin: 8px 0px;
+
+                select {
+                    width: 100%;
+                    height: 36px;
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: #696969;
+                    border: 0px;
+                    outline: 0px;
+                    appearance: none;
+                    -moz-appearance: none;
+                    -webkit-appearance: none;
+                    background-image: url(../images/cinema/icon2.png);
+                    background-repeat: no-repeat;
+                    background-position: 95% 50%;
+                    padding-left: 12px;
+                }
+
+                .icon {
+                    width: 2px;
+                    height: 23px;
+                    position: absolute;
+                    border-right: 1px dotted #6e6e6e;
+                    top: 6px;
+                    right: 40px;
+                }
+            }
+
+            .line3 {
+                select {
+                    background-image: url(../images/cinema/icon3.png);
+                }
+            }
+
+            .line4 {
+                select {
+                    background-image: url(../images/cinema/icon4.png);
+                }
+            }
+
+            .line5 {
+                select {
+                    background-image: url(../images/cinema/icon5.png);
+                }
+            }
+
+            a {
+                display: block;
+                width: 100%;
+                height: 44px;
+                line-height: 44px;
+                text-decoration: none;
+                font-size: 18px;
+                color: #ffffff;
+                background-color: #e50020;
+                text-align: center;
+            }
+        }
+
+        .cinema-activity {
+            margin-top: 12px;
+            padding: 10px;
+            background-color: #f3f3f3;
+
+            .title {
+                // width: 231px;
+                height: 27px;
+                display: flex;
+                justify-content: space-between;
+                // align-items: center;
+
+                .left {
+                    font-size: 15px;
+                    font-weight: bold;
+                    line-height: 16px;
+                    color: #f0343c;
+                    border-bottom: 3px solid #f0343c;
+                    padding-bottom: 10px;
+                }
+
+                .right {
+                    flex-grow: 1;
+                    border-bottom: 3px solid #999999;
+                    padding-bottom: 10px;
+                    display: flex;
+                    justify-content: flex-end;
+
+                    a {
+                        text-decoration: none;
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: #666666;
+
+                    }
+                }
+            }
+
+            .item {
+                display: flex;
+                padding-bottom: 15px;
+                margin-top: 10px;
+                border-bottom: 1px dashed #c0c0c0;
+
+                &:last-child {
+                    border: 0px;
+                }
+
+                .left {
+                    width: 100px;
+                    height: 140px;
+                }
+
+                .right {
+                    flex-grow: 1;
+                    padding-left: 10px;
+
+                    p {
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: #666666;
+                        margin: 10px 0px;
+
+                        &:first-child {
+                            font-size: 14px;
+                            font-weight: bold;
+                            color: #000000;
+                            margin-top: 7px;
+                        }
+                    }
+
+                    a {
+                        display: block;
+                        width: 90px;
+                        height: 26px;
+                        background-color: #a4a4a4;
+                        font-size: 12px;
+                        line-height: 26px;
+                        color: #ffffff;
+                        background-image: url(../images/cinema/icon7.png);
+                        background-repeat: no-repeat;
+                        background-position: 15% 50%;
+                        padding-left: 40px;
+                        text-decoration: none;
+                        margin-top: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// foot区域
+footer {
+    width: 100%;
+    height: 300px;
+
+    .content1 {
+        width: 100%;
+        background-color: #ededed;
+
+        .foot-body {
+            width: 990px;
+            margin: 0 auto;
+            height: 200px;
+            padding-top: 18px;
+
+            ul {
+                padding: 0px;
+                margin: 0px;
+                list-style: none;
+                display: flex;
+                justify-content: space-around;
+
+                .item {
+                    .title {
+                        display: flex;
+                        align-items: flex-end;
+                        margin-bottom: 15px;
+
+                        .icon {
+                            width: 35px;
+                            height: 35px;
+                            background-image: url(../images/main/icon12.png);
+                            background-repeat: no-repeat;
+                            background-position: center center;
+                        }
+
+                        .icon2 {
+                            background-image: url(../images/main/icon13.png);
+                        }
+
+                        .icon3 {
+                            background-image: url(../images/main/icon14.png);
+                        }
+
+                        .icon4 {
+                            background-image: url(../images/main/icon15.png);
+                        }
+
+                        p {
+                            font-size: 16px;
+                            line-height: 16px;
+                            color: #333333;
+                            margin: 0px;
+                            font-weight: bold;
+                            margin-left: 10px;
+                        }
+                    }
+
+                    a {
+                        display: block;
+                        text-decoration: none;
+                        font-size: 12px;
+                        line-height: 16px;
+                        color: #666666;
+                        margin: 8px 0px;
+                    }
+
+                }
+            }
+        }
+
+    }
+
+    .content2 {
+        width: 100%;
+        background-color: #b9b9b9;
+
+        .foot-bottom {
+            width: 990px;
+            margin: 0 auto;
+            height: 80px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            p,
+            span {
+                font-size: 12px;
+                line-height: 16px;
+                color: #333333;
+                margin: 0px;
+                margin-bottom: 5px;
+            }
+        }
+    }
+}

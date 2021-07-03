@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer" />
+    <title>影城</title>
+    <link rel="stylesheet" href="../js/css/bootstrap.min.css">
+    <script src="../js/js/jquery-3.6.0.slim.min.js"></script>
+    <script src="../js/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="../css/影城.min.css">
+</head>
+
+<body>
+    <!-- 顶部登录注册部分 -->
+    <div class="top">
+        <div class="content">
+            <a href="">
+                <img src="../images/main/icon1.png" alt="">
+            </a>
+            <a href="">
+                <img src="../images/main/icon2.png" alt="">
+            </a>
+            <ul>
+                <li class="item">
+                    <a href="./登陆.html" id="toLogin">登录</a>
+                    <span onclick="quit()" class="quit">退出当前账户</span>
+                </li>
+                <li class="item">
+                    <a href="./注册.html">注册</a>
+                </li>
+                <li class="item">
+                    <span> 全国服务热线：888-8888888</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- logo区域 -->
+    <div class="logo">
+        <div class="content">
+            <div class="logo_icon"></div>
+            <div class="city">
+                <p>佛山</p>
+                <!-- span标签用于更换城市 -->
+                <span>[更换城市]</span>
+            </div>
+        </div>
+    </div>
+    <!-- 导航栏区域 -->
+    <nav>
+        <div class="content">
+            <ul class="nav">
+                <li class="item">
+                    <a href="./index主页.html">首页</a>
+                </li>
+                <li class="item">
+                    <a href="./影片.html">影片</a>
+                </li>
+                <li class="item">
+                    <a href="./影城.html">影城</a>
+                </li>
+                <li class="item">
+                    <a href="./购票.html">购票</a>
+                </li>
+                <li class="item">
+                    <a href="./影城活动.html">影城活动</a>
+                </li>
+                <li class="item">
+                    <a href="./会员中心.html">会员服务</a>
+                </li>
+                <li class="item">
+                    <a href="./顾客互动.html">顾客互动</a>
+                </li>
+            </ul>
+            <div class="input_search">
+                <input type="text" class="ipt_search" placeholder="搜索影片">
+                <a class="btn_search" href="https://www.baidu.com"> </a>
+            </div>
+        </div>
+    </nav>
+    <!-- main区域 -->
+    <main>
+        <div class="main-left">
+            <p>佛山共<span id="cinemaNum">88</span>家电影城</p>
+            <div class="left-content" id="left-content">
+                
+            </div>
+
+
+            <!-- 翻页按钮 -->
+            <div class="changePage">
+                <a  class="item item1">首页</a>
+                <a  class="item item2">上一页</a>
+                <a  class="item item3">1</a>
+                <a  class="item item4">2</a>
+                <a  class="item item5">3</a>
+                <a  class="item item6">4</a>
+                <a  class="item item7">下一页</a>
+                <a  class="item item8">尾页</a>
+                <span>共有8页</span>
+            </div>
+
+        </div>
+        <div class="main-right">
+            <div class="quick-ticket">
+                <div class="line1">
+                    <div class="text">
+                        <p>快速购票</p>
+                        <span>QUICK TICKET</span>
+                    </div>
+                    <div class="icon"></div>
+                </div>
+                <div class="item line2">
+                    <select name="" id="cinema" onchange="toMovie(this)">
+                        <option value="">选择影院</option>
+                        <option value="">天空影院</option>
+                        <option value="">大地影院</option>
+                    </select>
+                    <div class="icon"></div>
+                </div>
+                <div class="item line3">
+                    <select name="" id="movie" onchange="toTime(this)">
+                        <option value="">选择电影</option>
+                        <option value="">天空影院</option>
+                        <option value="">大地影院</option>
+                    </select>
+                    <div class="icon"></div>
+                </div>
+                <div class="item line4">
+                    <select name="" id="time" onchange="toSession(this)">
+                        <option value="">选择时间</option>
+                        <option value="">天空影院</option>
+                        <option value="">大地影院</option>
+                    </select>
+                    <div class="icon"></div>
+                </div>
+                <div class="item line5">
+                    <select name="" id="session">
+                        <option value="">选择场次</option>
+                        <option value="">天空影院</option>
+                        <option value="">大地影院</option>
+                    </select>
+                    <div class="icon"></div>
+                </div>
+                <!-- 立即购票按钮 -->
+                <a href="">立即购票</a>
+            </div>
+            <div class="cinema-activity">
+                <div class="title">
+                    <div class="left">影城活动</div>
+                    <div class="right">
+                        <a href="">更多>></a>
+                    </div>
+                </div>
+                <div class="content">
+                    <div class="item">
+                        <div class="left">
+                            <img src="../images/cinema/img9.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <p>飞驰人生</p>
+                            <p>9月13日上映</p>
+                            <p>类型：剧情/悬疑</p>
+                            <p>片长：119分钟</p>
+                            <a href="">预先片</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="left">
+                            <img src="../images/cinema/img10.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <p>飞驰人生</p>
+                            <p>9月13日上映</p>
+                            <p>类型：剧情/悬疑</p>
+                            <p>片长：119分钟</p>
+                            <a href="">预先片</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="left">
+                            <img src="../images/cinema/img11.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <p>飞驰人生</p>
+                            <p>9月13日上映</p>
+                            <p>类型：剧情/悬疑</p>
+                            <p>片长：119分钟</p>
+                            <a href="">预先片</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="left">
+                            <img src="../images/cinema/img12.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <p>飞驰人生</p>
+                            <p>9月13日上映</p>
+                            <p>类型：剧情/悬疑</p>
+                            <p>片长：119分钟</p>
+                            <a href="">预先片</a>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="left">
+                            <img src="../images/cinema/img13.jpg" alt="">
+                        </div>
+                        <div class="right">
+                            <p>飞驰人生</p>
+                            <p>9月13日上映</p>
+                            <p>类型：剧情/悬疑</p>
+                            <p>片长：119分钟</p>
+                            <a href="">预先片</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+
+    <!-- foot区域 -->
+    <footer>
+        <div class="content1">
+            <div class="foot-body">
+                <ul>
+                    <li class="item">
+                        <div class="title">
+                            <div class="icon"></div>
+                            <p>新手上路</p>
+                        </div>
+                        <a href="" class="tolink">注册登录问题</a>
+                        <a href="" class="tolink">用户绑定会员卡问题</a>
+                        <a href="" class="tolink">影票相关问题</a>
+                        <a href="" class="tolink">票价和支付问题</a>
+                        <a href="" class="tolink">取票凭证吗和取票问题</a>
+                    </li>
+                    <li class="item">
+                        <div class="title">
+                            <div class="icon icon2"></div>
+                            <p>购票指南</p>
+                        </div>
+                        <a href="" class="tolink">注册登录问题</a>
+                        <a href="" class="tolink">用户绑定会员卡问题</a>
+                        <a href="" class="tolink">影票相关问题</a>
+                        <a href="" class="tolink">票价和支付问题</a>
+                        <a href="" class="tolink">取票凭证吗和取票问题</a>
+                    </li>
+                    <li class="item">
+                        <div class="title">
+                            <div class="icon icon3"></div>
+                            <p>会员权益</p>
+                        </div>
+                        <a href="" class="tolink">注册登录问题</a>
+                        <a href="" class="tolink">用户绑定会员卡问题</a>
+                        <a href="" class="tolink">影票相关问题</a>
+                        <a href="" class="tolink">票价和支付问题</a>
+                        <a href="" class="tolink">取票凭证吗和取票问题</a>
+                    </li>
+                    <li class="item">
+                        <div class="title">
+                            <div class="icon icon4"></div>
+                            <p>联系我们</p>
+                        </div>
+                        <a href="" class="tolink">注册登录问题</a>
+                        <a href="" class="tolink">用户绑定会员卡问题</a>
+                        <a href="" class="tolink">影票相关问题</a>
+                        <a href="" class="tolink">票价和支付问题</a>
+                        <a href="" class="tolink">取票凭证吗和取票问题</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="content2">
+            <div class="foot-bottom">
+                <p>公司介绍 - 合作咨询 - 友情链接 - 网站地图 - 站长统计 - 网站声明</p>
+                <span>Copyright © 2013 ed by </span>
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+    <script src="../js/jquery.js"></script>
+    <script src="../js/Mock.js"></script>
+    <script src="../javaScript/影城.js"></script>
+</body>
+
+</html>

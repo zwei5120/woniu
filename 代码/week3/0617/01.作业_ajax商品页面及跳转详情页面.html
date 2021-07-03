@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品详情页面</title>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script src="../js/jquery.js"></script>
+    <script>
+        // 定义全部变量的数组接受获取的数据
+        let goodArr = [];
+
+        // 首先从json文件中获取数据
+        $.ajax({
+            url: '../json/a.json',
+            type: 'get',
+            success: function (res) {
+                goodArr = [...res.data];
+                // console.log(goodArr);
+                let item = goodArr.find(item => item.id === goodId);
+                render(item);
+            }
+        });
+        // 定义渲染函数
+        function render(item) {
+            $('#box').html('');
+            let $p = $(`  <p> 编号：${item.id} 名称：${item.name} 数量：${item.num} 价格：${item.price} </p>  `);
+            $('#box').html($p);
+        }
+        // 定义函数，从页面地址栏中解析出参数id的值
+        function getId(search, id) {
+            let params = new URLSearchParams(search);
+            let value = parseInt(params.get(id));
+            return value;
+        }
+        // 解析商品页面传来的参数并打印
+        // console.log(getId(location.search, 'id'));
+        let goodId = getId(location.search, 'id');
+        // 已成功打印，可根据返回值在页面渲染该商品
+
+    </script>
+</body>
+
+</html>
